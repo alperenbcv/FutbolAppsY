@@ -1,20 +1,20 @@
-Manager{CurrenTeamId1id=1, name='Jose', age=61, nationality='Portekiz', managerUserName='mourinho', managerPassword='1234', currentTeamID=1}
-Manager{CurrenTeamId2id=2, name='Okan', age=50, nationality='Istanbul', managerUserName='okan', managerPassword='1234', currentTeamID=2}
-Manager{CurrenTeamId3id=3, name='Giovanni van', age=49, nationality='Hollanda', managerUserName='giovanni', managerPassword='1234', currentTeamID=3}
-Manager{CurrenTeamId4id=4, name='Abdullah', age=61, nationality='Istanbul', managerUserName='abdullah', managerPassword='1234', currentTeamID=4}
-Manager{CurrenTeamId5id=5, name='Cagdas', age=44, nationality='Istanbul', managerUserName='cagdas', managerPassword='6783', currentTeamID=5}
-Manager{CurrenTeamId6id=6, name='İlhan', age=47, nationality='Hatay', managerUserName='ilhan', managerPassword='5214', currentTeamID=6}
-Manager{CurrenTeamId7id=7, name='Thomas', age=50, nationality='Almanya', managerUserName='thomas', managerPassword='4325', currentTeamID=7}
-Manager{CurrenTeamId8id=8, name='Burak', age=39, nationality='Antalya', managerUserName='burak', managerPassword='3675', currentTeamID=8}
-Manager{CurrenTeamId9id=9, name='Arda', age=37, nationality='Turkiye', managerUserName='Arda', managerPassword='9999', currentTeamID=9}
-Manager{CurrenTeamId10id=10, name='Alex', age=46, nationality='Brazil', managerUserName='Alex', managerPassword='9876', currentTeamID=10}
-Manager{CurrenTeamId11id=11, name='Michael', age=40, nationality='Avustralia', managerUserName='Michi', managerPassword='5432', currentTeamID=11}
-Manager{CurrenTeamId12id=12, name='Fatih', age=46, nationality='Turkiye', managerUserName='Fatih', managerPassword='2468', currentTeamID=12}
-Manager{CurrenTeamId13id=13, name='Bülent', age=53, nationality='Turkiye', managerUserName='bulent', managerPassword='1234', currentTeamID=13}
-Manager{CurrenTeamId14id=14, name='Sami', age=46, nationality='Turkiye', managerUserName='sami', managerPassword='1234', currentTeamID=14}
-Manager{CurrenTeamId15id=15, name='Ali', age=40, nationality='Turkiye', managerUserName='ali', managerPassword='1234', currentTeamID=15}
-Manager{CurrenTeamId16id=16, name='Selcuk', age=39, nationality='Turkiye', managerUserName='selcuk', managerPassword='1234', currentTeamID=16}
-Manager{CurrenTeamId17id=17, name='Ozhan', age=39, nationality='Turkiye', managerUserName='ozhan', managerPassword='1234', currentTeamID=17}
-Manager{CurrenTeamId18id=18, name='Stanimir', age=57, nationality='Bulgaristan', managerUserName='stanimir', managerPassword='1234', currentTeamID=18}
-Manager{CurrenTeamId19id=19, name='Ismet', age=50, nationality='Turkiye', managerUserName='ismet', managerPassword='1234', currentTeamID=19}
-Manager{CurrenTeamId20id=20, name='Cihat', age=54, nationality='Turkiye', managerUserName='cihat', managerPassword='1234', currentTeamID=20}
+1,Jose,Mourinho,61,Portekiz,mourinho,1234,
+2,Okan,Buruk,50,Istanbul,okan,1234,
+3,Giovanni van,Bronckhorst,49,Hollanda,giovanni,1234,
+4,Abdullah,Avci,61,Istanbul,abdullah,1234,
+5,Cagdas,Atan,44,Istanbul,cagdas,6783,
+6,İlhan,Palut,47,Hatay,ilhan,5214,
+7,Thomas,Reis,50,Almanya,thomas,4325,
+8,Burak,Yılmaz,39,Antalya,burak,3675,
+9,Arda,Turan,37,Turkiye,Arda,9999,
+10,Alex,DeSouza,46,Brazil,Alex,9876,
+11,Michael,Valkanis,40,Avustralia,Michi,5432,
+12,Fatih,Tekke,46,Turkiye,Fatih,2468,
+13,Bülent,Uygun,53,Turkiye,bulent,1234,
+14,Sami,Ugurlu,46,Turkiye,sami,1234,
+15,Ali,Camdali,40,Turkiye,ali,1234,
+16,Selcuk,Inan,39,Turkiye,selcuk,1234,
+17,Ozhan,Pulat,39,Turkiye,ozhan,1234,
+18,Stanimir,Stoilov,57,Bulgaristan,stanimir,1234,
+19,Ismet,Tasdemir,50,Turkiye,ismet,1234,
+20,Cihat,Arslan,54,Turkiye,cihat,1234,

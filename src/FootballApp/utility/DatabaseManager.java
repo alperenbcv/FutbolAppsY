@@ -57,4 +57,8 @@ public class DatabaseManager<T extends BaseEntity> implements ICRUD<T> {
 		return Optional.empty();
 	}
 	
+	public void delete(T t) {
+		veriListesi.remove(t);
+	}
+	
 }

@@ -1,20 +1,14 @@
 package FootballApp.modules;
 
 import FootballApp.entities.Manager;
-import FootballApp.entities.Player;
-import FootballApp.utility.DataGenerator;
-
-import javax.xml.crypto.Data;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.InputMismatchException;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Menu {
 	private static Scanner sc = new Scanner(System.in);
 	private static Manager loggedManager = null;
+	
+	
 	public static void startMenu() {
 		int userInput;
 		do {

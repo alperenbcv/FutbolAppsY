@@ -1,300 +1,300 @@
-Player ID: 1, Name=Ali, SurName=Arslan, Age=22, Nationality=Turkiye, CurrentTeamID=1, Position=GK, OverallRating=76, Value=178606.37, Wage=7853.5, TechnicalAttributes: Finishing=79, Pass=95, Dribbling=67, Tackle=55, ShotPower=86
-Player ID: 2, Name=Ali, SurName=Çelik, Age=33, Nationality=Turkiye, CurrentTeamID=1, Position=ST, OverallRating=67, Value=185706.56, Wage=6292.95, TechnicalAttributes: Finishing=74, Pass=75, Dribbling=50, Tackle=80, ShotPower=57
-Player ID: 3, Name=Ali, SurName=Akman, Age=23, Nationality=Turkiye, CurrentTeamID=1, Position=ST, OverallRating=78, Value=213915.57, Wage=6659.33, TechnicalAttributes: Finishing=96, Pass=62, Dribbling=99, Tackle=67, ShotPower=66
-Player ID: 4, Name=Ali, SurName=Çam, Age=24, Nationality=Turkiye, CurrentTeamID=1, Position=CM, OverallRating=79, Value=466237.61, Wage=7418.86, TechnicalAttributes: Finishing=89, Pass=96, Dribbling=85, Tackle=68, ShotPower=57
-Player ID: 5, Name=Ali, SurName=Aydın, Age=22, Nationality=Turkiye, CurrentTeamID=1, Position=ST, OverallRating=74, Value=329738.15, Wage=5550.26, TechnicalAttributes: Finishing=74, Pass=84, Dribbling=77, Tackle=78, ShotPower=57
-Player ID: 6, Name=Ali, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=1, Position=GK, OverallRating=66, Value=320020.99, Wage=6265.45, TechnicalAttributes: Finishing=66, Pass=72, Dribbling=85, Tackle=51, ShotPower=60
-Player ID: 7, Name=Ali, SurName=Acar, Age=16, Nationality=Turkiye, CurrentTeamID=1, Position=ST, OverallRating=70, Value=378397.46, Wage=5970.49, TechnicalAttributes: Finishing=95, Pass=54, Dribbling=61, Tackle=89, ShotPower=54
-Player ID: 8, Name=Ali, SurName=Şahin, Age=16, Nationality=Turkiye, CurrentTeamID=1, Position=CM, OverallRating=76, Value=107396.97, Wage=7243.33, TechnicalAttributes: Finishing=70, Pass=62, Dribbling=93, Tackle=97, ShotPower=59
-Player ID: 9, Name=Ali, SurName=Yılmaz, Age=23, Nationality=Turkiye, CurrentTeamID=1, Position=CB, OverallRating=68, Value=342397.55, Wage=6287.88, TechnicalAttributes: Finishing=71, Pass=54, Dribbling=85, Tackle=80, ShotPower=53
-Player ID: 10, Name=Ali, SurName=Çetin, Age=29, Nationality=Turkiye, CurrentTeamID=1, Position=CM, OverallRating=67, Value=117901.99, Wage=7327.5, TechnicalAttributes: Finishing=64, Pass=95, Dribbling=60, Tackle=55, ShotPower=62
-Player ID: 11, Name=Ali, SurName=Kılıç, Age=23, Nationality=Turkiye, CurrentTeamID=1, Position=ST, OverallRating=83, Value=587492.18, Wage=5389.42, TechnicalAttributes: Finishing=75, Pass=98, Dribbling=62, Tackle=89, ShotPower=91
-Player ID: 12, Name=Ali, SurName=Akman, Age=21, Nationality=Turkiye, CurrentTeamID=1, Position=CM, OverallRating=66, Value=232747.9, Wage=5394.86, TechnicalAttributes: Finishing=77, Pass=56, Dribbling=80, Tackle=59, ShotPower=60
-Player ID: 13, Name=Ali, SurName=Çelik, Age=34, Nationality=Turkiye, CurrentTeamID=1, Position=GK, OverallRating=77, Value=371746.34, Wage=5478.04, TechnicalAttributes: Finishing=74, Pass=84, Dribbling=85, Tackle=60, ShotPower=85
-Player ID: 14, Name=Ali, SurName=Çetin, Age=27, Nationality=Turkiye, CurrentTeamID=1, Position=GK, OverallRating=63, Value=495339.16, Wage=7407.46, TechnicalAttributes: Finishing=51, Pass=77, Dribbling=54, Tackle=66, ShotPower=70
-Player ID: 15, Name=Ali, SurName=Çetin, Age=28, Nationality=Turkiye, CurrentTeamID=1, Position=GK, OverallRating=72, Value=394752.17, Wage=7351.45, TechnicalAttributes: Finishing=80, Pass=91, Dribbling=59, Tackle=52, ShotPower=80
-Player ID: 16, Name=Ahmet, SurName=Akman, Age=23, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=84, Value=527530.5, Wage=5319.21, TechnicalAttributes: Finishing=69, Pass=81, Dribbling=92, Tackle=85, ShotPower=95
-Player ID: 17, Name=Ahmet, SurName=Çelik, Age=16, Nationality=Turkiye, CurrentTeamID=2, Position=CB, OverallRating=79, Value=148163.98, Wage=7302.05, TechnicalAttributes: Finishing=94, Pass=70, Dribbling=92, Tackle=61, ShotPower=82
-Player ID: 18, Name=Ahmet, SurName=Kılıç, Age=23, Nationality=Turkiye, CurrentTeamID=2, Position=ST, OverallRating=66, Value=482423.03, Wage=6645.6, TechnicalAttributes: Finishing=63, Pass=70, Dribbling=51, Tackle=77, ShotPower=70
-Player ID: 19, Name=Ahmet, SurName=Aydın, Age=21, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=67, Value=580405.66, Wage=7791.6, TechnicalAttributes: Finishing=65, Pass=50, Dribbling=77, Tackle=84, ShotPower=63
-Player ID: 20, Name=Ahmet, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=2, Position=ST, OverallRating=74, Value=427280.02, Wage=6353.3, TechnicalAttributes: Finishing=79, Pass=75, Dribbling=51, Tackle=89, ShotPower=79
-Player ID: 21, Name=Ahmet, SurName=Çetin, Age=23, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=57, Value=184781.37, Wage=5225.31, TechnicalAttributes: Finishing=58, Pass=57, Dribbling=62, Tackle=52, ShotPower=57
-Player ID: 22, Name=Ahmet, SurName=Kılıç, Age=23, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=61, Value=262614.24, Wage=7101.08, TechnicalAttributes: Finishing=50, Pass=52, Dribbling=61, Tackle=92, ShotPower=51
-Player ID: 23, Name=Ahmet, SurName=Kaya, Age=24, Nationality=Turkiye, CurrentTeamID=2, Position=CB, OverallRating=80, Value=181284.58, Wage=6477.06, TechnicalAttributes: Finishing=66, Pass=69, Dribbling=82, Tackle=95, ShotPower=90
-Player ID: 24, Name=Ahmet, SurName=Karaca, Age=28, Nationality=Turkiye, CurrentTeamID=2, Position=CB, OverallRating=86, Value=375657.14, Wage=6893.3, TechnicalAttributes: Finishing=96, Pass=61, Dribbling=83, Tackle=97, ShotPower=96
-Player ID: 25, Name=Ahmet, SurName=Öztürk, Age=16, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=72, Value=268152.37, Wage=6301.05, TechnicalAttributes: Finishing=80, Pass=58, Dribbling=69, Tackle=59, ShotPower=94
-Player ID: 26, Name=Ahmet, SurName=Kılıç, Age=17, Nationality=Turkiye, CurrentTeamID=2, Position=ST, OverallRating=77, Value=568265.61, Wage=7893.93, TechnicalAttributes: Finishing=79, Pass=96, Dribbling=83, Tackle=56, ShotPower=74
-Player ID: 27, Name=Ahmet, SurName=Çelik, Age=33, Nationality=Turkiye, CurrentTeamID=2, Position=CM, OverallRating=65, Value=319651.8, Wage=7404.44, TechnicalAttributes: Finishing=55, Pass=75, Dribbling=54, Tackle=63, ShotPower=78
-Player ID: 28, Name=Ahmet, SurName=Çelik, Age=29, Nationality=Turkiye, CurrentTeamID=2, Position=ST, OverallRating=78, Value=210855.38, Wage=7491.93, TechnicalAttributes: Finishing=62, Pass=98, Dribbling=80, Tackle=74, ShotPower=79
-Player ID: 29, Name=Ahmet, SurName=Çelik, Age=17, Nationality=Turkiye, CurrentTeamID=2, Position=ST, OverallRating=80, Value=451711.51, Wage=7752.0, TechnicalAttributes: Finishing=65, Pass=93, Dribbling=95, Tackle=93, ShotPower=55
-Player ID: 30, Name=Ahmet, SurName=Çetin, Age=18, Nationality=Turkiye, CurrentTeamID=2, Position=GK, OverallRating=80, Value=375170.84, Wage=5707.71, TechnicalAttributes: Finishing=99, Pass=93, Dribbling=63, Tackle=57, ShotPower=92
-Player ID: 31, Name=Baris, SurName=Aydın, Age=24, Nationality=Turkiye, CurrentTeamID=3, Position=CB, OverallRating=82, Value=266826.59, Wage=6625.31, TechnicalAttributes: Finishing=90, Pass=90, Dribbling=57, Tackle=81, ShotPower=93
-Player ID: 32, Name=Baris, SurName=Aydın, Age=27, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=76, Value=359609.27, Wage=7685.57, TechnicalAttributes: Finishing=97, Pass=62, Dribbling=53, Tackle=97, ShotPower=75
-Player ID: 33, Name=Baris, SurName=Demir, Age=23, Nationality=Turkiye, CurrentTeamID=3, Position=ST, OverallRating=62, Value=584166.63, Wage=6068.04, TechnicalAttributes: Finishing=77, Pass=58, Dribbling=58, Tackle=55, ShotPower=65
-Player ID: 34, Name=Baris, SurName=Çelik, Age=20, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=74, Value=351413.02, Wage=5328.89, TechnicalAttributes: Finishing=75, Pass=73, Dribbling=93, Tackle=74, ShotPower=55
-Player ID: 35, Name=Baris, SurName=Kaya, Age=32, Nationality=Turkiye, CurrentTeamID=3, Position=CB, OverallRating=75, Value=210006.24, Wage=7613.05, TechnicalAttributes: Finishing=66, Pass=87, Dribbling=92, Tackle=63, ShotPower=67
-Player ID: 36, Name=Baris, SurName=Kaya, Age=17, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=83, Value=370326.67, Wage=6102.17, TechnicalAttributes: Finishing=93, Pass=83, Dribbling=82, Tackle=76, ShotPower=81
-Player ID: 37, Name=Baris, SurName=Taş, Age=28, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=69, Value=407474.31, Wage=5608.17, TechnicalAttributes: Finishing=92, Pass=72, Dribbling=69, Tackle=52, ShotPower=62
-Player ID: 38, Name=Baris, SurName=Yurt, Age=24, Nationality=Turkiye, CurrentTeamID=3, Position=ST, OverallRating=71, Value=528286.58, Wage=6648.44, TechnicalAttributes: Finishing=83, Pass=57, Dribbling=64, Tackle=61, ShotPower=91
-Player ID: 39, Name=Baris, SurName=Öztürk, Age=16, Nationality=Turkiye, CurrentTeamID=3, Position=ST, OverallRating=83, Value=323182.71, Wage=6034.57, TechnicalAttributes: Finishing=67, Pass=96, Dribbling=93, Tackle=82, ShotPower=81
-Player ID: 40, Name=Baris, SurName=Kılıç, Age=27, Nationality=Turkiye, CurrentTeamID=3, Position=CB, OverallRating=81, Value=219368.7, Wage=5150.56, TechnicalAttributes: Finishing=89, Pass=89, Dribbling=74, Tackle=93, ShotPower=61
-Player ID: 41, Name=Baris, SurName=Şahin, Age=17, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=66, Value=421547.17, Wage=6445.15, TechnicalAttributes: Finishing=64, Pass=89, Dribbling=66, Tackle=56, ShotPower=58
-Player ID: 42, Name=Baris, SurName=Yavuz, Age=20, Nationality=Turkiye, CurrentTeamID=3, Position=CM, OverallRating=68, Value=383566.03, Wage=7301.59, TechnicalAttributes: Finishing=78, Pass=50, Dribbling=97, Tackle=50, ShotPower=68
-Player ID: 43, Name=Baris, SurName=Çam, Age=26, Nationality=Turkiye, CurrentTeamID=3, Position=CB, OverallRating=72, Value=565552.48, Wage=6539.88, TechnicalAttributes: Finishing=74, Pass=99, Dribbling=64, Tackle=60, ShotPower=64
-Player ID: 44, Name=Baris, SurName=Çelik, Age=17, Nationality=Turkiye, CurrentTeamID=3, Position=ST, OverallRating=71, Value=147000.58, Wage=7342.12, TechnicalAttributes: Finishing=68, Pass=70, Dribbling=67, Tackle=89, ShotPower=64
-Player ID: 45, Name=Baris, SurName=Yalçın, Age=17, Nationality=Turkiye, CurrentTeamID=3, Position=CB, OverallRating=76, Value=405340.99, Wage=5940.99, TechnicalAttributes: Finishing=92, Pass=62, Dribbling=98, Tackle=51, ShotPower=81
-Player ID: 46, Name=Ceren, SurName=Yılmaz, Age=17, Nationality=Turkiye, CurrentTeamID=4, Position=CB, OverallRating=67, Value=339894.9, Wage=6871.53, TechnicalAttributes: Finishing=72, Pass=54, Dribbling=86, Tackle=70, ShotPower=57
-Player ID: 47, Name=Ceren, SurName=Kaya, Age=25, Nationality=Turkiye, CurrentTeamID=4, Position=CM, OverallRating=69, Value=363318.13, Wage=5933.09, TechnicalAttributes: Finishing=68, Pass=66, Dribbling=66, Tackle=77, ShotPower=71
-Player ID: 48, Name=Ceren, SurName=Yavuz, Age=21, Nationality=Turkiye, CurrentTeamID=4, Position=CM, OverallRating=76, Value=292037.1, Wage=6045.39, TechnicalAttributes: Finishing=83, Pass=74, Dribbling=72, Tackle=91, ShotPower=64
-Player ID: 49, Name=Ceren, SurName=Yalçın, Age=23, Nationality=Turkiye, CurrentTeamID=4, Position=CB, OverallRating=83, Value=446470.33, Wage=7291.63, TechnicalAttributes: Finishing=89, Pass=90, Dribbling=78, Tackle=94, ShotPower=65
-Player ID: 50, Name=Ceren, SurName=Yurt, Age=28, Nationality=Turkiye, CurrentTeamID=4, Position=GK, OverallRating=81, Value=373568.39, Wage=5332.7, TechnicalAttributes: Finishing=90, Pass=99, Dribbling=82, Tackle=58, ShotPower=80
-Player ID: 51, Name=Ceren, SurName=Yavuz, Age=25, Nationality=Turkiye, CurrentTeamID=4, Position=ST, OverallRating=67, Value=393280.18, Wage=6837.84, TechnicalAttributes: Finishing=80, Pass=72, Dribbling=67, Tackle=60, ShotPower=58
-Player ID: 52, Name=Ceren, SurName=Çetin, Age=25, Nationality=Turkiye, CurrentTeamID=4, Position=CM, OverallRating=64, Value=536705.81, Wage=7224.56, TechnicalAttributes: Finishing=81, Pass=50, Dribbling=77, Tackle=61, ShotPower=53
-Player ID: 53, Name=Ceren, SurName=Akman, Age=27, Nationality=Turkiye, CurrentTeamID=4, Position=CB, OverallRating=73, Value=144001.08, Wage=5029.08, TechnicalAttributes: Finishing=64, Pass=85, Dribbling=87, Tackle=77, ShotPower=54
-Player ID: 54, Name=Ceren, SurName=Acar, Age=28, Nationality=Turkiye, CurrentTeamID=4, Position=ST, OverallRating=82, Value=371483.17, Wage=7159.67, TechnicalAttributes: Finishing=88, Pass=92, Dribbling=80, Tackle=64, ShotPower=88
-Player ID: 55, Name=Ceren, SurName=Kaya, Age=18, Nationality=Turkiye, CurrentTeamID=4, Position=CB, OverallRating=69, Value=479117.31, Wage=6720.74, TechnicalAttributes: Finishing=60, Pass=61, Dribbling=83, Tackle=75, ShotPower=69
-Player ID: 56, Name=Ceren, SurName=Yurt, Age=21, Nationality=Turkiye, CurrentTeamID=4, Position=CB, OverallRating=84, Value=115751.71, Wage=5462.61, TechnicalAttributes: Finishing=94, Pass=60, Dribbling=93, Tackle=81, ShotPower=95
-Player ID: 57, Name=Ceren, SurName=Karaca, Age=20, Nationality=Turkiye, CurrentTeamID=4, Position=CM, OverallRating=72, Value=101568.2, Wage=5219.32, TechnicalAttributes: Finishing=93, Pass=53, Dribbling=60, Tackle=83, ShotPower=74
-Player ID: 58, Name=Ceren, SurName=Taş, Age=29, Nationality=Turkiye, CurrentTeamID=4, Position=GK, OverallRating=88, Value=136527.62, Wage=7277.16, TechnicalAttributes: Finishing=94, Pass=85, Dribbling=86, Tackle=91, ShotPower=87
-Player ID: 59, Name=Ceren, SurName=Demir, Age=15, Nationality=Turkiye, CurrentTeamID=4, Position=ST, OverallRating=69, Value=473753.86, Wage=6885.76, TechnicalAttributes: Finishing=55, Pass=64, Dribbling=87, Tackle=74, ShotPower=69
-Player ID: 60, Name=Ceren, SurName=Arslan, Age=28, Nationality=Turkiye, CurrentTeamID=4, Position=ST, OverallRating=84, Value=586306.52, Wage=6319.73, TechnicalAttributes: Finishing=86, Pass=97, Dribbling=69, Tackle=78, ShotPower=92
-Player ID: 61, Name=Deniz, SurName=Kaya, Age=22, Nationality=Turkiye, CurrentTeamID=5, Position=ST, OverallRating=77, Value=150467.39, Wage=6844.17, TechnicalAttributes: Finishing=78, Pass=69, Dribbling=85, Tackle=92, ShotPower=65
-Player ID: 62, Name=Deniz, SurName=Öztürk, Age=30, Nationality=Turkiye, CurrentTeamID=5, Position=CB, OverallRating=66, Value=494186.19, Wage=7777.13, TechnicalAttributes: Finishing=55, Pass=66, Dribbling=80, Tackle=69, ShotPower=60
-Player ID: 63, Name=Deniz, SurName=Aydın, Age=20, Nationality=Turkiye, CurrentTeamID=5, Position=CB, OverallRating=80, Value=343712.66, Wage=5803.19, TechnicalAttributes: Finishing=87, Pass=77, Dribbling=92, Tackle=83, ShotPower=61
-Player ID: 64, Name=Deniz, SurName=Yılmaz, Age=27, Nationality=Turkiye, CurrentTeamID=5, Position=ST, OverallRating=73, Value=197546.38, Wage=7827.98, TechnicalAttributes: Finishing=61, Pass=92, Dribbling=94, Tackle=65, ShotPower=55
-Player ID: 65, Name=Deniz, SurName=Kılıç, Age=21, Nationality=Turkiye, CurrentTeamID=5, Position=CB, OverallRating=81, Value=134868.76, Wage=6605.54, TechnicalAttributes: Finishing=91, Pass=83, Dribbling=59, Tackle=80, ShotPower=96
-Player ID: 66, Name=Deniz, SurName=Aydın, Age=32, Nationality=Turkiye, CurrentTeamID=5, Position=CM, OverallRating=69, Value=215631.09, Wage=7078.72, TechnicalAttributes: Finishing=71, Pass=64, Dribbling=57, Tackle=69, ShotPower=86
-Player ID: 67, Name=Deniz, SurName=Yılmaz, Age=23, Nationality=Turkiye, CurrentTeamID=5, Position=CB, OverallRating=83, Value=203851.78, Wage=7886.19, TechnicalAttributes: Finishing=72, Pass=81, Dribbling=89, Tackle=94, ShotPower=79
-Player ID: 68, Name=Deniz, SurName=Yılmaz, Age=19, Nationality=Turkiye, CurrentTeamID=5, Position=CM, OverallRating=78, Value=161660.96, Wage=7672.93, TechnicalAttributes: Finishing=65, Pass=91, Dribbling=95, Tackle=58, ShotPower=84
-Player ID: 69, Name=Deniz, SurName=Çetin, Age=22, Nationality=Turkiye, CurrentTeamID=5, Position=ST, OverallRating=82, Value=393801.3, Wage=6140.16, TechnicalAttributes: Finishing=95, Pass=91, Dribbling=86, Tackle=69, ShotPower=71
-Player ID: 70, Name=Deniz, SurName=Yavuz, Age=15, Nationality=Turkiye, CurrentTeamID=5, Position=GK, OverallRating=71, Value=255074.9, Wage=5956.7, TechnicalAttributes: Finishing=51, Pass=66, Dribbling=98, Tackle=67, ShotPower=75
-Player ID: 71, Name=Deniz, SurName=Öztürk, Age=29, Nationality=Turkiye, CurrentTeamID=5, Position=ST, OverallRating=72, Value=193383.72, Wage=7578.37, TechnicalAttributes: Finishing=86, Pass=69, Dribbling=60, Tackle=90, ShotPower=59
-Player ID: 72, Name=Deniz, SurName=Çelik, Age=30, Nationality=Turkiye, CurrentTeamID=5, Position=CM, OverallRating=73, Value=330157.86, Wage=7362.95, TechnicalAttributes: Finishing=68, Pass=85, Dribbling=59, Tackle=97, ShotPower=58
-Player ID: 73, Name=Deniz, SurName=Yalçın, Age=16, Nationality=Turkiye, CurrentTeamID=5, Position=CB, OverallRating=72, Value=177056.3, Wage=7383.27, TechnicalAttributes: Finishing=55, Pass=76, Dribbling=84, Tackle=92, ShotPower=57
-Player ID: 74, Name=Deniz, SurName=Kılıç, Age=18, Nationality=Turkiye, CurrentTeamID=5, Position=ST, OverallRating=70, Value=461657.46, Wage=6614.35, TechnicalAttributes: Finishing=93, Pass=50, Dribbling=78, Tackle=81, ShotPower=52
-Player ID: 75, Name=Deniz, SurName=Kılıç, Age=17, Nationality=Turkiye, CurrentTeamID=5, Position=CM, OverallRating=72, Value=206575.26, Wage=5365.58, TechnicalAttributes: Finishing=74, Pass=76, Dribbling=86, Tackle=52, ShotPower=75
-Player ID: 76, Name=Kemal, SurName=Çelik, Age=26, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=77, Value=122025.44, Wage=6437.05, TechnicalAttributes: Finishing=55, Pass=95, Dribbling=71, Tackle=87, ShotPower=80
-Player ID: 77, Name=Kemal, SurName=Çetin, Age=28, Nationality=Turkiye, CurrentTeamID=6, Position=GK, OverallRating=70, Value=194658.34, Wage=6569.42, TechnicalAttributes: Finishing=60, Pass=67, Dribbling=65, Tackle=78, ShotPower=84
-Player ID: 78, Name=Kemal, SurName=Çam, Age=31, Nationality=Turkiye, CurrentTeamID=6, Position=CB, OverallRating=75, Value=508640.5, Wage=5726.51, TechnicalAttributes: Finishing=67, Pass=73, Dribbling=82, Tackle=68, ShotPower=87
-Player ID: 79, Name=Kemal, SurName=Çam, Age=23, Nationality=Turkiye, CurrentTeamID=6, Position=CB, OverallRating=72, Value=104026.6, Wage=5075.29, TechnicalAttributes: Finishing=72, Pass=86, Dribbling=50, Tackle=99, ShotPower=56
-Player ID: 80, Name=Kemal, SurName=Yavuz, Age=20, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=75, Value=582777.51, Wage=7512.08, TechnicalAttributes: Finishing=70, Pass=98, Dribbling=62, Tackle=84, ShotPower=61
-Player ID: 81, Name=Kemal, SurName=Yalçın, Age=15, Nationality=Turkiye, CurrentTeamID=6, Position=CM, OverallRating=73, Value=432052.19, Wage=7108.68, TechnicalAttributes: Finishing=98, Pass=56, Dribbling=55, Tackle=88, ShotPower=69
-Player ID: 82, Name=Kemal, SurName=Çam, Age=18, Nationality=Turkiye, CurrentTeamID=6, Position=CM, OverallRating=76, Value=245183.42, Wage=7128.46, TechnicalAttributes: Finishing=83, Pass=78, Dribbling=64, Tackle=95, ShotPower=60
-Player ID: 83, Name=Kemal, SurName=Çelik, Age=18, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=71, Value=172928.23, Wage=5576.75, TechnicalAttributes: Finishing=91, Pass=50, Dribbling=66, Tackle=53, ShotPower=99
-Player ID: 84, Name=Kemal, SurName=Çelik, Age=17, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=74, Value=145903.67, Wage=5719.85, TechnicalAttributes: Finishing=58, Pass=85, Dribbling=98, Tackle=78, ShotPower=51
-Player ID: 85, Name=Kemal, SurName=Yılmaz, Age=15, Nationality=Turkiye, CurrentTeamID=6, Position=CB, OverallRating=77, Value=165654.11, Wage=6326.56, TechnicalAttributes: Finishing=60, Pass=88, Dribbling=93, Tackle=62, ShotPower=82
-Player ID: 86, Name=Kemal, SurName=Kılıç, Age=29, Nationality=Turkiye, CurrentTeamID=6, Position=CB, OverallRating=77, Value=188473.75, Wage=5576.69, TechnicalAttributes: Finishing=89, Pass=82, Dribbling=97, Tackle=68, ShotPower=52
-Player ID: 87, Name=Kemal, SurName=Çetin, Age=33, Nationality=Turkiye, CurrentTeamID=6, Position=CM, OverallRating=68, Value=257193.68, Wage=6745.23, TechnicalAttributes: Finishing=74, Pass=68, Dribbling=65, Tackle=79, ShotPower=56
-Player ID: 88, Name=Kemal, SurName=Çelik, Age=19, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=72, Value=310748.19, Wage=5835.3, TechnicalAttributes: Finishing=87, Pass=64, Dribbling=84, Tackle=62, ShotPower=63
-Player ID: 89, Name=Kemal, SurName=Kaya, Age=29, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=71, Value=375915.93, Wage=7805.99, TechnicalAttributes: Finishing=99, Pass=63, Dribbling=81, Tackle=61, ShotPower=52
-Player ID: 90, Name=Kemal, SurName=Çelik, Age=30, Nationality=Turkiye, CurrentTeamID=6, Position=ST, OverallRating=68, Value=546485.64, Wage=7756.98, TechnicalAttributes: Finishing=58, Pass=63, Dribbling=58, Tackle=88, ShotPower=73
-Player ID: 91, Name=Mert, SurName=Taş, Age=16, Nationality=Turkiye, CurrentTeamID=7, Position=GK, OverallRating=70, Value=510867.12, Wage=5303.73, TechnicalAttributes: Finishing=70, Pass=95, Dribbling=50, Tackle=65, ShotPower=71
-Player ID: 92, Name=Mert, SurName=Yavuz, Age=27, Nationality=Turkiye, CurrentTeamID=7, Position=CB, OverallRating=64, Value=333341.39, Wage=6146.14, TechnicalAttributes: Finishing=50, Pass=89, Dribbling=56, Tackle=57, ShotPower=72
-Player ID: 93, Name=Mert, SurName=Çetin, Age=31, Nationality=Turkiye, CurrentTeamID=7, Position=GK, OverallRating=80, Value=547550.45, Wage=6819.45, TechnicalAttributes: Finishing=88, Pass=95, Dribbling=71, Tackle=83, ShotPower=67
-Player ID: 94, Name=Mert, SurName=Karaca, Age=15, Nationality=Turkiye, CurrentTeamID=7, Position=CB, OverallRating=73, Value=224139.76, Wage=7465.9, TechnicalAttributes: Finishing=73, Pass=85, Dribbling=58, Tackle=71, ShotPower=79
-Player ID: 95, Name=Mert, SurName=Aydın, Age=32, Nationality=Turkiye, CurrentTeamID=7, Position=CM, OverallRating=66, Value=480703.62, Wage=7905.23, TechnicalAttributes: Finishing=83, Pass=55, Dribbling=50, Tackle=67, ShotPower=75
-Player ID: 96, Name=Mert, SurName=Yılmaz, Age=24, Nationality=Turkiye, CurrentTeamID=7, Position=ST, OverallRating=77, Value=329206.58, Wage=5865.0, TechnicalAttributes: Finishing=71, Pass=57, Dribbling=89, Tackle=84, ShotPower=85
-Player ID: 97, Name=Mert, SurName=Öztürk, Age=31, Nationality=Turkiye, CurrentTeamID=7, Position=CB, OverallRating=78, Value=589066.51, Wage=5089.75, TechnicalAttributes: Finishing=51, Pass=91, Dribbling=75, Tackle=95, ShotPower=78
-Player ID: 98, Name=Mert, SurName=Yalçın, Age=16, Nationality=Turkiye, CurrentTeamID=7, Position=GK, OverallRating=80, Value=328138.24, Wage=6641.29, TechnicalAttributes: Finishing=90, Pass=99, Dribbling=53, Tackle=76, ShotPower=86
-Player ID: 99, Name=Mert, SurName=Arslan, Age=34, Nationality=Turkiye, CurrentTeamID=7, Position=CM, OverallRating=65, Value=206321.08, Wage=5568.98, TechnicalAttributes: Finishing=62, Pass=55, Dribbling=67, Tackle=89, ShotPower=53
-Player ID: 100, Name=Mert, SurName=Akman, Age=18, Nationality=Turkiye, CurrentTeamID=7, Position=ST, OverallRating=79, Value=459666.26, Wage=6634.78, TechnicalAttributes: Finishing=77, Pass=97, Dribbling=69, Tackle=93, ShotPower=60
-Player ID: 101, Name=Mert, SurName=Çam, Age=17, Nationality=Turkiye, CurrentTeamID=7, Position=CM, OverallRating=82, Value=106262.08, Wage=6867.61, TechnicalAttributes: Finishing=76, Pass=94, Dribbling=65, Tackle=94, ShotPower=83
-Player ID: 102, Name=Mert, SurName=Çetin, Age=19, Nationality=Turkiye, CurrentTeamID=7, Position=CB, OverallRating=83, Value=148247.91, Wage=6667.61, TechnicalAttributes: Finishing=93, Pass=64, Dribbling=74, Tackle=87, ShotPower=97
-Player ID: 103, Name=Mert, SurName=Acar, Age=23, Nationality=Turkiye, CurrentTeamID=7, Position=GK, OverallRating=72, Value=288821.8, Wage=7333.95, TechnicalAttributes: Finishing=51, Pass=60, Dribbling=97, Tackle=84, ShotPower=71
-Player ID: 104, Name=Mert, SurName=Yurt, Age=30, Nationality=Turkiye, CurrentTeamID=7, Position=CM, OverallRating=64, Value=165670.77, Wage=6427.94, TechnicalAttributes: Finishing=58, Pass=57, Dribbling=65, Tackle=80, ShotPower=60
-Player ID: 105, Name=Mert, SurName=Çetin, Age=19, Nationality=Turkiye, CurrentTeamID=7, Position=GK, OverallRating=77, Value=126824.12, Wage=6064.34, TechnicalAttributes: Finishing=81, Pass=62, Dribbling=73, Tackle=78, ShotPower=95
-Player ID: 106, Name=Burak, SurName=Öztürk, Age=18, Nationality=Turkiye, CurrentTeamID=8, Position=CM, OverallRating=77, Value=175305.37, Wage=6131.95, TechnicalAttributes: Finishing=85, Pass=82, Dribbling=96, Tackle=61, ShotPower=61
-Player ID: 107, Name=Burak, SurName=Yalçın, Age=25, Nationality=Turkiye, CurrentTeamID=8, Position=CM, OverallRating=79, Value=451282.48, Wage=6742.86, TechnicalAttributes: Finishing=94, Pass=69, Dribbling=51, Tackle=94, ShotPower=91
-Player ID: 108, Name=Burak, SurName=Çetin, Age=16, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=87, Value=555673.12, Wage=5890.55, TechnicalAttributes: Finishing=97, Pass=69, Dribbling=89, Tackle=96, ShotPower=87
-Player ID: 109, Name=Burak, SurName=Çetin, Age=28, Nationality=Turkiye, CurrentTeamID=8, Position=ST, OverallRating=75, Value=245683.29, Wage=7927.96, TechnicalAttributes: Finishing=93, Pass=88, Dribbling=69, Tackle=57, ShotPower=70
-Player ID: 110, Name=Burak, SurName=Yurt, Age=30, Nationality=Turkiye, CurrentTeamID=8, Position=ST, OverallRating=76, Value=378717.26, Wage=5956.35, TechnicalAttributes: Finishing=93, Pass=79, Dribbling=67, Tackle=61, ShotPower=80
-Player ID: 111, Name=Burak, SurName=Çam, Age=18, Nationality=Turkiye, CurrentTeamID=8, Position=GK, OverallRating=79, Value=157010.92, Wage=7519.88, TechnicalAttributes: Finishing=61, Pass=96, Dribbling=63, Tackle=92, ShotPower=86
-Player ID: 112, Name=Burak, SurName=Yalçın, Age=31, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=76, Value=436573.11, Wage=5932.0, TechnicalAttributes: Finishing=57, Pass=61, Dribbling=94, Tackle=81, ShotPower=87
-Player ID: 113, Name=Burak, SurName=Çam, Age=27, Nationality=Turkiye, CurrentTeamID=8, Position=CM, OverallRating=68, Value=453272.16, Wage=6500.93, TechnicalAttributes: Finishing=50, Pass=57, Dribbling=68, Tackle=79, ShotPower=87
-Player ID: 114, Name=Burak, SurName=Kılıç, Age=24, Nationality=Turkiye, CurrentTeamID=8, Position=CM, OverallRating=81, Value=218729.23, Wage=5582.38, TechnicalAttributes: Finishing=99, Pass=59, Dribbling=72, Tackle=89, ShotPower=87
-Player ID: 115, Name=Burak, SurName=Çetin, Age=23, Nationality=Turkiye, CurrentTeamID=8, Position=CM, OverallRating=74, Value=563967.77, Wage=7555.55, TechnicalAttributes: Finishing=51, Pass=72, Dribbling=65, Tackle=83, ShotPower=99
-Player ID: 116, Name=Burak, SurName=Koç, Age=21, Nationality=Turkiye, CurrentTeamID=8, Position=GK, OverallRating=78, Value=119254.53, Wage=6110.83, TechnicalAttributes: Finishing=93, Pass=51, Dribbling=85, Tackle=91, ShotPower=72
-Player ID: 117, Name=Burak, SurName=Kılıç, Age=32, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=76, Value=371335.25, Wage=7847.91, TechnicalAttributes: Finishing=94, Pass=68, Dribbling=79, Tackle=87, ShotPower=53
-Player ID: 118, Name=Burak, SurName=Demir, Age=23, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=68, Value=131237.09, Wage=7633.69, TechnicalAttributes: Finishing=55, Pass=63, Dribbling=87, Tackle=65, ShotPower=70
-Player ID: 119, Name=Burak, SurName=Kaya, Age=17, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=87, Value=356252.03, Wage=6061.88, TechnicalAttributes: Finishing=78, Pass=87, Dribbling=96, Tackle=92, ShotPower=83
-Player ID: 120, Name=Burak, SurName=Arslan, Age=21, Nationality=Turkiye, CurrentTeamID=8, Position=CB, OverallRating=61, Value=302738.5, Wage=5117.86, TechnicalAttributes: Finishing=52, Pass=52, Dribbling=61, Tackle=61, ShotPower=83
-Player ID: 121, Name=Okan, SurName=Arslan, Age=27, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=72, Value=503439.5, Wage=6791.7, TechnicalAttributes: Finishing=77, Pass=55, Dribbling=85, Tackle=55, ShotPower=91
-Player ID: 122, Name=Okan, SurName=Çelik, Age=24, Nationality=Turkiye, CurrentTeamID=9, Position=CB, OverallRating=70, Value=425413.35, Wage=7232.25, TechnicalAttributes: Finishing=50, Pass=74, Dribbling=83, Tackle=60, ShotPower=83
-Player ID: 123, Name=Okan, SurName=Demir, Age=19, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=72, Value=166048.53, Wage=6511.24, TechnicalAttributes: Finishing=87, Pass=53, Dribbling=82, Tackle=63, ShotPower=77
-Player ID: 124, Name=Okan, SurName=Çam, Age=15, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=72, Value=123476.69, Wage=5407.12, TechnicalAttributes: Finishing=77, Pass=68, Dribbling=77, Tackle=86, ShotPower=54
-Player ID: 125, Name=Okan, SurName=Çetin, Age=21, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=67, Value=429833.37, Wage=5645.76, TechnicalAttributes: Finishing=60, Pass=80, Dribbling=78, Tackle=61, ShotPower=56
-Player ID: 126, Name=Okan, SurName=Çetin, Age=24, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=81, Value=516922.91, Wage=5894.17, TechnicalAttributes: Finishing=75, Pass=80, Dribbling=96, Tackle=68, ShotPower=86
-Player ID: 127, Name=Okan, SurName=Yılmaz, Age=29, Nationality=Turkiye, CurrentTeamID=9, Position=ST, OverallRating=80, Value=531935.82, Wage=6722.05, TechnicalAttributes: Finishing=93, Pass=71, Dribbling=73, Tackle=96, ShotPower=69
-Player ID: 128, Name=Okan, SurName=Yavuz, Age=21, Nationality=Turkiye, CurrentTeamID=9, Position=ST, OverallRating=88, Value=538807.79, Wage=6775.43, TechnicalAttributes: Finishing=97, Pass=96, Dribbling=91, Tackle=95, ShotPower=62
-Player ID: 129, Name=Okan, SurName=Acar, Age=17, Nationality=Turkiye, CurrentTeamID=9, Position=ST, OverallRating=82, Value=268803.17, Wage=5181.46, TechnicalAttributes: Finishing=92, Pass=94, Dribbling=53, Tackle=83, ShotPower=89
-Player ID: 130, Name=Okan, SurName=Kılıç, Age=28, Nationality=Turkiye, CurrentTeamID=9, Position=CM, OverallRating=90, Value=562001.13, Wage=6680.8, TechnicalAttributes: Finishing=91, Pass=94, Dribbling=97, Tackle=71, ShotPower=98
-Player ID: 131, Name=Okan, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=72, Value=511953.05, Wage=7204.7, TechnicalAttributes: Finishing=95, Pass=92, Dribbling=54, Tackle=53, ShotPower=68
-Player ID: 132, Name=Okan, SurName=Karaca, Age=16, Nationality=Turkiye, CurrentTeamID=9, Position=CB, OverallRating=57, Value=226100.53, Wage=7441.49, TechnicalAttributes: Finishing=69, Pass=56, Dribbling=53, Tackle=55, ShotPower=55
-Player ID: 133, Name=Okan, SurName=Yalçın, Age=20, Nationality=Turkiye, CurrentTeamID=9, Position=CM, OverallRating=76, Value=579175.11, Wage=6818.49, TechnicalAttributes: Finishing=64, Pass=58, Dribbling=94, Tackle=80, ShotPower=87
-Player ID: 134, Name=Okan, SurName=Taş, Age=23, Nationality=Turkiye, CurrentTeamID=9, Position=GK, OverallRating=71, Value=330167.7, Wage=5030.96, TechnicalAttributes: Finishing=92, Pass=56, Dribbling=65, Tackle=82, ShotPower=62
-Player ID: 135, Name=Okan, SurName=Koç, Age=25, Nationality=Turkiye, CurrentTeamID=9, Position=ST, OverallRating=81, Value=272324.19, Wage=6630.98, TechnicalAttributes: Finishing=87, Pass=71, Dribbling=95, Tackle=75, ShotPower=78
-Player ID: 136, Name=Emre, SurName=Demir, Age=31, Nationality=Turkiye, CurrentTeamID=10, Position=ST, OverallRating=72, Value=211606.78, Wage=7925.14, TechnicalAttributes: Finishing=80, Pass=57, Dribbling=64, Tackle=90, ShotPower=73
-Player ID: 137, Name=Emre, SurName=Çelik, Age=23, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=58, Value=411111.26, Wage=5776.58, TechnicalAttributes: Finishing=58, Pass=50, Dribbling=52, Tackle=83, ShotPower=51
-Player ID: 138, Name=Emre, SurName=Öztürk, Age=29, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=75, Value=565849.88, Wage=5449.99, TechnicalAttributes: Finishing=70, Pass=55, Dribbling=71, Tackle=94, ShotPower=89
-Player ID: 139, Name=Emre, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=10, Position=GK, OverallRating=70, Value=315238.0, Wage=5040.19, TechnicalAttributes: Finishing=50, Pass=75, Dribbling=88, Tackle=50, ShotPower=88
-Player ID: 140, Name=Emre, SurName=Çelik, Age=22, Nationality=Turkiye, CurrentTeamID=10, Position=GK, OverallRating=74, Value=245548.28, Wage=7777.71, TechnicalAttributes: Finishing=77, Pass=61, Dribbling=90, Tackle=72, ShotPower=70
-Player ID: 141, Name=Emre, SurName=Kaya, Age=28, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=70, Value=194848.12, Wage=6676.89, TechnicalAttributes: Finishing=81, Pass=85, Dribbling=61, Tackle=63, ShotPower=64
-Player ID: 142, Name=Emre, SurName=Koç, Age=21, Nationality=Turkiye, CurrentTeamID=10, Position=CM, OverallRating=72, Value=451688.46, Wage=7981.48, TechnicalAttributes: Finishing=90, Pass=59, Dribbling=85, Tackle=78, ShotPower=51
-Player ID: 143, Name=Emre, SurName=Çelik, Age=21, Nationality=Turkiye, CurrentTeamID=10, Position=GK, OverallRating=73, Value=421582.24, Wage=6145.33, TechnicalAttributes: Finishing=84, Pass=82, Dribbling=78, Tackle=65, ShotPower=57
-Player ID: 144, Name=Emre, SurName=Şahin, Age=22, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=77, Value=442460.22, Wage=6964.09, TechnicalAttributes: Finishing=75, Pass=91, Dribbling=58, Tackle=76, ShotPower=85
-Player ID: 145, Name=Emre, SurName=Yalçın, Age=24, Nationality=Turkiye, CurrentTeamID=10, Position=GK, OverallRating=77, Value=109526.14, Wage=6831.29, TechnicalAttributes: Finishing=78, Pass=75, Dribbling=81, Tackle=84, ShotPower=71
-Player ID: 146, Name=Emre, SurName=Kaya, Age=15, Nationality=Turkiye, CurrentTeamID=10, Position=ST, OverallRating=79, Value=588799.93, Wage=5137.46, TechnicalAttributes: Finishing=85, Pass=93, Dribbling=53, Tackle=78, ShotPower=88
-Player ID: 147, Name=Emre, SurName=Akman, Age=20, Nationality=Turkiye, CurrentTeamID=10, Position=ST, OverallRating=72, Value=527030.55, Wage=7852.66, TechnicalAttributes: Finishing=87, Pass=92, Dribbling=57, Tackle=69, ShotPower=57
-Player ID: 148, Name=Emre, SurName=Aydın, Age=22, Nationality=Turkiye, CurrentTeamID=10, Position=GK, OverallRating=75, Value=268315.25, Wage=6447.42, TechnicalAttributes: Finishing=75, Pass=56, Dribbling=62, Tackle=93, ShotPower=93
-Player ID: 149, Name=Emre, SurName=Koç, Age=21, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=72, Value=376758.56, Wage=7207.96, TechnicalAttributes: Finishing=97, Pass=56, Dribbling=62, Tackle=85, ShotPower=63
-Player ID: 150, Name=Emre, SurName=Çelik, Age=22, Nationality=Turkiye, CurrentTeamID=10, Position=CB, OverallRating=75, Value=451768.14, Wage=6712.75, TechnicalAttributes: Finishing=53, Pass=89, Dribbling=81, Tackle=78, ShotPower=74
-Player ID: 151, Name=Can, SurName=Taş, Age=17, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=78, Value=482380.44, Wage=6857.73, TechnicalAttributes: Finishing=85, Pass=73, Dribbling=81, Tackle=73, ShotPower=78
-Player ID: 152, Name=Can, SurName=Koç, Age=16, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=65, Value=308451.33, Wage=6277.09, TechnicalAttributes: Finishing=63, Pass=51, Dribbling=89, Tackle=71, ShotPower=51
-Player ID: 153, Name=Can, SurName=Çelik, Age=33, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=74, Value=246088.1, Wage=6811.3, TechnicalAttributes: Finishing=75, Pass=85, Dribbling=65, Tackle=63, ShotPower=85
-Player ID: 154, Name=Can, SurName=Çelik, Age=34, Nationality=Turkiye, CurrentTeamID=11, Position=CM, OverallRating=78, Value=468639.21, Wage=5659.37, TechnicalAttributes: Finishing=50, Pass=93, Dribbling=98, Tackle=76, ShotPower=76
-Player ID: 155, Name=Can, SurName=Yılmaz, Age=29, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=63, Value=181540.74, Wage=7931.41, TechnicalAttributes: Finishing=63, Pass=77, Dribbling=70, Tackle=55, ShotPower=51
-Player ID: 156, Name=Can, SurName=Çetin, Age=23, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=73, Value=122826.91, Wage=6230.96, TechnicalAttributes: Finishing=60, Pass=57, Dribbling=89, Tackle=98, ShotPower=62
-Player ID: 157, Name=Can, SurName=Çam, Age=20, Nationality=Turkiye, CurrentTeamID=11, Position=CB, OverallRating=75, Value=401979.9, Wage=5964.78, TechnicalAttributes: Finishing=93, Pass=71, Dribbling=66, Tackle=95, ShotPower=53
-Player ID: 158, Name=Can, SurName=Koç, Age=21, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=80, Value=378692.75, Wage=5946.69, TechnicalAttributes: Finishing=78, Pass=92, Dribbling=95, Tackle=69, ShotPower=69
-Player ID: 159, Name=Can, SurName=Arslan, Age=34, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=82, Value=193067.17, Wage=5259.03, TechnicalAttributes: Finishing=89, Pass=94, Dribbling=61, Tackle=91, ShotPower=76
-Player ID: 160, Name=Can, SurName=Taş, Age=23, Nationality=Turkiye, CurrentTeamID=11, Position=CB, OverallRating=64, Value=317626.62, Wage=5812.42, TechnicalAttributes: Finishing=51, Pass=74, Dribbling=55, Tackle=59, ShotPower=82
-Player ID: 161, Name=Can, SurName=Yurt, Age=28, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=79, Value=414499.16, Wage=5734.75, TechnicalAttributes: Finishing=90, Pass=58, Dribbling=80, Tackle=71, ShotPower=96
-Player ID: 162, Name=Can, SurName=Şahin, Age=25, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=81, Value=343263.12, Wage=6083.11, TechnicalAttributes: Finishing=95, Pass=98, Dribbling=64, Tackle=94, ShotPower=58
-Player ID: 163, Name=Can, SurName=Öztürk, Age=25, Nationality=Turkiye, CurrentTeamID=11, Position=GK, OverallRating=71, Value=213644.18, Wage=5945.97, TechnicalAttributes: Finishing=82, Pass=80, Dribbling=73, Tackle=69, ShotPower=52
-Player ID: 164, Name=Can, SurName=Çam, Age=16, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=83, Value=424741.38, Wage=7153.19, TechnicalAttributes: Finishing=64, Pass=98, Dribbling=96, Tackle=99, ShotPower=62
-Player ID: 165, Name=Can, SurName=Şahin, Age=24, Nationality=Turkiye, CurrentTeamID=11, Position=ST, OverallRating=64, Value=128321.9, Wage=6483.6, TechnicalAttributes: Finishing=64, Pass=56, Dribbling=56, Tackle=93, ShotPower=52
-Player ID: 166, Name=Arda, SurName=Koç, Age=19, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=81, Value=137383.98, Wage=6725.18, TechnicalAttributes: Finishing=58, Pass=85, Dribbling=81, Tackle=96, ShotPower=87
-Player ID: 167, Name=Arda, SurName=Çam, Age=27, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=79, Value=134411.67, Wage=7552.96, TechnicalAttributes: Finishing=81, Pass=99, Dribbling=69, Tackle=90, ShotPower=57
-Player ID: 168, Name=Arda, SurName=Acar, Age=28, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=80, Value=473145.86, Wage=7122.59, TechnicalAttributes: Finishing=85, Pass=90, Dribbling=85, Tackle=86, ShotPower=54
-Player ID: 169, Name=Arda, SurName=Taş, Age=19, Nationality=Turkiye, CurrentTeamID=12, Position=CM, OverallRating=68, Value=287227.28, Wage=6290.56, TechnicalAttributes: Finishing=67, Pass=97, Dribbling=53, Tackle=54, ShotPower=72
-Player ID: 170, Name=Arda, SurName=Yavuz, Age=17, Nationality=Turkiye, CurrentTeamID=12, Position=CM, OverallRating=82, Value=202529.68, Wage=6549.74, TechnicalAttributes: Finishing=71, Pass=78, Dribbling=97, Tackle=96, ShotPower=69
-Player ID: 171, Name=Arda, SurName=Aydın, Age=30, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=73, Value=303535.1, Wage=7274.41, TechnicalAttributes: Finishing=57, Pass=98, Dribbling=57, Tackle=80, ShotPower=77
-Player ID: 172, Name=Arda, SurName=Karaca, Age=32, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=78, Value=538697.13, Wage=7694.06, TechnicalAttributes: Finishing=89, Pass=74, Dribbling=77, Tackle=76, ShotPower=76
-Player ID: 173, Name=Arda, SurName=Karaca, Age=21, Nationality=Turkiye, CurrentTeamID=12, Position=GK, OverallRating=68, Value=263719.97, Wage=6728.37, TechnicalAttributes: Finishing=53, Pass=74, Dribbling=96, Tackle=65, ShotPower=54
-Player ID: 174, Name=Arda, SurName=Acar, Age=25, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=61, Value=133226.91, Wage=5315.03, TechnicalAttributes: Finishing=61, Pass=64, Dribbling=61, Tackle=65, ShotPower=56
-Player ID: 175, Name=Arda, SurName=Acar, Age=16, Nationality=Turkiye, CurrentTeamID=12, Position=CM, OverallRating=77, Value=140917.13, Wage=7123.02, TechnicalAttributes: Finishing=70, Pass=91, Dribbling=71, Tackle=80, ShotPower=76
-Player ID: 176, Name=Arda, SurName=Yavuz, Age=22, Nationality=Turkiye, CurrentTeamID=12, Position=CM, OverallRating=76, Value=521377.6, Wage=5369.78, TechnicalAttributes: Finishing=84, Pass=93, Dribbling=57, Tackle=70, ShotPower=80
-Player ID: 177, Name=Arda, SurName=Çelik, Age=25, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=69, Value=195930.87, Wage=7234.1, TechnicalAttributes: Finishing=61, Pass=74, Dribbling=55, Tackle=56, ShotPower=99
-Player ID: 178, Name=Arda, SurName=Yavuz, Age=30, Nationality=Turkiye, CurrentTeamID=12, Position=ST, OverallRating=75, Value=582809.98, Wage=6786.42, TechnicalAttributes: Finishing=60, Pass=85, Dribbling=54, Tackle=92, ShotPower=86
-Player ID: 179, Name=Arda, SurName=Öztürk, Age=22, Nationality=Turkiye, CurrentTeamID=12, Position=GK, OverallRating=71, Value=263449.65, Wage=7233.94, TechnicalAttributes: Finishing=57, Pass=97, Dribbling=65, Tackle=50, ShotPower=90
-Player ID: 180, Name=Arda, SurName=Çam, Age=16, Nationality=Turkiye, CurrentTeamID=12, Position=CB, OverallRating=63, Value=561506.05, Wage=5214.06, TechnicalAttributes: Finishing=59, Pass=90, Dribbling=58, Tackle=51, ShotPower=60
-Player ID: 181, Name=Ege, SurName=Çam, Age=19, Nationality=Turkiye, CurrentTeamID=13, Position=ST, OverallRating=73, Value=256444.83, Wage=6062.53, TechnicalAttributes: Finishing=81, Pass=94, Dribbling=73, Tackle=52, ShotPower=65
-Player ID: 182, Name=Ege, SurName=Demir, Age=20, Nationality=Turkiye, CurrentTeamID=13, Position=CM, OverallRating=80, Value=486093.23, Wage=5952.71, TechnicalAttributes: Finishing=90, Pass=77, Dribbling=83, Tackle=86, ShotPower=66
-Player ID: 183, Name=Ege, SurName=Demir, Age=22, Nationality=Turkiye, CurrentTeamID=13, Position=CB, OverallRating=75, Value=171704.18, Wage=7151.8, TechnicalAttributes: Finishing=51, Pass=59, Dribbling=98, Tackle=72, ShotPower=96
-Player ID: 184, Name=Ege, SurName=Yavuz, Age=19, Nationality=Turkiye, CurrentTeamID=13, Position=CB, OverallRating=90, Value=178939.81, Wage=6796.3, TechnicalAttributes: Finishing=75, Pass=90, Dribbling=99, Tackle=97, ShotPower=91
-Player ID: 185, Name=Ege, SurName=Aydın, Age=15, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=66, Value=190203.58, Wage=5560.14, TechnicalAttributes: Finishing=65, Pass=62, Dribbling=52, Tackle=74, ShotPower=77
-Player ID: 186, Name=Ege, SurName=Yılmaz, Age=16, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=87, Value=239234.01, Wage=5708.56, TechnicalAttributes: Finishing=62, Pass=92, Dribbling=95, Tackle=94, ShotPower=95
-Player ID: 187, Name=Ege, SurName=Aydın, Age=28, Nationality=Turkiye, CurrentTeamID=13, Position=ST, OverallRating=73, Value=331459.53, Wage=5713.87, TechnicalAttributes: Finishing=73, Pass=98, Dribbling=81, Tackle=66, ShotPower=51
-Player ID: 188, Name=Ege, SurName=Taş, Age=32, Nationality=Turkiye, CurrentTeamID=13, Position=CM, OverallRating=76, Value=221791.82, Wage=6094.5, TechnicalAttributes: Finishing=82, Pass=62, Dribbling=96, Tackle=86, ShotPower=56
-Player ID: 189, Name=Ege, SurName=Aydın, Age=31, Nationality=Turkiye, CurrentTeamID=13, Position=CM, OverallRating=70, Value=421132.47, Wage=5248.23, TechnicalAttributes: Finishing=60, Pass=88, Dribbling=68, Tackle=50, ShotPower=87
-Player ID: 190, Name=Ege, SurName=Yurt, Age=23, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=75, Value=529559.63, Wage=6929.04, TechnicalAttributes: Finishing=73, Pass=57, Dribbling=70, Tackle=77, ShotPower=99
-Player ID: 191, Name=Ege, SurName=Şahin, Age=32, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=78, Value=455964.72, Wage=5892.61, TechnicalAttributes: Finishing=98, Pass=94, Dribbling=65, Tackle=69, ShotPower=66
-Player ID: 192, Name=Ege, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=63, Value=563685.89, Wage=7159.72, TechnicalAttributes: Finishing=64, Pass=87, Dribbling=60, Tackle=50, ShotPower=56
-Player ID: 193, Name=Ege, SurName=Kaya, Age=20, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=68, Value=269639.42, Wage=5953.25, TechnicalAttributes: Finishing=76, Pass=50, Dribbling=53, Tackle=76, ShotPower=89
-Player ID: 194, Name=Ege, SurName=Kaya, Age=31, Nationality=Turkiye, CurrentTeamID=13, Position=CM, OverallRating=85, Value=350631.73, Wage=6611.92, TechnicalAttributes: Finishing=97, Pass=87, Dribbling=60, Tackle=86, ShotPower=97
-Player ID: 195, Name=Ege, SurName=Öztürk, Age=21, Nationality=Turkiye, CurrentTeamID=13, Position=GK, OverallRating=76, Value=127335.97, Wage=7710.95, TechnicalAttributes: Finishing=92, Pass=86, Dribbling=76, Tackle=66, ShotPower=62
-Player ID: 196, Name=Serkan, SurName=Koç, Age=24, Nationality=Turkiye, CurrentTeamID=14, Position=ST, OverallRating=75, Value=331073.56, Wage=5092.68, TechnicalAttributes: Finishing=94, Pass=94, Dribbling=65, Tackle=57, ShotPower=68
-Player ID: 197, Name=Serkan, SurName=Kılıç, Age=20, Nationality=Turkiye, CurrentTeamID=14, Position=ST, OverallRating=74, Value=215634.43, Wage=6972.81, TechnicalAttributes: Finishing=67, Pass=83, Dribbling=69, Tackle=61, ShotPower=90
-Player ID: 198, Name=Serkan, SurName=Çelik, Age=25, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=67, Value=310321.56, Wage=6513.6, TechnicalAttributes: Finishing=51, Pass=85, Dribbling=84, Tackle=58, ShotPower=57
-Player ID: 199, Name=Serkan, SurName=Acar, Age=26, Nationality=Turkiye, CurrentTeamID=14, Position=ST, OverallRating=74, Value=177985.97, Wage=6093.49, TechnicalAttributes: Finishing=92, Pass=68, Dribbling=68, Tackle=74, ShotPower=69
-Player ID: 200, Name=Serkan, SurName=Aydın, Age=25, Nationality=Turkiye, CurrentTeamID=14, Position=GK, OverallRating=78, Value=214636.08, Wage=7632.97, TechnicalAttributes: Finishing=90, Pass=64, Dribbling=94, Tackle=86, ShotPower=56
-Player ID: 201, Name=Serkan, SurName=Yurt, Age=32, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=73, Value=564218.23, Wage=6015.47, TechnicalAttributes: Finishing=71, Pass=80, Dribbling=63, Tackle=60, ShotPower=91
-Player ID: 202, Name=Serkan, SurName=Kaya, Age=22, Nationality=Turkiye, CurrentTeamID=14, Position=ST, OverallRating=69, Value=312169.52, Wage=5454.43, TechnicalAttributes: Finishing=57, Pass=94, Dribbling=55, Tackle=54, ShotPower=87
-Player ID: 203, Name=Serkan, SurName=Kılıç, Age=28, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=62, Value=435483.96, Wage=5267.01, TechnicalAttributes: Finishing=63, Pass=65, Dribbling=55, Tackle=59, ShotPower=71
-Player ID: 204, Name=Serkan, SurName=Yurt, Age=19, Nationality=Turkiye, CurrentTeamID=14, Position=ST, OverallRating=67, Value=171294.87, Wage=7411.83, TechnicalAttributes: Finishing=50, Pass=95, Dribbling=53, Tackle=74, ShotPower=63
-Player ID: 205, Name=Serkan, SurName=Aydın, Age=30, Nationality=Turkiye, CurrentTeamID=14, Position=GK, OverallRating=66, Value=263688.4, Wage=6402.71, TechnicalAttributes: Finishing=57, Pass=58, Dribbling=63, Tackle=80, ShotPower=73
-Player ID: 206, Name=Serkan, SurName=Demir, Age=25, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=82, Value=412802.37, Wage=6219.09, TechnicalAttributes: Finishing=92, Pass=93, Dribbling=57, Tackle=87, ShotPower=81
-Player ID: 207, Name=Serkan, SurName=Çam, Age=24, Nationality=Turkiye, CurrentTeamID=14, Position=CB, OverallRating=73, Value=336745.0, Wage=5073.48, TechnicalAttributes: Finishing=80, Pass=69, Dribbling=62, Tackle=64, ShotPower=93
-Player ID: 208, Name=Serkan, SurName=Çelik, Age=27, Nationality=Turkiye, CurrentTeamID=14, Position=GK, OverallRating=67, Value=155854.03, Wage=6669.22, TechnicalAttributes: Finishing=56, Pass=50, Dribbling=79, Tackle=77, ShotPower=77
-Player ID: 209, Name=Serkan, SurName=Yavuz, Age=27, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=74, Value=238011.42, Wage=6771.34, TechnicalAttributes: Finishing=74, Pass=75, Dribbling=90, Tackle=66, ShotPower=66
-Player ID: 210, Name=Serkan, SurName=Koç, Age=22, Nationality=Turkiye, CurrentTeamID=14, Position=CM, OverallRating=84, Value=550681.84, Wage=5728.02, TechnicalAttributes: Finishing=87, Pass=96, Dribbling=74, Tackle=72, ShotPower=94
-Player ID: 211, Name=Ömer, SurName=Kılıç, Age=21, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=78, Value=219946.9, Wage=5308.92, TechnicalAttributes: Finishing=55, Pass=57, Dribbling=90, Tackle=93, ShotPower=97
-Player ID: 212, Name=Ömer, SurName=Çam, Age=34, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=81, Value=373798.11, Wage=7985.94, TechnicalAttributes: Finishing=92, Pass=74, Dribbling=84, Tackle=62, ShotPower=94
-Player ID: 213, Name=Ömer, SurName=Çelik, Age=25, Nationality=Turkiye, CurrentTeamID=15, Position=ST, OverallRating=70, Value=528409.14, Wage=6264.62, TechnicalAttributes: Finishing=77, Pass=69, Dribbling=93, Tackle=63, ShotPower=52
-Player ID: 214, Name=Ömer, SurName=Karaca, Age=32, Nationality=Turkiye, CurrentTeamID=15, Position=ST, OverallRating=74, Value=353957.58, Wage=6905.46, TechnicalAttributes: Finishing=89, Pass=71, Dribbling=82, Tackle=68, ShotPower=61
-Player ID: 215, Name=Ömer, SurName=Şahin, Age=31, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=71, Value=245073.34, Wage=5951.33, TechnicalAttributes: Finishing=70, Pass=96, Dribbling=52, Tackle=54, ShotPower=85
-Player ID: 216, Name=Ömer, SurName=Yalçın, Age=26, Nationality=Turkiye, CurrentTeamID=15, Position=CM, OverallRating=78, Value=119268.82, Wage=5331.63, TechnicalAttributes: Finishing=84, Pass=60, Dribbling=56, Tackle=92, ShotPower=98
-Player ID: 217, Name=Ömer, SurName=Çetin, Age=26, Nationality=Turkiye, CurrentTeamID=15, Position=CM, OverallRating=82, Value=261208.0, Wage=7950.31, TechnicalAttributes: Finishing=90, Pass=90, Dribbling=99, Tackle=50, ShotPower=81
-Player ID: 218, Name=Ömer, SurName=Kaya, Age=15, Nationality=Turkiye, CurrentTeamID=15, Position=GK, OverallRating=82, Value=357698.34, Wage=7420.09, TechnicalAttributes: Finishing=89, Pass=84, Dribbling=90, Tackle=60, ShotPower=87
-Player ID: 219, Name=Ömer, SurName=Kılıç, Age=24, Nationality=Turkiye, CurrentTeamID=15, Position=GK, OverallRating=58, Value=386481.38, Wage=5891.0, TechnicalAttributes: Finishing=58, Pass=61, Dribbling=50, Tackle=67, ShotPower=56
-Player ID: 220, Name=Ömer, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=84, Value=264743.97, Wage=7479.42, TechnicalAttributes: Finishing=86, Pass=79, Dribbling=99, Tackle=83, ShotPower=73
-Player ID: 221, Name=Ömer, SurName=Demir, Age=34, Nationality=Turkiye, CurrentTeamID=15, Position=CM, OverallRating=68, Value=271599.64, Wage=6954.07, TechnicalAttributes: Finishing=68, Pass=94, Dribbling=68, Tackle=53, ShotPower=57
-Player ID: 222, Name=Ömer, SurName=Kaya, Age=34, Nationality=Turkiye, CurrentTeamID=15, Position=GK, OverallRating=80, Value=203274.63, Wage=5223.89, TechnicalAttributes: Finishing=97, Pass=87, Dribbling=53, Tackle=77, ShotPower=90
-Player ID: 223, Name=Ömer, SurName=Demir, Age=30, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=68, Value=163392.09, Wage=6526.5, TechnicalAttributes: Finishing=50, Pass=79, Dribbling=70, Tackle=89, ShotPower=53
-Player ID: 224, Name=Ömer, SurName=Yılmaz, Age=20, Nationality=Turkiye, CurrentTeamID=15, Position=CB, OverallRating=67, Value=381442.15, Wage=6587.94, TechnicalAttributes: Finishing=60, Pass=64, Dribbling=75, Tackle=84, ShotPower=56
-Player ID: 225, Name=Ömer, SurName=Acar, Age=28, Nationality=Turkiye, CurrentTeamID=15, Position=ST, OverallRating=69, Value=495460.99, Wage=7546.4, TechnicalAttributes: Finishing=70, Pass=53, Dribbling=81, Tackle=95, ShotPower=50
-Player ID: 226, Name=Gökhan, SurName=Demir, Age=29, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=74, Value=295166.19, Wage=7565.04, TechnicalAttributes: Finishing=53, Pass=70, Dribbling=74, Tackle=86, ShotPower=90
-Player ID: 227, Name=Gökhan, SurName=Kılıç, Age=30, Nationality=Turkiye, CurrentTeamID=16, Position=CB, OverallRating=82, Value=326702.48, Wage=6339.63, TechnicalAttributes: Finishing=51, Pass=94, Dribbling=78, Tackle=93, ShotPower=96
-Player ID: 228, Name=Gökhan, SurName=Akman, Age=20, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=65, Value=211976.51, Wage=6501.63, TechnicalAttributes: Finishing=72, Pass=54, Dribbling=60, Tackle=82, ShotPower=60
-Player ID: 229, Name=Gökhan, SurName=Arslan, Age=24, Nationality=Turkiye, CurrentTeamID=16, Position=ST, OverallRating=77, Value=533882.72, Wage=6171.33, TechnicalAttributes: Finishing=80, Pass=98, Dribbling=58, Tackle=63, ShotPower=86
-Player ID: 230, Name=Gökhan, SurName=Koç, Age=22, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=66, Value=282967.94, Wage=6900.71, TechnicalAttributes: Finishing=64, Pass=96, Dribbling=51, Tackle=58, ShotPower=63
-Player ID: 231, Name=Gökhan, SurName=Kaya, Age=29, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=77, Value=513017.31, Wage=6312.52, TechnicalAttributes: Finishing=93, Pass=51, Dribbling=83, Tackle=75, ShotPower=83
-Player ID: 232, Name=Gökhan, SurName=Yavuz, Age=15, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=82, Value=149281.08, Wage=7069.9, TechnicalAttributes: Finishing=98, Pass=96, Dribbling=86, Tackle=59, ShotPower=72
-Player ID: 233, Name=Gökhan, SurName=Şahin, Age=33, Nationality=Turkiye, CurrentTeamID=16, Position=ST, OverallRating=73, Value=157554.09, Wage=7155.35, TechnicalAttributes: Finishing=93, Pass=80, Dribbling=60, Tackle=83, ShotPower=53
-Player ID: 234, Name=Gökhan, SurName=Kılıç, Age=15, Nationality=Turkiye, CurrentTeamID=16, Position=ST, OverallRating=73, Value=108867.7, Wage=7885.44, TechnicalAttributes: Finishing=95, Pass=60, Dribbling=82, Tackle=58, ShotPower=70
-Player ID: 235, Name=Gökhan, SurName=Öztürk, Age=22, Nationality=Turkiye, CurrentTeamID=16, Position=CM, OverallRating=73, Value=229299.22, Wage=7800.33, TechnicalAttributes: Finishing=61, Pass=60, Dribbling=84, Tackle=98, ShotPower=63
-Player ID: 236, Name=Gökhan, SurName=Yalçın, Age=30, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=73, Value=398333.28, Wage=6536.2, TechnicalAttributes: Finishing=76, Pass=56, Dribbling=73, Tackle=73, ShotPower=88
-Player ID: 237, Name=Gökhan, SurName=Yalçın, Age=24, Nationality=Turkiye, CurrentTeamID=16, Position=CB, OverallRating=83, Value=560652.86, Wage=6584.62, TechnicalAttributes: Finishing=72, Pass=98, Dribbling=83, Tackle=96, ShotPower=67
-Player ID: 238, Name=Gökhan, SurName=Yurt, Age=18, Nationality=Turkiye, CurrentTeamID=16, Position=CB, OverallRating=72, Value=173369.14, Wage=7360.98, TechnicalAttributes: Finishing=76, Pass=61, Dribbling=96, Tackle=66, ShotPower=61
-Player ID: 239, Name=Gökhan, SurName=Akman, Age=33, Nationality=Turkiye, CurrentTeamID=16, Position=GK, OverallRating=69, Value=364035.59, Wage=6222.67, TechnicalAttributes: Finishing=55, Pass=81, Dribbling=50, Tackle=82, ShotPower=77
-Player ID: 240, Name=Gökhan, SurName=Çam, Age=28, Nationality=Turkiye, CurrentTeamID=16, Position=ST, OverallRating=76, Value=579695.71, Wage=6797.52, TechnicalAttributes: Finishing=84, Pass=85, Dribbling=94, Tackle=50, ShotPower=71
-Player ID: 241, Name=Bora, SurName=Taş, Age=21, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=75, Value=436388.68, Wage=6588.95, TechnicalAttributes: Finishing=88, Pass=84, Dribbling=57, Tackle=62, ShotPower=85
-Player ID: 242, Name=Bora, SurName=Kılıç, Age=31, Nationality=Turkiye, CurrentTeamID=17, Position=GK, OverallRating=76, Value=234533.37, Wage=7023.21, TechnicalAttributes: Finishing=89, Pass=52, Dribbling=84, Tackle=87, ShotPower=72
-Player ID: 243, Name=Bora, SurName=Koç, Age=28, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=85, Value=583320.46, Wage=5687.11, TechnicalAttributes: Finishing=92, Pass=92, Dribbling=87, Tackle=66, ShotPower=89
-Player ID: 244, Name=Bora, SurName=Çam, Age=21, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=85, Value=186400.96, Wage=7085.27, TechnicalAttributes: Finishing=97, Pass=83, Dribbling=79, Tackle=85, ShotPower=81
-Player ID: 245, Name=Bora, SurName=Koç, Age=24, Nationality=Turkiye, CurrentTeamID=17, Position=ST, OverallRating=79, Value=178848.3, Wage=6020.7, TechnicalAttributes: Finishing=54, Pass=90, Dribbling=84, Tackle=99, ShotPower=69
-Player ID: 246, Name=Bora, SurName=Yalçın, Age=20, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=76, Value=208512.75, Wage=7192.13, TechnicalAttributes: Finishing=58, Pass=90, Dribbling=52, Tackle=97, ShotPower=85
-Player ID: 247, Name=Bora, SurName=Demir, Age=33, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=73, Value=342750.15, Wage=5408.05, TechnicalAttributes: Finishing=83, Pass=81, Dribbling=83, Tackle=61, ShotPower=61
-Player ID: 248, Name=Bora, SurName=Taş, Age=23, Nationality=Turkiye, CurrentTeamID=17, Position=GK, OverallRating=66, Value=428202.61, Wage=5368.23, TechnicalAttributes: Finishing=61, Pass=60, Dribbling=69, Tackle=61, ShotPower=81
-Player ID: 249, Name=Bora, SurName=Kılıç, Age=17, Nationality=Turkiye, CurrentTeamID=17, Position=CB, OverallRating=73, Value=198291.15, Wage=7266.87, TechnicalAttributes: Finishing=63, Pass=86, Dribbling=65, Tackle=83, ShotPower=68
-Player ID: 250, Name=Bora, SurName=Acar, Age=27, Nationality=Turkiye, CurrentTeamID=17, Position=ST, OverallRating=81, Value=281650.11, Wage=5860.54, TechnicalAttributes: Finishing=57, Pass=93, Dribbling=78, Tackle=95, ShotPower=85
-Player ID: 251, Name=Bora, SurName=Demir, Age=28, Nationality=Turkiye, CurrentTeamID=17, Position=GK, OverallRating=77, Value=588530.93, Wage=5534.18, TechnicalAttributes: Finishing=77, Pass=63, Dribbling=68, Tackle=98, ShotPower=79
-Player ID: 252, Name=Bora, SurName=Çelik, Age=15, Nationality=Turkiye, CurrentTeamID=17, Position=CB, OverallRating=74, Value=279716.2, Wage=6528.46, TechnicalAttributes: Finishing=57, Pass=99, Dribbling=62, Tackle=66, ShotPower=89
-Player ID: 253, Name=Bora, SurName=Çelik, Age=22, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=80, Value=529543.59, Wage=7682.81, TechnicalAttributes: Finishing=90, Pass=89, Dribbling=97, Tackle=57, ShotPower=68
-Player ID: 254, Name=Bora, SurName=Şahin, Age=33, Nationality=Turkiye, CurrentTeamID=17, Position=CM, OverallRating=72, Value=316917.11, Wage=6947.26, TechnicalAttributes: Finishing=53, Pass=85, Dribbling=62, Tackle=80, ShotPower=83
-Player ID: 255, Name=Bora, SurName=Yılmaz, Age=29, Nationality=Turkiye, CurrentTeamID=17, Position=GK, OverallRating=79, Value=403697.06, Wage=5747.94, TechnicalAttributes: Finishing=78, Pass=74, Dribbling=81, Tackle=84, ShotPower=82
-Player ID: 256, Name=Mustafa, SurName=Taş, Age=15, Nationality=Turkiye, CurrentTeamID=18, Position=CB, OverallRating=66, Value=251473.19, Wage=7110.79, TechnicalAttributes: Finishing=75, Pass=69, Dribbling=57, Tackle=80, ShotPower=53
-Player ID: 257, Name=Mustafa, SurName=Arslan, Age=24, Nationality=Turkiye, CurrentTeamID=18, Position=GK, OverallRating=67, Value=215640.49, Wage=7885.68, TechnicalAttributes: Finishing=93, Pass=50, Dribbling=61, Tackle=57, ShotPower=76
-Player ID: 258, Name=Mustafa, SurName=Yurt, Age=23, Nationality=Turkiye, CurrentTeamID=18, Position=GK, OverallRating=73, Value=129964.88, Wage=6430.68, TechnicalAttributes: Finishing=92, Pass=52, Dribbling=90, Tackle=75, ShotPower=56
-Player ID: 259, Name=Mustafa, SurName=Yavuz, Age=27, Nationality=Turkiye, CurrentTeamID=18, Position=ST, OverallRating=76, Value=127837.81, Wage=6750.05, TechnicalAttributes: Finishing=77, Pass=83, Dribbling=51, Tackle=85, ShotPower=85
-Player ID: 260, Name=Mustafa, SurName=Yavuz, Age=29, Nationality=Turkiye, CurrentTeamID=18, Position=ST, OverallRating=75, Value=575411.77, Wage=5196.83, TechnicalAttributes: Finishing=68, Pass=83, Dribbling=67, Tackle=90, ShotPower=68
-Player ID: 261, Name=Mustafa, SurName=Yılmaz, Age=17, Nationality=Turkiye, CurrentTeamID=18, Position=ST, OverallRating=77, Value=461362.3, Wage=6895.95, TechnicalAttributes: Finishing=94, Pass=90, Dribbling=54, Tackle=83, ShotPower=66
-Player ID: 262, Name=Mustafa, SurName=Koç, Age=32, Nationality=Turkiye, CurrentTeamID=18, Position=CM, OverallRating=65, Value=372560.66, Wage=6788.37, TechnicalAttributes: Finishing=77, Pass=51, Dribbling=76, Tackle=55, ShotPower=66
-Player ID: 263, Name=Mustafa, SurName=Yurt, Age=29, Nationality=Turkiye, CurrentTeamID=18, Position=GK, OverallRating=75, Value=551231.87, Wage=7492.58, TechnicalAttributes: Finishing=75, Pass=56, Dribbling=61, Tackle=89, ShotPower=98
-Player ID: 264, Name=Mustafa, SurName=Çam, Age=29, Nationality=Turkiye, CurrentTeamID=18, Position=CM, OverallRating=69, Value=218827.59, Wage=6704.15, TechnicalAttributes: Finishing=64, Pass=72, Dribbling=52, Tackle=65, ShotPower=94
-Player ID: 265, Name=Mustafa, SurName=Yurt, Age=19, Nationality=Turkiye, CurrentTeamID=18, Position=GK, OverallRating=85, Value=483816.28, Wage=5865.35, TechnicalAttributes: Finishing=83, Pass=64, Dribbling=92, Tackle=99, ShotPower=87
-Player ID: 266, Name=Mustafa, SurName=Çam, Age=33, Nationality=Turkiye, CurrentTeamID=18, Position=CM, OverallRating=75, Value=453683.61, Wage=5918.6, TechnicalAttributes: Finishing=94, Pass=67, Dribbling=77, Tackle=51, ShotPower=88
-Player ID: 267, Name=Mustafa, SurName=Yurt, Age=28, Nationality=Turkiye, CurrentTeamID=18, Position=CM, OverallRating=69, Value=156787.4, Wage=6773.85, TechnicalAttributes: Finishing=85, Pass=61, Dribbling=89, Tackle=58, ShotPower=53
-Player ID: 268, Name=Mustafa, SurName=Yurt, Age=34, Nationality=Turkiye, CurrentTeamID=18, Position=CM, OverallRating=67, Value=323308.1, Wage=6161.55, TechnicalAttributes: Finishing=58, Pass=84, Dribbling=62, Tackle=59, ShotPower=75
-Player ID: 269, Name=Mustafa, SurName=Yurt, Age=30, Nationality=Turkiye, CurrentTeamID=18, Position=ST, OverallRating=68, Value=589710.16, Wage=6879.44, TechnicalAttributes: Finishing=53, Pass=59, Dribbling=79, Tackle=90, ShotPower=63
-Player ID: 270, Name=Mustafa, SurName=Şahin, Age=15, Nationality=Turkiye, CurrentTeamID=18, Position=GK, OverallRating=62, Value=341053.48, Wage=6469.47, TechnicalAttributes: Finishing=81, Pass=56, Dribbling=56, Tackle=63, ShotPower=57
-Player ID: 271, Name=Melis, SurName=Acar, Age=26, Nationality=Turkiye, CurrentTeamID=19, Position=ST, OverallRating=75, Value=345686.52, Wage=6558.18, TechnicalAttributes: Finishing=56, Pass=96, Dribbling=96, Tackle=51, ShotPower=77
-Player ID: 272, Name=Melis, SurName=Yavuz, Age=33, Nationality=Turkiye, CurrentTeamID=19, Position=ST, OverallRating=74, Value=107673.83, Wage=7761.05, TechnicalAttributes: Finishing=68, Pass=62, Dribbling=75, Tackle=86, ShotPower=79
-Player ID: 273, Name=Melis, SurName=Akman, Age=20, Nationality=Turkiye, CurrentTeamID=19, Position=ST, OverallRating=77, Value=181466.86, Wage=6073.03, TechnicalAttributes: Finishing=64, Pass=73, Dribbling=86, Tackle=87, ShotPower=77
-Player ID: 274, Name=Melis, SurName=Koç, Age=27, Nationality=Turkiye, CurrentTeamID=19, Position=CB, OverallRating=76, Value=468365.38, Wage=5251.49, TechnicalAttributes: Finishing=81, Pass=95, Dribbling=73, Tackle=60, ShotPower=72
-Player ID: 275, Name=Melis, SurName=Yalçın, Age=31, Nationality=Turkiye, CurrentTeamID=19, Position=CB, OverallRating=59, Value=285132.24, Wage=6134.16, TechnicalAttributes: Finishing=66, Pass=53, Dribbling=57, Tackle=60, ShotPower=63
-Player ID: 276, Name=Melis, SurName=Yalçın, Age=28, Nationality=Turkiye, CurrentTeamID=19, Position=CM, OverallRating=82, Value=346450.07, Wage=6237.51, TechnicalAttributes: Finishing=85, Pass=82, Dribbling=81, Tackle=84, ShotPower=78
-Player ID: 277, Name=Melis, SurName=Yılmaz, Age=28, Nationality=Turkiye, CurrentTeamID=19, Position=GK, OverallRating=76, Value=566828.44, Wage=5046.94, TechnicalAttributes: Finishing=93, Pass=66, Dribbling=76, Tackle=53, ShotPower=93
-Player ID: 278, Name=Melis, SurName=Akman, Age=24, Nationality=Turkiye, CurrentTeamID=19, Position=CM, OverallRating=74, Value=466004.2, Wage=7159.42, TechnicalAttributes: Finishing=69, Pass=82, Dribbling=76, Tackle=74, ShotPower=69
-Player ID: 279, Name=Melis, SurName=Kılıç, Age=27, Nationality=Turkiye, CurrentTeamID=19, Position=CB, OverallRating=76, Value=379096.63, Wage=6974.37, TechnicalAttributes: Finishing=64, Pass=83, Dribbling=76, Tackle=72, ShotPower=89
-Player ID: 280, Name=Melis, SurName=Yılmaz, Age=27, Nationality=Turkiye, CurrentTeamID=19, Position=ST, OverallRating=78, Value=257892.3, Wage=6876.55, TechnicalAttributes: Finishing=74, Pass=59, Dribbling=93, Tackle=91, ShotPower=73
-Player ID: 281, Name=Melis, SurName=Kaya, Age=29, Nationality=Turkiye, CurrentTeamID=19, Position=CM, OverallRating=73, Value=519097.97, Wage=5324.13, TechnicalAttributes: Finishing=67, Pass=72, Dribbling=95, Tackle=64, ShotPower=68
-Player ID: 282, Name=Melis, SurName=Yalçın, Age=34, Nationality=Turkiye, CurrentTeamID=19, Position=GK, OverallRating=76, Value=495512.02, Wage=6779.04, TechnicalAttributes: Finishing=82, Pass=90, Dribbling=50, Tackle=96, ShotPower=64
-Player ID: 283, Name=Melis, SurName=Kaya, Age=17, Nationality=Turkiye, CurrentTeamID=19, Position=GK, OverallRating=75, Value=165468.49, Wage=6910.06, TechnicalAttributes: Finishing=99, Pass=73, Dribbling=64, Tackle=83, ShotPower=59
-Player ID: 284, Name=Melis, SurName=Koç, Age=21, Nationality=Turkiye, CurrentTeamID=19, Position=CM, OverallRating=71, Value=218089.08, Wage=5701.69, TechnicalAttributes: Finishing=86, Pass=61, Dribbling=68, Tackle=88, ShotPower=54
-Player ID: 285, Name=Melis, SurName=Çam, Age=31, Nationality=Turkiye, CurrentTeamID=19, Position=GK, OverallRating=67, Value=587667.67, Wage=5333.71, TechnicalAttributes: Finishing=80, Pass=76, Dribbling=63, Tackle=65, ShotPower=51
-Player ID: 286, Name=Selin, SurName=Akman, Age=24, Nationality=Turkiye, CurrentTeamID=20, Position=CB, OverallRating=65, Value=270582.15, Wage=7604.73, TechnicalAttributes: Finishing=84, Pass=56, Dribbling=56, Tackle=68, ShotPower=65
-Player ID: 287, Name=Selin, SurName=Taş, Age=28, Nationality=Turkiye, CurrentTeamID=20, Position=GK, OverallRating=77, Value=575498.96, Wage=7983.96, TechnicalAttributes: Finishing=67, Pass=91, Dribbling=65, Tackle=71, ShotPower=92
-Player ID: 288, Name=Selin, SurName=Arslan, Age=27, Nationality=Turkiye, CurrentTeamID=20, Position=ST, OverallRating=77, Value=300165.45, Wage=7641.33, TechnicalAttributes: Finishing=88, Pass=63, Dribbling=69, Tackle=86, ShotPower=79
-Player ID: 289, Name=Selin, SurName=Öztürk, Age=25, Nationality=Turkiye, CurrentTeamID=20, Position=CB, OverallRating=56, Value=430981.61, Wage=5160.86, TechnicalAttributes: Finishing=52, Pass=63, Dribbling=64, Tackle=51, ShotPower=53
-Player ID: 290, Name=Selin, SurName=Arslan, Age=34, Nationality=Turkiye, CurrentTeamID=20, Position=CM, OverallRating=67, Value=279852.91, Wage=5543.64, TechnicalAttributes: Finishing=96, Pass=80, Dribbling=51, Tackle=57, ShotPower=51
-Player ID: 291, Name=Selin, SurName=Çam, Age=29, Nationality=Turkiye, CurrentTeamID=20, Position=CM, OverallRating=91, Value=523943.62, Wage=6094.56, TechnicalAttributes: Finishing=97, Pass=96, Dribbling=92, Tackle=71, ShotPower=99
-Player ID: 292, Name=Selin, SurName=Yurt, Age=34, Nationality=Turkiye, CurrentTeamID=20, Position=CM, OverallRating=78, Value=440110.57, Wage=5226.48, TechnicalAttributes: Finishing=77, Pass=86, Dribbling=75, Tackle=95, ShotPower=58
-Player ID: 293, Name=Selin, SurName=Çelik, Age=15, Nationality=Turkiye, CurrentTeamID=20, Position=GK, OverallRating=73, Value=516581.7, Wage=7051.27, TechnicalAttributes: Finishing=69, Pass=72, Dribbling=72, Tackle=79, ShotPower=77
-Player ID: 294, Name=Selin, SurName=Öztürk, Age=15, Nationality=Turkiye, CurrentTeamID=20, Position=GK, OverallRating=66, Value=539274.93, Wage=5132.14, TechnicalAttributes: Finishing=54, Pass=51, Dribbling=91, Tackle=61, ShotPower=73
-Player ID: 295, Name=Selin, SurName=Öztürk, Age=22, Nationality=Turkiye, CurrentTeamID=20, Position=GK, OverallRating=65, Value=460799.33, Wage=6295.07, TechnicalAttributes: Finishing=85, Pass=56, Dribbling=67, Tackle=55, ShotPower=65
-Player ID: 296, Name=Selin, SurName=Acar, Age=16, Nationality=Turkiye, CurrentTeamID=20, Position=CM, OverallRating=84, Value=313252.95, Wage=6119.91, TechnicalAttributes: Finishing=83, Pass=93, Dribbling=97, Tackle=95, ShotPower=55
-Player ID: 297, Name=Selin, SurName=Kılıç, Age=33, Nationality=Turkiye, CurrentTeamID=20, Position=ST, OverallRating=72, Value=545385.17, Wage=6408.01, TechnicalAttributes: Finishing=56, Pass=63, Dribbling=68, Tackle=97, ShotPower=76
-Player ID: 298, Name=Selin, SurName=Yurt, Age=27, Nationality=Turkiye, CurrentTeamID=20, Position=GK, OverallRating=74, Value=164325.16, Wage=5640.42, TechnicalAttributes: Finishing=65, Pass=90, Dribbling=58, Tackle=61, ShotPower=96
-Player ID: 299, Name=Selin, SurName=Karaca, Age=31, Nationality=Turkiye, CurrentTeamID=20, Position=ST, OverallRating=58, Value=158034.45, Wage=6360.42, TechnicalAttributes: Finishing=54, Pass=53, Dribbling=55, Tackle=67, ShotPower=62
-Player ID: 300, Name=Selin, SurName=Şahin, Age=15, Nationality=Turkiye, CurrentTeamID=20, Position=CM, OverallRating=72, Value=557906.66, Wage=6527.7, TechnicalAttributes: Finishing=87, Pass=57, Dribbling=69, Tackle=53, ShotPower=95
+Ali,Öztürk,32,Turkiye,71,56,93,77,66,1,355040.0,7556.22,CM,
+Ali,Çetin,17,Turkiye,94,95,78,81,65,1,174305.55,7077.42,ST,
+Ali,Acar,20,Turkiye,60,52,91,70,52,1,198149.46,6951.18,ST,
+Ali,Çetin,26,Turkiye,83,83,98,60,90,1,376976.37,5855.49,CM,
+Ali,Kılıç,28,Turkiye,53,93,88,89,54,1,465419.41,7838.6,CM,
+Ali,Koç,29,Turkiye,88,84,77,64,63,1,572026.65,5557.7,GK,
+Ali,Koç,19,Turkiye,94,69,82,57,59,1,387241.25,7029.12,GK,
+Ali,Aydın,19,Turkiye,80,91,52,56,91,1,220322.28,5052.47,ST,
+Ali,Yavuz,24,Turkiye,55,64,68,89,86,1,272262.7,6494.73,GK,
+Ali,Yavuz,27,Turkiye,70,57,58,64,92,1,222217.3,6312.43,GK,
+Ali,Yurt,29,Turkiye,56,99,68,96,53,1,561224.87,6901.39,CM,
+Ali,Acar,16,Turkiye,74,84,68,97,69,1,255705.88,7273.15,GK,
+Ali,Çelik,16,Turkiye,55,93,96,67,57,1,518295.99,5421.76,CM,
+Ali,Öztürk,26,Turkiye,51,87,84,66,70,1,158833.92,6148.55,ST,
+Ali,Koç,25,Turkiye,96,82,55,72,92,1,409904.21,7720.14,CM,
+Ahmet,Yalçın,28,Turkiye,80,73,74,98,50,2,150224.64,5036.05,GK,
+Ahmet,Demir,33,Turkiye,78,66,65,62,82,2,193698.56,5047.32,CB,
+Ahmet,Çetin,29,Turkiye,54,94,61,92,71,2,200293.59,6893.22,CB,
+Ahmet,Aydın,19,Turkiye,76,92,64,50,68,2,417581.31,5585.61,CM,
+Ahmet,Yurt,23,Turkiye,53,61,95,72,55,2,204136.73,6873.19,CM,
+Ahmet,Acar,26,Turkiye,63,85,60,71,70,2,170757.64,7542.26,GK,
+Ahmet,Yurt,27,Turkiye,78,79,99,93,70,2,255170.79,7567.7,CM,
+Ahmet,Çetin,29,Turkiye,86,74,88,96,54,2,555437.22,7004.59,CB,
+Ahmet,Koç,29,Turkiye,52,94,73,55,69,2,156388.42,5924.03,CB,
+Ahmet,Öztürk,28,Turkiye,97,99,52,59,68,2,479199.88,5240.68,GK,
+Ahmet,Çetin,25,Turkiye,95,83,86,65,56,2,313561.3,7476.63,GK,
+Ahmet,Yurt,29,Turkiye,97,62,90,77,77,2,354101.44,6956.74,CM,
+Ahmet,Yalçın,32,Turkiye,99,97,97,60,83,2,571882.69,7064.02,CM,
+Ahmet,Yavuz,17,Turkiye,72,69,69,52,70,2,239348.29,6005.83,ST,
+Ahmet,Yılmaz,29,Turkiye,61,87,62,89,52,2,454386.43,5388.51,ST,
+Baris,Yalçın,32,Turkiye,75,79,82,64,93,3,369808.31,7182.0,GK,
+Baris,Kaya,17,Turkiye,51,54,69,85,77,3,117012.68,6618.57,ST,
+Baris,Çelik,33,Turkiye,68,83,55,60,78,3,572752.85,7029.96,CB,
+Baris,Yılmaz,21,Turkiye,61,92,89,65,55,3,361411.51,7733.32,CB,
+Baris,Acar,24,Turkiye,57,89,69,54,98,3,280038.99,6052.54,ST,
+Baris,Şahin,27,Turkiye,99,78,63,57,90,3,282483.39,5463.16,CM,
+Baris,Çelik,22,Turkiye,95,72,81,77,76,3,152443.3,6306.51,ST,
+Baris,Yalçın,20,Turkiye,52,84,70,82,88,3,413251.65,5492.86,GK,
+Baris,Şahin,29,Turkiye,54,79,78,89,65,3,237047.3,6142.2,ST,
+Baris,Yurt,33,Turkiye,59,75,79,53,92,3,324944.89,5060.4,CM,
+Baris,Kılıç,26,Turkiye,74,95,98,88,91,3,127452.7,6762.83,CM,
+Baris,Yalçın,26,Turkiye,82,99,70,66,53,3,165138.3,6209.71,ST,
+Baris,Yurt,26,Turkiye,71,79,67,52,71,3,470167.87,5357.14,ST,
+Baris,Çetin,31,Turkiye,79,59,75,98,53,3,111460.73,5734.84,ST,
+Baris,Taş,34,Turkiye,78,64,58,53,52,3,488759.86,7791.85,ST,
+Ceren,Karaca,28,Turkiye,65,95,62,60,51,4,452720.36,7290.57,ST,
+Ceren,Taş,28,Turkiye,79,59,55,59,94,4,130305.13,7240.51,ST,
+Ceren,Koç,25,Turkiye,53,86,69,92,51,4,253334.86,6236.28,GK,
+Ceren,Demir,25,Turkiye,78,94,67,79,71,4,446299.41,6670.8,ST,
+Ceren,Yılmaz,15,Turkiye,85,87,61,78,86,4,280672.73,7529.77,ST,
+Ceren,Öztürk,33,Turkiye,76,55,84,54,78,4,412501.53,5814.86,ST,
+Ceren,Arslan,21,Turkiye,94,69,75,87,65,4,308320.45,7392.38,CB,
+Ceren,Şahin,30,Turkiye,66,71,67,85,81,4,319187.8,6105.44,ST,
+Ceren,Çetin,29,Turkiye,93,88,68,75,84,4,361386.27,7528.65,CB,
+Ceren,Acar,18,Turkiye,94,60,93,89,69,4,454983.37,6075.23,GK,
+Ceren,Şahin,17,Turkiye,83,98,89,94,91,4,362734.13,5401.34,CB,
+Ceren,Yılmaz,25,Turkiye,75,78,65,80,94,4,113813.56,6887.94,ST,
+Ceren,Çelik,31,Turkiye,64,78,93,87,59,4,301512.26,7436.73,ST,
+Ceren,Koç,16,Turkiye,75,56,50,81,78,4,115582.78,6996.39,ST,
+Ceren,Yavuz,33,Turkiye,60,71,96,56,98,4,157499.12,6065.44,CB,
+Deniz,Yurt,33,Turkiye,61,97,72,56,99,5,376940.61,7406.78,CM,
+Deniz,Kılıç,22,Turkiye,62,59,62,92,62,5,566634.93,5190.34,GK,
+Deniz,Aydın,34,Turkiye,53,94,63,99,72,5,328934.18,6667.48,CB,
+Deniz,Arslan,20,Turkiye,84,75,84,84,89,5,334640.53,5016.22,ST,
+Deniz,Kaya,26,Turkiye,80,98,55,93,96,5,253472.56,5496.94,CM,
+Deniz,Çetin,17,Turkiye,75,76,92,59,72,5,386845.49,5174.52,CM,
+Deniz,Kılıç,24,Turkiye,89,55,78,86,61,5,200343.79,5917.28,CM,
+Deniz,Şahin,15,Turkiye,97,98,84,92,85,5,213256.42,5732.08,CB,
+Deniz,Çelik,32,Turkiye,91,94,51,81,94,5,541026.87,7868.56,ST,
+Deniz,Kılıç,20,Turkiye,86,67,98,93,85,5,528491.08,5984.04,CM,
+Deniz,Yavuz,24,Turkiye,86,92,80,71,53,5,404730.46,5543.4,ST,
+Deniz,Arslan,24,Turkiye,77,73,96,71,66,5,346488.09,6899.1,ST,
+Deniz,Acar,17,Turkiye,53,64,61,51,63,5,545967.13,5102.52,CM,
+Deniz,Çam,26,Turkiye,86,53,88,77,98,5,379872.1,5709.16,CM,
+Deniz,Demir,32,Turkiye,62,92,92,86,87,5,531536.44,5008.79,CB,
+Kemal,Akman,27,Turkiye,75,63,55,55,71,6,103512.75,5415.76,ST,
+Kemal,Taş,22,Turkiye,84,60,76,53,78,6,208041.85,5951.12,ST,
+Kemal,Şahin,23,Turkiye,63,96,62,81,66,6,481161.32,6922.11,CB,
+Kemal,Kaya,24,Turkiye,55,63,84,56,74,6,189006.37,5218.65,ST,
+Kemal,Akman,15,Turkiye,62,70,72,83,88,6,243082.39,5092.55,ST,
+Kemal,Öztürk,32,Turkiye,59,82,74,99,79,6,463278.26,6432.12,CM,
+Kemal,Çelik,22,Turkiye,79,67,76,85,96,6,191318.21,7289.92,GK,
+Kemal,Öztürk,16,Turkiye,89,53,77,71,88,6,573733.03,6741.14,GK,
+Kemal,Taş,20,Turkiye,65,51,59,62,68,6,477632.05,6847.02,GK,
+Kemal,Şahin,19,Turkiye,74,66,90,97,60,6,327279.6,6954.47,ST,
+Kemal,Acar,31,Turkiye,89,68,61,90,99,6,397272.05,7489.44,GK,
+Kemal,Çetin,31,Turkiye,57,51,88,74,59,6,393868.2,7585.28,ST,
+Kemal,Yılmaz,22,Turkiye,58,83,96,75,82,6,279480.96,7945.21,CB,
+Kemal,Acar,18,Turkiye,75,53,92,96,79,6,573574.25,5464.03,GK,
+Kemal,Öztürk,29,Turkiye,88,85,92,74,60,6,223147.0,5850.36,ST,
+Mert,Yurt,32,Turkiye,71,94,89,61,98,7,246897.21,5398.99,CB,
+Mert,Kılıç,20,Turkiye,95,61,63,94,67,7,523150.09,5590.17,CM,
+Mert,Akman,31,Turkiye,70,61,54,59,74,7,484165.19,6347.48,CB,
+Mert,Aydın,28,Turkiye,89,85,66,54,68,7,339802.84,6901.93,ST,
+Mert,Taş,32,Turkiye,85,98,53,71,58,7,275375.45,6700.98,GK,
+Mert,Çetin,20,Turkiye,80,75,90,69,53,7,250319.3,6908.35,CM,
+Mert,Çelik,20,Turkiye,82,50,52,61,67,7,241928.22,7582.79,GK,
+Mert,Koç,22,Turkiye,63,66,61,80,69,7,117464.66,5749.22,GK,
+Mert,Kılıç,33,Turkiye,69,79,71,75,50,7,546525.34,7509.36,GK,
+Mert,Acar,29,Turkiye,50,88,74,85,70,7,116447.95,6134.71,CB,
+Mert,Taş,30,Turkiye,88,71,69,78,66,7,587007.37,7374.49,GK,
+Mert,Çetin,29,Turkiye,81,81,59,56,59,7,486714.95,6954.75,CM,
+Mert,Kılıç,31,Turkiye,53,87,76,50,56,7,494092.33,6480.6,GK,
+Mert,Akman,34,Turkiye,56,74,77,83,61,7,190581.93,7547.22,ST,
+Mert,Yılmaz,32,Turkiye,85,57,59,75,55,7,301855.93,6261.97,CB,
+Burak,Şahin,30,Turkiye,73,93,87,62,92,8,485621.62,5351.12,CB,
+Burak,Kaya,26,Turkiye,64,92,74,57,52,8,253358.06,7421.86,CM,
+Burak,Yılmaz,19,Turkiye,91,76,76,92,87,8,482370.89,5451.66,GK,
+Burak,Taş,21,Turkiye,57,60,73,68,54,8,542071.54,5439.25,CM,
+Burak,Çelik,19,Turkiye,51,94,72,50,87,8,583275.26,6960.55,ST,
+Burak,Acar,25,Turkiye,56,65,59,70,77,8,472709.5,7790.1,ST,
+Burak,Yavuz,33,Turkiye,90,54,66,79,63,8,442818.95,7267.34,ST,
+Burak,Yurt,33,Turkiye,94,79,85,91,97,8,162673.81,5774.28,ST,
+Burak,Arslan,33,Turkiye,52,63,86,92,94,8,512509.17,6947.11,GK,
+Burak,Akman,31,Turkiye,84,98,50,55,86,8,247662.18,6541.27,CB,
+Burak,Aydın,24,Turkiye,73,78,73,64,79,8,177792.42,6514.7,GK,
+Burak,Öztürk,19,Turkiye,98,98,83,50,60,8,121972.91,6766.24,ST,
+Burak,Kaya,18,Turkiye,63,93,83,51,74,8,537075.55,7277.35,CB,
+Burak,Koç,33,Turkiye,81,86,87,70,53,8,295736.16,5442.74,GK,
+Burak,Taş,19,Turkiye,68,88,66,85,93,8,355807.84,5255.47,GK,
+Okan,Demir,15,Turkiye,68,63,83,68,99,9,377677.41,5429.03,CM,
+Okan,Yurt,27,Turkiye,66,66,88,97,82,9,501051.31,7515.13,GK,
+Okan,Arslan,16,Turkiye,80,73,80,69,74,9,483083.01,5712.42,CM,
+Okan,Çelik,26,Turkiye,65,58,83,79,67,9,364123.9,6286.15,CB,
+Okan,Yavuz,33,Turkiye,96,81,82,88,95,9,252390.13,7839.24,CM,
+Okan,Kılıç,18,Turkiye,81,90,96,70,69,9,440746.95,7926.46,GK,
+Okan,Yalçın,23,Turkiye,56,90,96,65,97,9,536262.43,5597.69,GK,
+Okan,Çam,32,Turkiye,96,80,82,73,75,9,269660.59,7135.65,CB,
+Okan,Taş,26,Turkiye,68,67,74,65,98,9,138140.07,6836.92,GK,
+Okan,Demir,15,Turkiye,80,92,95,78,81,9,291891.93,7820.19,ST,
+Okan,Çetin,18,Turkiye,53,52,95,92,66,9,155066.79,5257.52,CB,
+Okan,Çetin,30,Turkiye,61,54,90,71,81,9,503769.15,7667.83,CB,
+Okan,Kılıç,21,Turkiye,68,61,74,63,79,9,572099.16,6117.35,CB,
+Okan,Yurt,30,Turkiye,73,91,52,75,50,9,267369.9,6800.11,ST,
+Okan,Çelik,15,Turkiye,59,82,81,51,52,9,254792.08,5061.0,CB,
+Emre,Şahin,30,Turkiye,91,88,91,91,64,10,172376.06,7839.83,CM,
+Emre,Yurt,23,Turkiye,87,98,77,91,82,10,228132.04,6702.2,CM,
+Emre,Yurt,19,Turkiye,52,66,66,55,68,10,173277.38,5354.53,GK,
+Emre,Karaca,24,Turkiye,58,72,68,80,69,10,328853.66,5165.69,CB,
+Emre,Aydın,20,Turkiye,82,59,59,88,58,10,405524.66,5916.73,CB,
+Emre,Öztürk,21,Turkiye,94,81,80,78,56,10,371327.44,7528.28,CM,
+Emre,Kılıç,15,Turkiye,83,98,89,53,61,10,463579.19,7958.93,CM,
+Emre,Yılmaz,22,Turkiye,91,65,73,99,64,10,275145.48,5988.82,GK,
+Emre,Çam,23,Turkiye,57,90,64,79,73,10,172837.81,5193.58,GK,
+Emre,Arslan,29,Turkiye,72,70,89,89,75,10,415159.68,6642.17,CM,
+Emre,Yalçın,21,Turkiye,61,98,90,89,99,10,116134.19,5617.5,CB,
+Emre,Yalçın,18,Turkiye,96,53,93,55,69,10,452040.74,6934.96,CB,
+Emre,Çam,24,Turkiye,90,86,90,58,75,10,533924.93,5025.5,CM,
+Emre,Koç,33,Turkiye,91,65,85,76,98,10,213428.39,5239.03,ST,
+Emre,Demir,25,Turkiye,70,84,67,89,55,10,255364.55,5519.39,GK,
+Can,Yavuz,27,Turkiye,84,85,80,95,80,11,222433.0,7493.07,CB,
+Can,Çetin,24,Turkiye,54,68,65,81,84,11,585257.08,6716.47,CB,
+Can,Çam,33,Turkiye,84,99,92,63,75,11,341625.31,5533.95,CB,
+Can,Çelik,30,Turkiye,71,96,95,71,55,11,519342.31,5235.4,CM,
+Can,Aydın,17,Turkiye,68,72,59,86,50,11,266715.67,6566.55,CB,
+Can,Çelik,25,Turkiye,85,51,89,80,87,11,337533.19,5567.88,ST,
+Can,Kaya,27,Turkiye,86,76,51,51,99,11,564876.25,6203.89,GK,
+Can,Yurt,28,Turkiye,88,80,75,53,94,11,281566.37,7630.94,GK,
+Can,Kaya,30,Turkiye,65,97,50,78,78,11,348098.64,5649.36,CB,
+Can,Taş,33,Turkiye,60,84,86,67,85,11,400061.23,7137.37,CM,
+Can,Kılıç,17,Turkiye,98,79,52,84,94,11,242106.98,5888.75,CB,
+Can,Koç,21,Turkiye,96,61,54,87,65,11,300203.48,5421.03,ST,
+Can,Karaca,32,Turkiye,94,53,91,72,78,11,506160.37,7211.52,CB,
+Can,Aydın,17,Turkiye,90,64,55,73,55,11,231177.44,7508.87,GK,
+Can,Akman,17,Turkiye,96,53,67,77,77,11,128581.12,7989.75,ST,
+Arda,Öztürk,20,Turkiye,69,84,89,99,79,12,490066.79,6043.08,GK,
+Arda,Şahin,15,Turkiye,51,66,77,81,74,12,547033.91,6407.35,CM,
+Arda,Arslan,34,Turkiye,70,98,62,51,94,12,266227.33,7124.61,GK,
+Arda,Arslan,15,Turkiye,84,70,68,98,90,12,261458.86,5753.31,CB,
+Arda,Çelik,20,Turkiye,70,51,64,61,51,12,415105.02,6273.25,ST,
+Arda,Akman,15,Turkiye,91,80,89,74,57,12,171125.2,7969.7,CM,
+Arda,Acar,26,Turkiye,51,70,88,63,70,12,127131.73,5479.8,GK,
+Arda,Yavuz,30,Turkiye,52,96,60,51,80,12,495524.53,5378.86,CB,
+Arda,Koç,28,Turkiye,86,73,95,77,76,12,401676.19,6762.25,CM,
+Arda,Acar,27,Turkiye,52,86,79,89,93,12,241762.21,7903.37,GK,
+Arda,Şahin,34,Turkiye,96,99,99,73,66,12,430061.25,5730.92,CB,
+Arda,Çelik,31,Turkiye,97,68,52,72,86,12,578731.87,7638.8,GK,
+Arda,Arslan,17,Turkiye,84,94,60,62,58,12,315378.89,7416.22,CB,
+Arda,Kılıç,30,Turkiye,76,63,88,67,54,12,430673.31,6341.09,GK,
+Arda,Aydın,32,Turkiye,79,85,52,51,61,12,150242.9,5018.21,CB,
+Ege,Yalçın,30,Turkiye,84,56,62,98,85,13,209715.09,7248.82,CB,
+Ege,Aydın,25,Turkiye,97,53,98,55,66,13,516714.85,6298.57,GK,
+Ege,Yavuz,29,Turkiye,53,76,60,86,89,13,358693.28,7675.39,GK,
+Ege,Yurt,34,Turkiye,94,58,78,78,72,13,245421.89,7053.29,CB,
+Ege,Karaca,23,Turkiye,74,74,54,62,50,13,131914.45,6977.02,ST,
+Ege,Akman,17,Turkiye,80,52,92,95,56,13,323356.06,7478.58,ST,
+Ege,Çetin,30,Turkiye,85,60,65,98,57,13,202595.43,6829.46,CM,
+Ege,Taş,29,Turkiye,67,69,92,94,78,13,352002.46,7272.62,GK,
+Ege,Acar,18,Turkiye,53,86,62,66,90,13,541464.55,5229.96,CM,
+Ege,Çelik,27,Turkiye,98,94,78,96,56,13,209289.99,5002.4,CB,
+Ege,Yalçın,26,Turkiye,57,54,92,53,81,13,291448.22,6280.45,ST,
+Ege,Akman,34,Turkiye,54,68,59,58,82,13,480390.83,6607.59,GK,
+Ege,Arslan,25,Turkiye,93,59,66,95,66,13,558493.92,6603.97,CB,
+Ege,Demir,28,Turkiye,55,95,52,62,53,13,373616.23,6912.45,CM,
+Ege,Arslan,26,Turkiye,88,89,70,96,94,13,318394.91,7198.41,GK,
+Serkan,Arslan,23,Turkiye,76,65,54,56,76,14,158563.91,5672.08,CM,
+Serkan,Karaca,29,Turkiye,70,50,85,61,81,14,183984.26,6640.08,CB,
+Serkan,Karaca,18,Turkiye,63,63,57,59,50,14,194268.16,7990.78,CM,
+Serkan,Karaca,32,Turkiye,69,82,95,53,98,14,386254.6,5814.23,CB,
+Serkan,Arslan,22,Turkiye,52,62,84,86,56,14,335387.22,6918.12,CB,
+Serkan,Acar,28,Turkiye,73,58,85,75,88,14,406837.89,7770.7,GK,
+Serkan,Çam,30,Turkiye,87,67,68,87,67,14,264432.85,6652.3,CM,
+Serkan,Şahin,34,Turkiye,52,65,94,96,87,14,347843.06,5879.7,GK,
+Serkan,Yurt,20,Turkiye,75,68,70,72,90,14,247705.29,5060.65,CM,
+Serkan,Şahin,27,Turkiye,92,74,61,76,71,14,188301.74,7196.5,GK,
+Serkan,Karaca,21,Turkiye,86,98,56,52,91,14,501942.88,6163.69,ST,
+Serkan,Öztürk,33,Turkiye,58,94,81,65,88,14,394411.99,7833.17,ST,
+Serkan,Yavuz,26,Turkiye,79,87,62,84,79,14,197728.12,6821.93,CM,
+Serkan,Akman,24,Turkiye,90,85,50,76,56,14,443396.24,6181.59,CB,
+Serkan,Şahin,30,Turkiye,96,67,69,92,94,14,194413.37,7113.6,CM,
+Ömer,Karaca,31,Turkiye,97,85,74,65,70,15,578104.82,5033.95,CM,
+Ömer,Çelik,33,Turkiye,72,54,75,88,58,15,239737.11,7796.62,CB,
+Ömer,Aydın,33,Turkiye,94,87,85,64,51,15,271497.8,7005.49,CM,
+Ömer,Aydın,33,Turkiye,81,64,55,96,62,15,575397.61,7810.15,GK,
+Ömer,Koç,16,Turkiye,89,80,72,74,83,15,506827.82,6178.79,GK,
+Ömer,Yurt,21,Turkiye,74,71,57,97,83,15,577633.91,7988.04,CB,
+Ömer,Yurt,22,Turkiye,98,68,74,91,61,15,210723.12,6559.92,CB,
+Ömer,Kılıç,25,Turkiye,91,77,92,50,59,15,359334.94,6031.34,CM,
+Ömer,Aydın,28,Turkiye,60,50,70,97,83,15,572434.76,7763.7,ST,
+Ömer,Aydın,21,Turkiye,70,93,77,57,88,15,287355.53,7316.68,ST,
+Ömer,Kaya,34,Turkiye,64,62,56,62,99,15,463263.76,5329.0,GK,
+Ömer,Yurt,18,Turkiye,58,62,54,52,92,15,265564.04,5304.2,CB,
+Ömer,Yalçın,22,Turkiye,87,76,75,83,74,15,315623.52,6204.42,ST,
+Ömer,Çelik,24,Turkiye,87,87,63,73,84,15,410679.29,7151.46,ST,
+Ömer,Öztürk,29,Turkiye,97,89,73,98,73,15,291319.54,6240.79,CB,
+Gökhan,Çetin,27,Turkiye,66,95,72,71,54,16,344175.34,5638.48,CB,
+Gökhan,Acar,21,Turkiye,60,62,99,97,82,16,433443.36,7978.78,CM,
+Gökhan,Yavuz,23,Turkiye,61,74,64,63,69,16,439440.92,5664.82,CM,
+Gökhan,Yavuz,30,Turkiye,75,85,97,92,70,16,495779.11,5628.78,ST,
+Gökhan,Çelik,20,Turkiye,66,67,78,60,94,16,498975.73,7390.67,CB,
+Gökhan,Kılıç,22,Turkiye,88,99,61,97,55,16,357810.92,5904.27,CM,
+Gökhan,Yalçın,31,Turkiye,93,77,72,64,82,16,361689.37,5562.08,ST,
+Gökhan,Yalçın,17,Turkiye,59,63,70,89,62,16,232296.1,6291.39,CB,
+Gökhan,Yavuz,16,Turkiye,51,69,79,98,96,16,515339.23,6684.09,CM,
+Gökhan,Çam,30,Turkiye,90,87,72,99,94,16,115933.65,7414.06,CB,
+Gökhan,Arslan,26,Turkiye,73,57,94,51,71,16,473801.67,5486.19,CM,
+Gökhan,Akman,25,Turkiye,86,58,84,67,50,16,121909.44,5387.82,GK,
+Gökhan,Koç,31,Turkiye,83,66,89,95,52,16,433216.95,6560.83,CB,
+Gökhan,Koç,20,Turkiye,53,76,70,83,60,16,116039.06,6444.81,CB,
+Gökhan,Şahin,34,Turkiye,92,87,89,50,98,16,105081.23,7148.4,CM,
+Bora,Taş,23,Turkiye,79,63,54,61,86,17,215856.08,6658.61,CM,
+Bora,Acar,23,Turkiye,90,90,80,95,96,17,268079.71,5791.43,ST,
+Bora,Çam,32,Turkiye,88,67,94,64,63,17,464308.09,7299.48,ST,
+Bora,Çam,23,Turkiye,90,52,68,89,60,17,443863.31,7985.74,CB,
+Bora,Kaya,20,Turkiye,68,74,76,97,64,17,116724.71,5209.1,CB,
+Bora,Koç,30,Turkiye,85,88,87,63,77,17,165066.97,6017.88,CB,
+Bora,Çetin,24,Turkiye,59,87,87,86,79,17,561411.26,5598.52,CB,
+Bora,Koç,16,Turkiye,57,56,88,50,94,17,116650.65,6896.1,ST,
+Bora,Öztürk,17,Turkiye,85,96,69,73,65,17,350598.86,7844.03,ST,
+Bora,Yılmaz,21,Turkiye,59,79,96,87,91,17,234115.22,6655.9,ST,
+Bora,Kılıç,34,Turkiye,93,53,75,60,91,17,339545.83,6182.54,GK,
+Bora,Kaya,30,Turkiye,96,60,67,81,80,17,224303.07,6351.66,ST,
+Bora,Demir,17,Turkiye,90,92,62,67,70,17,287337.78,5691.77,GK,
+Bora,Çelik,30,Turkiye,92,58,79,86,75,17,416339.57,5732.26,CM,
+Bora,Çelik,31,Turkiye,52,98,92,81,76,17,213372.53,5580.01,CM,
+Mustafa,Demir,26,Turkiye,58,84,67,65,77,18,381804.29,6941.45,ST,
+Mustafa,Şahin,21,Turkiye,54,58,50,73,78,18,278643.63,5606.18,CM,
+Mustafa,Öztürk,22,Turkiye,60,94,79,86,98,18,364441.72,7582.75,GK,
+Mustafa,Çelik,28,Turkiye,85,60,92,84,99,18,370750.27,5403.0,GK,
+Mustafa,Koç,26,Turkiye,62,90,50,65,98,18,260629.51,6143.8,CB,
+Mustafa,Yılmaz,31,Turkiye,73,64,84,77,99,18,126063.32,5584.61,CM,
+Mustafa,Acar,19,Turkiye,78,63,65,80,74,18,422417.9,6086.85,CM,
+Mustafa,Yurt,23,Turkiye,75,97,66,87,63,18,151667.21,6784.42,CM,
+Mustafa,Çelik,28,Turkiye,58,74,81,90,84,18,185237.08,7879.57,CB,
+Mustafa,Akman,15,Turkiye,59,97,95,78,55,18,323573.45,7190.19,CM,
+Mustafa,Yurt,34,Turkiye,69,60,69,94,55,18,502340.2,5864.66,ST,
+Mustafa,Akman,34,Turkiye,52,63,76,51,55,18,346266.84,5720.0,ST,
+Mustafa,Kılıç,33,Turkiye,92,52,51,59,90,18,337707.74,5146.78,CM,
+Mustafa,Öztürk,27,Turkiye,61,85,81,78,76,18,391896.95,5716.8,ST,
+Mustafa,Çelik,21,Turkiye,62,96,69,98,80,18,148484.65,6611.97,GK,
+Melis,Kaya,23,Turkiye,58,80,54,57,89,19,585367.06,6928.21,GK,
+Melis,Kaya,30,Turkiye,50,76,82,74,98,19,207054.99,6787.54,CM,
+Melis,Çetin,33,Turkiye,59,61,75,80,74,19,504199.53,7584.81,ST,
+Melis,Yalçın,21,Turkiye,95,95,76,67,83,19,261579.53,5499.24,CB,
+Melis,Koç,25,Turkiye,96,77,79,82,76,19,289371.29,5591.54,CB,
+Melis,Çetin,29,Turkiye,64,70,82,93,71,19,532229.74,6188.04,ST,
+Melis,Yurt,27,Turkiye,79,70,87,75,59,19,475314.79,5206.14,ST,
+Melis,Demir,20,Turkiye,76,54,67,90,75,19,218447.49,7310.24,GK,
+Melis,Kılıç,28,Turkiye,91,87,95,76,98,19,493969.53,7092.28,CM,
+Melis,Çam,28,Turkiye,57,56,52,89,87,19,310343.06,6462.33,CB,
+Melis,Karaca,25,Turkiye,67,92,93,56,57,19,109145.96,5306.69,CB,
+Melis,Kılıç,34,Turkiye,50,95,56,69,69,19,414814.55,5746.23,ST,
+Melis,Karaca,32,Turkiye,62,82,84,66,56,19,563528.1,5606.23,ST,
+Melis,Öztürk,15,Turkiye,98,63,89,93,62,19,184130.08,7420.72,GK,
+Melis,Kılıç,18,Turkiye,60,77,69,53,82,19,121393.23,6444.54,CM,
+Selin,Yalçın,31,Turkiye,86,51,69,59,50,20,291559.9,5071.28,ST,
+Selin,Yurt,32,Turkiye,56,95,91,54,80,20,585566.43,5167.44,ST,
+Selin,Kılıç,25,Turkiye,98,91,65,89,62,20,125178.78,7373.6,GK,
+Selin,Çetin,18,Turkiye,77,72,70,97,80,20,527254.61,5212.13,CB,
+Selin,Arslan,26,Turkiye,72,61,84,84,84,20,157179.52,5024.71,CB,
+Selin,Çelik,28,Turkiye,68,80,97,58,63,20,272219.28,5567.46,CM,
+Selin,Yurt,19,Turkiye,94,99,79,96,74,20,521946.95,7571.35,ST,
+Selin,Çelik,32,Turkiye,99,97,77,89,70,20,366249.09,6360.84,GK,
+Selin,Akman,31,Turkiye,58,53,92,99,75,20,541737.26,7676.27,CB,
+Selin,Çelik,18,Turkiye,81,95,69,50,91,20,507082.88,5202.21,GK,
+Selin,Yılmaz,18,Turkiye,53,74,70,58,53,20,224090.77,7831.32,GK,
+Selin,Öztürk,21,Turkiye,52,50,83,54,86,20,308810.46,6836.03,GK,
+Selin,Yavuz,29,Turkiye,81,94,88,58,63,20,290076.9,6649.99,GK,
+Selin,Akman,23,Turkiye,80,89,63,53,67,20,568343.48,7729.86,GK,
+Selin,Arslan,20,Turkiye,59,79,81,66,56,20,407128.53,6652.41,CM,

@@ -7,23 +7,24 @@ import FootballApp.modules.Menu;
 import FootballApp.modules.PlayerModule;
 import FootballApp.modules.TeamModule;
 import FootballApp.utility.DataGenerator;
+import FootballApp.utility.DataIO;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.io.File;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Main {
 	static PlayerDB playerDB = new PlayerDB();
 	static Scanner sc = new Scanner(System.in);
 	static TeamDB teamDB = new TeamDB();
 
+	
+
 
 	public static void main(String[] args) {
-		DataGenerator generator = new DataGenerator();
-		generator.initialize();
-//		PlayerModule.playerMenu();
-//		TeamModule.startTeamMenu();
+		
+		
+		DataIO.dataIOInitialize();
 		Menu.startMenu();
 	}
 }
