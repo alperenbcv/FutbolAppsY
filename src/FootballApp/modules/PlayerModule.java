@@ -28,16 +28,17 @@ public class PlayerModule {
 		boolean validInput = false;
 		
 		while (!validInput) {
-			System.out.println("1-List of all Player ID's by Team");
+			System.out.println("\n1-List of all Player ID's by Team");
 			System.out.println("2-Find Player by ID");
 			System.out.println("3-Find Player by Name");
 			System.out.println("4-Find Player by Team");
+			System.out.println("5-Find Player by Rating");
 			System.out.println("0-Main Menu");
 			System.out.print("Selection: ");
 			try {
 				userInput = sc.nextInt();
 				sc.nextLine();
-				if (userInput >= 0 && userInput <= 4) {
+				if (userInput >= 0 && userInput <= 5) {
 					validInput = true;
 				} else {
 					System.out.println("Please enter a valid option!");
@@ -56,6 +57,7 @@ public class PlayerModule {
 			case 2 -> displayPlayerByID();
 			case 3 -> displayPlayerByName();
 			case 4 -> displayPlayersByTeamName();
+			case 5 -> displayPlayersByRating();
 			case 0 -> System.out.println("Returning to Main Menu...");
 			default -> System.out.println("Please enter a valid value!");
 		}
@@ -65,8 +67,10 @@ public class PlayerModule {
 		System.out.println("List of all Player ID's by Team");
 		List<Team> teams = DataIO.teamDB.listAll();
 		teams.forEach(team -> {
-			System.out.println("Team ID: " + team.getId() + ", Team Name: " + team.getTeamName());
-			System.out.println("Team Players ID List: " + team.getTeamPlayerIDList());
+			System.out.println("\nTeam ID: " + team.getId() + ", Team Name: " + team.getTeamName());
+			System.out.println("Player ID's: ");
+			DataIO.playerDB.findByTeamID(team.getId()).forEach(player -> System.out.print(player.getId()+" "));
+			System.out.println();
 		});
 		displayPlayerDetails();
 	}
@@ -109,17 +113,13 @@ public class PlayerModule {
 			return;
 		}
 		List<Player> byTeamName = DataIO.playerDB.findByTeamName(teamName);
-		if (byTeamName.isEmpty()) {
-			return;
-		}
-		
 		byTeamName.forEach(System.out::println);
 	}
 	
 	private static void displayPlayerDetails() {
-		System.out.println("Which player do you want to select? Please enter the Player ID: 0=Back to Player Menu");
+		System.out.println("\nWhich player you'd like to see by detail? Please enter the Player ID: 0=Back to Player Menu");
 		Integer playerID = sc.nextInt();
-		sc.nextLine(); // consume newline
+		sc.nextLine();
 		if (playerID == 0) {
 			return;
 		}
@@ -130,5 +130,17 @@ public class PlayerModule {
 		} else {
 			System.out.println("Player not found!");
 		}
+	}
+	
+	private static void displayPlayersByRating() {
+		System.out.println("Enter a minimum rating: 0=Back to Player Menu");
+		int rating=sc.nextInt();
+		List<Player> players = DataIO.playerDB.listAll();
+		List<Player> list = players.stream().filter(player -> player.getPlayerOverallRating() >= rating).toList();
+		if(list.isEmpty()) {
+			System.out.println("No players found with rating higher than or equal to " + rating + "!");
+		}
+		System.out.println(list.size() + " players found with rating higher than or equal to " + rating + ":");
+		list.forEach(System.out::println);
 	}
 }

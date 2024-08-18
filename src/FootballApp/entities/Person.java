@@ -4,7 +4,7 @@ public class Person extends BaseEntity {
 	
 	
 	private String personName;
-	private String surName;
+	private String personSurname;
 	private Integer personAge;
 	private String personNationality;
 	
@@ -16,17 +16,17 @@ public class Person extends BaseEntity {
 	public Person(Integer id, String name, String surName, Integer age, String nationality) {
 		super(id);
 		this.personName = name;
-        this.surName = surName;
+        this.personSurname = surName;
         this.personAge = age;
 		this.personNationality = nationality;
 	}
 
 	public String getSurName() {
-		return surName;
+		return personSurname;
 	}
 
 	public void setSurName(String surName) {
-		this.surName = surName;
+		this.personSurname = surName;
 	}
 
 	public String getName() {

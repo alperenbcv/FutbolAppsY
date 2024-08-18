@@ -36,8 +36,36 @@ public class Player extends Person implements Subject {
 	}
 	
 	private Integer calculateOverallRating() {
-		this.playerOverallRating = (playerTechnicalAttributes.getDribbling()+ playerTechnicalAttributes.getFinishing()
-				+playerTechnicalAttributes.getPass()+playerTechnicalAttributes.getTackle()+playerTechnicalAttributes.getShotPower())/5;
+		
+			if(playersPosition.equals(EPosition.ST)){
+				this.playerOverallRating = (int)
+						((0.15)*playerTechnicalAttributes.getDribbling()+
+						((0.4)*playerTechnicalAttributes.getFinishing())+
+						((0.10)*playerTechnicalAttributes.getPass())+
+						((0.05)*playerTechnicalAttributes.getTackle())+
+						((0.3)*playerTechnicalAttributes.getShotPower())); }
+			if(playersPosition.equals(EPosition.CM)){
+				this.playerOverallRating = (int)
+						((0.15)*playerTechnicalAttributes.getDribbling()+
+						((0.15)*playerTechnicalAttributes.getFinishing())+
+						((0.35)*playerTechnicalAttributes.getPass())+
+						((0.25)*playerTechnicalAttributes.getTackle())+
+						((0.1)*playerTechnicalAttributes.getShotPower())); }
+			if(playersPosition.equals(EPosition.CB)){
+				this.playerOverallRating = (int)
+						((0.05)*playerTechnicalAttributes.getDribbling()+
+						((0.05)*playerTechnicalAttributes.getFinishing())+
+						((0.25)*playerTechnicalAttributes.getPass())+
+						((0.60)*playerTechnicalAttributes.getTackle())+
+						((0.05)*playerTechnicalAttributes.getShotPower())); }
+			if(playersPosition.equals(EPosition.GK)){
+				this.playerOverallRating = (int)
+						(((1)*playerTechnicalAttributes.getDribbling() +
+                        ((1)*playerTechnicalAttributes.getFinishing())   +
+                        ((1)*playerTechnicalAttributes.getPass())+
+                        ((1)*playerTechnicalAttributes.getTackle())+
+                        ((1)*playerTechnicalAttributes.getShotPower()))/5);
+			}
 		return playerOverallRating;
 	}
 	
@@ -101,7 +129,7 @@ public class Player extends Person implements Subject {
 		return "Player"
 				+ " ID: " + getId()
 				+ ", Name=" + getName()
-				+ ", SurName=" + getSurName()
+				+ ", Surname=" + getSurName()
 				+ ", Age=" + getAge()
 				+ ", Nationality=" + getNationality()
 				+ ", CurrentTeamID=" + currentTeamID

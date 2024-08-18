@@ -26,9 +26,6 @@ public class Main {
 		
 		DataIO.dataIOInitialize();
 		DataIO dataIO=new DataIO();
-		Team team=new Team("Barcelona",new ArrayList<>(),"Spain","Nou Camp",1d,1d);
-		DataIO.teamDB.save(team);
-		DataIO.saveTeamsToFile();
 		ObserverInitializer oi = new ObserverInitializer(dataIO,DataIO.teamDB, DataIO.playerDB, DataIO.managerDB);
 		oi.initializeObservers();
 		Menu.startMenu();

@@ -32,7 +32,6 @@ public class DataIO implements Observer {
 		generateTeams();
 		generateManagers();
 		generatePlayers();
-		setCurrentPlayerList();
 	}
 	
 	public static void saveTeamsToFile() {
@@ -142,15 +141,14 @@ public class DataIO implements Observer {
 				
 				try {
 					String teamName = split[0];
-					String city = split[2];
-					String stadiumName = split[3];
+					String city = split[1];
+					String stadiumName = split[2];
 					
-					double transferBudget = Double.parseDouble(split[4]);
-					double wageBudget = Double.parseDouble(split[5]);
+					double transferBudget = Double.parseDouble(split[3]);
+					double wageBudget = Double.parseDouble(split[4]);
 					
 					Team team = new Team(
 							teamName,
-							new ArrayList<>(),
 							city,
 							stadiumName,
 							transferBudget,
@@ -199,23 +197,6 @@ public class DataIO implements Observer {
 		return managers;
 	}
 	
-	
-	public static void setCurrentPlayerList() {
-		Integer teamID;
-		for (Team team : teamDB.listAll()) {
-			teamID = team.getId();
-			Integer finalTeamID = teamID;
-			List<Integer> list = playerDB.listAll()
-			                                         .stream().filter(player -> player.getCurrentTeamID()
-			                                         .equals(finalTeamID)).map(Player::getId).toList();
-			
-			Optional<Team> byID = teamDB.findByID(finalTeamID);
-			if (byID.isPresent()) {
-				team = byID.get();
-				team.setTeamPlayerIDList(list);
-			}
-		}
-	}
 	
 	@Override
 	public void update() {

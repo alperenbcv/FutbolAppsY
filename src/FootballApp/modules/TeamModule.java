@@ -30,7 +30,7 @@ public class TeamModule {
 		boolean validInput = false;
 		
 		while(!validInput) {
-			System.out.println("1-List of Teams");
+			System.out.println("\n1-List of Teams");
 			System.out.println("2-Find Team by ID");
 			System.out.println("3-Find Team by Name");
 			System.out.println("0-Main Menu");
@@ -42,7 +42,7 @@ public class TeamModule {
 					validInput = true;
 				}
 				else {
-					System.out.println("Please enter a valid option!");
+					System.out.println("\nPlease enter a valid option!");
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("\nPlease enter a numeric value!");
