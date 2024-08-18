@@ -23,12 +23,12 @@ public class DataIO implements Observer {
 	static File file3 = new File("players.txt");
 	
 	public static void dataIOInitialize() {
-//		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
-//			savePlayersToFile();
-//			saveTeamsToFile();
-//			saveManagersToFile();
-//
-//		}
+		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
+			savePlayersToFile();
+			saveTeamsToFile();
+			saveManagersToFile();
+
+		}
 		generateTeams();
 		generateManagers();
 		generatePlayers();
