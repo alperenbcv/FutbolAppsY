@@ -7,7 +7,6 @@ public class Team extends BaseEntity implements Subject{
 	private List<Observer> observers = new ArrayList<>();
 	
 	private static Integer teamCounter=0;
-	private int counter;
 	private String teamName;
 	private String teamLocation;
 	private Double transferBudget;
@@ -26,7 +25,7 @@ public class Team extends BaseEntity implements Subject{
 		this.stadiumName = stadiumName;
 		this.transferBudget = transferBudget;
 		this.wageBudget = wageBudget;
-		this.counter = ++counter;
+		notifyObservers();
 	}
 	
 
@@ -62,19 +61,19 @@ public class Team extends BaseEntity implements Subject{
 		return stadiumName;
 	}
 
-	
+
 	@Override
 	public String toString() {
-		return "Team "
-				+ "ID: " + getId()
-				+ ", Name=" + getTeamName()
-				+ ", Location=" + getTeamLocation()
-				+ ", Stadium=" + getStadiumName()
-				+ ", TransferBudget=" + getTransferBudget()
-				+ ", WageBudget=" + getWageBudget();
-		
+		return String.format("Team ID: %d, Name=%s, Location=%s, Stadium=%s, TransferBudget=%.1f, WageBudget=%.1f",
+				getId(),
+				getTeamName(),
+				getTeamLocation(),
+				getStadiumName(),
+				getTransferBudget(),
+				getWageBudget());
 	}
-	
+
+
 	@Override
 	public void addObserver(Observer observer) {
 	 observers.add(observer);

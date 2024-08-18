@@ -80,18 +80,24 @@ public class PlayerModule {
     private static void displayPlayerByID() {
         int size = DataIO.playerDB.listAll().size();
         System.out.print("\nEnter a Player ID 1-" + size + " (0=Back to Player Menu): ");
-        Integer playerID = sc.nextInt();
+        try {
+            int playerID = sc.nextInt();
+            if (playerID == 0) {
+                return;
+            }
+            Optional<Player> byID = DataIO.playerDB.findByID(playerID);
+            if (byID.isPresent()) {
+                Player player = byID.get();
+                System.out.println(player);
+            } else {
+                System.out.println("Player not found!");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a numeric value between 1-" + size);
+        }
         sc.nextLine();
-        if (playerID == 0) {
-            return;
-        }
-        Optional<Player> playerByID = DataIO.playerDB.findByID(playerID);
-        if (playerByID.isPresent()) {
-            System.out.println("\n" + playerByID.get());
-        } else {
-            System.out.println("Player not found!");
-        }
     }
+
 
     private static void displayPlayerByName() {
         System.out.print("\nEnter a Player Name (0=Back to Player Menu): ");
@@ -99,6 +105,11 @@ public class PlayerModule {
         if (playerName.equalsIgnoreCase("0")) {
             return;
         }
+        if (playerName.matches(".*\\d.*")) {
+            System.out.println("Name can't contain a numeric value!");
+            return;
+        }
+
         List<Player> byPlayerName = DataIO.playerDB.findByPlayerName(playerName);
         if (byPlayerName.isEmpty()) {
             System.out.println("Player not found!");
@@ -120,12 +131,25 @@ public class PlayerModule {
     }
 
     private static void displayPlayerDetails() {
-        System.out.print("\nWhich player you'd like to see by detail? Please enter the Player ID (0=Back to Player Menu): ");
-        Integer playerID = sc.nextInt();
-        sc.nextLine();
+        boolean validInput = false;
+        Integer playerID = null;
+
+        do {
+            System.out.print("\nWhich player you'd like to see by detail? Please enter the Player ID (0=Back to Player Menu): ");
+            try {
+                playerID = sc.nextInt();
+                sc.nextLine(); // buffer'ı temizlemek için
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a numeric value!");
+                sc.nextLine(); // buffer'ı temizlemek için
+            }
+        } while (!validInput);
+
         if (playerID == 0) {
             return;
         }
+
         Optional<Player> player = DataIO.playerDB.findByID(playerID);
         if (player.isPresent()) {
             System.out.println("\n-----------------Player Details------------------------");
@@ -135,15 +159,32 @@ public class PlayerModule {
         }
     }
 
+
     private static void displayPlayersByRating() {
         System.out.print("\nEnter a minimum rating (0=Back to Player Menu): ");
-        int rating = sc.nextInt();
+        Optional<Integer> optionalRating = Optional.empty();
+
+        try {
+            int inputRating = sc.nextInt();
+            if (inputRating == 0) {
+                return;
+            }
+            optionalRating = Optional.of(inputRating);
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a numeric value between 0-100");
+            sc.nextLine();
+            return;
+        }
+
+        int rating = optionalRating.get();
         List<Player> players = DataIO.playerDB.listAll();
         List<Player> list = players.stream().filter(player -> player.getPlayerOverallRating() >= rating).toList();
         if (list.isEmpty()) {
             System.out.println("No players found with rating higher than or equal to " + rating + "!");
+        } else {
+            System.out.println("\n" + list.size() + " players found with rating higher than or equal to " + rating + ":");
+            list.forEach(System.out::println);
         }
-        System.out.println("\n"+ list.size() + " players found with rating higher than or equal to " + rating + ":");
-        list.forEach(System.out::println);
     }
+
 }

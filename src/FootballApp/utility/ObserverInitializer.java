@@ -4,11 +4,8 @@ import FootballApp.databases.ManagerDB;
 import FootballApp.databases.PlayerDB;
 import FootballApp.databases.TeamDB;
 import FootballApp.entities.Manager;
-import FootballApp.entities.Observer;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
-
-import java.util.Optional;
 
 public class ObserverInitializer {
 	private DataIO dataIO;
@@ -37,5 +34,8 @@ public class ObserverInitializer {
 		for (Manager manager : managerDB.listAll()) {
 			manager.addObserver(dataIO);
 		}
+	}
+	public void addObserverToNewTeam(Team team) {
+		team.addObserver(dataIO);
 	}
 }

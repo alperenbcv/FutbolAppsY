@@ -4,6 +4,7 @@ import FootballApp.entities.Manager;
 import FootballApp.utility.DataGenerator;
 import FootballApp.utility.DataIO;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -16,44 +17,63 @@ public class LogInModule {
 		System.out.println("\nWelcome to the Football Manager App!");
 		System.out.println("\n---------------Available Managers------------------");
 		Optional<List<Manager>> all = DataIO.managerDB.findAll();
-		if(all.isPresent()) {
+		if (all.isPresent()) {
 			all.get().forEach(manager -> {
-				System.out.println(manager.getId()+" "+manager.getName() + " " + manager.getSurName());
+				System.out.println(manager.getId() + " " + manager.getName() + " " + manager.getSurName());
 			});
 		}
+
 		boolean validInput = false;
-		do{
-			System.out.print("Enter a Manager ID to see login informations: ");
-			Integer managerID = sc.nextInt();
+		do {
+			System.out.print("Enter a Manager ID to see login information: ");
+			Optional<Integer> managerID = Optional.empty();
+
+			try {
+				managerID = Optional.of(sc.nextInt());
+			} catch (InputMismatchException e) {
+				System.out.println("Please enter a numeric value!");
+				sc.nextLine();
+				continue;
+			}
+
 			sc.nextLine();
-			if(managerID<=0 || managerID > DataIO.managerDB.listAll().size()) {
 
+			if (managerID.isPresent()) {
+				int id = managerID.get();
+				if(id == 0){
+					return null;
+				}
+				if (id > 0 && id <= DataIO.managerDB.listAll().size()) {
+					Optional<Manager> byID = DataIO.managerDB.findByID(id);
+					if (byID.isPresent()) {
+						System.out.println("\n------------------------------------------------");
+						System.out.println("Username: " + byID.get().getManagerUserName() + ", Password: " + byID.get().getManagerPassword());
+						validInput = true;
+						System.out.println("------------------------------------------------");
+					} else {
+						System.out.println("Manager not found! Please enter a valid ID.");
+					}
+				} else {
+					System.out.println("Invalid ID. Please enter a value within the valid range.");
+				}
 			}
-			Optional<Manager> byID = DataIO.managerDB.findByID(managerID);
-			if (byID.isPresent()) {
-				System.out.println("\n------------------------------------------------");
-				System.out.println("Username: " + byID.get().getManagerUserName()+ ", Password: " + byID.get().getManagerPassword());
-				validInput=true;
-				System.out.println("------------------------------------------------");
+		} while (!validInput);
 
-			}
-			else {
-				System.out.println("Manager not found! Please enter a valid ID.");
-			}
-		} while(!validInput);
+		do {
+			System.out.print("\nEnter your Username: ");
+			String username = sc.nextLine();
+			System.out.print("Enter your Password: ");
+			String password = sc.nextLine();
 
-		System.out.print("\nEnter your Username: ");
-		String username = sc.nextLine();
-		System.out.print("Enter your Password: ");
-		String password = sc.nextLine();
-		Optional<Manager> byUsernameAndPassword = DataIO.managerDB.findByUsernameAndPassword(username, password);
-		if (byUsernameAndPassword.isPresent()) {
-			System.out.println("Login Successful!");
-			System.out.println("\nYou are playing as: " + byUsernameAndPassword.get().getName() + " " + byUsernameAndPassword.get().getSurName() + "\n");
-			loggedManager = byUsernameAndPassword.get();
-			return byUsernameAndPassword.get();
-		}
-		System.out.println("\nInvalid credentials. Please try again.\n");
-		return null;
+			Optional<Manager> byUsernameAndPassword = DataIO.managerDB.findByUsernameAndPassword(username, password);
+			if (byUsernameAndPassword.isPresent()) {
+				System.out.println("Login Successful!");
+				System.out.println("\nYou are playing as: " + byUsernameAndPassword.get().getName() + " " + byUsernameAndPassword.get().getSurName() + "\n");
+				loggedManager = byUsernameAndPassword.get();
+				return loggedManager;
+			} else {
+				System.out.println("\nInvalid credentials. Please try again.");
+			}
+		} while (true);
 	}
 }
