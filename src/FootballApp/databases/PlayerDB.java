@@ -4,6 +4,7 @@ package FootballApp.databases;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.utility.DataGenerator;
+import FootballApp.utility.DataIO;
 import FootballApp.utility.DatabaseManager;
 
 import java.util.ArrayList;
@@ -70,7 +71,7 @@ public class PlayerDB extends DatabaseManager<Player> {
 	public List<Player> findByTeamName(String teamName) {
 		List<Player> foundPlayers = new ArrayList<>();
 		
-		Optional<Team> teamOpt = DataGenerator.teamDB.findByName(teamName);
+		Optional<Team> teamOpt = DataIO.teamDB.findByName(teamName);
 		
 		if (teamOpt.isEmpty()) {
 			System.out.println("Cannot Find the Team! \"" + teamName + "\" Please Enter its full name");
@@ -80,7 +81,7 @@ public class PlayerDB extends DatabaseManager<Player> {
 		List<Integer> teamPlayerIDList = teamOpt.get().getTeamPlayerIDList();
 		
 		for (Integer playerID : teamPlayerIDList) {
-			Optional<Player> byID = DataGenerator.playerDB.findByID(playerID);
+			Optional<Player> byID = DataIO.playerDB.findByID(playerID);
 			byID.ifPresent(foundPlayers::add);
 		}
 		

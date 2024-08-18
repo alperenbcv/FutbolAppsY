@@ -1,6 +1,10 @@
 package FootballApp.entities;
 
-public class Manager extends Person {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Manager extends Person implements Subject{
+	private List<Observer> observers = new ArrayList<>();
 	private static Integer managerCounter=0;
 	
 	private String managerUserName;
@@ -24,6 +28,7 @@ public class Manager extends Person {
 	
 	public void setManagerUserName(String managerUserName) {
 		this.managerUserName = managerUserName;
+		notifyObservers();
 	}
 	
 	public String getManagerPassword() {
@@ -32,6 +37,7 @@ public class Manager extends Person {
 	
 	public void setManagerPassword(String managerPassword) {
 		this.managerPassword = managerPassword;
+		notifyObservers();
 	}
 	
 	public Integer getCurrentTeamID() {
@@ -40,10 +46,28 @@ public class Manager extends Person {
 	
 	public void setCurrentTeamID(Integer currentTeamID) {
 		this.currentTeamID = currentTeamID;
+		notifyObservers();
 	}
 	
 	@Override
 	public String toString() {
 		return "Manager{" +"CurrenTeamId"+ getCurrentTeamID() + "id=" + getId() + ", name='" + getName() + '\'' + ", age=" + getAge() + ", nationality='" + getNationality() + '\'' + ", managerUserName='" + getManagerUserName() + '\'' + ", managerPassword='" + getManagerPassword() + '\'' + ", currentTeamID=" + getCurrentTeamID() + '}';
+	}
+	
+	@Override
+	public void addObserver(Observer observer) {
+		observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update();
+		}
 	}
 }

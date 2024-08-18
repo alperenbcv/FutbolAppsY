@@ -8,6 +8,7 @@ import FootballApp.modules.PlayerModule;
 import FootballApp.modules.TeamModule;
 import FootballApp.utility.DataGenerator;
 import FootballApp.utility.DataIO;
+import FootballApp.utility.ObserverInitializer;
 
 import java.io.File;
 import java.time.LocalDate;
@@ -23,8 +24,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
 		DataIO.dataIOInitialize();
+		DataIO dataIO=new DataIO();
+		Team team=new Team("Barcelona",new ArrayList<>(),"Spain","Nou Camp",1d,1d);
+		DataIO.teamDB.save(team);
+		DataIO.saveTeamsToFile();
+		ObserverInitializer oi = new ObserverInitializer(dataIO,DataIO.teamDB, DataIO.playerDB, DataIO.managerDB);
+		oi.initializeObservers();
 		Menu.startMenu();
 	}
 }

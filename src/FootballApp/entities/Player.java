@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Player extends Person {
+public class Player extends Person implements Subject {
+	private List<Observer> observers = new ArrayList<>();
 	private static Integer playerCounter=0;
 	
 	private Integer playerOverallRating;
@@ -48,6 +49,7 @@ public class Player extends Person {
 	
 	public void setCurrentTeamID(Integer currentTeamID) {
 		this.currentTeamID = currentTeamID;
+		notifyObservers();
 	}
 	
 	public TechnicalAttributes getPlayerTechnicalAttributes() {
@@ -56,6 +58,7 @@ public class Player extends Person {
 	
 	public void setPlayerTechnicalAttributes(TechnicalAttributes playerTechnicalAttributes) {
 		this.playerTechnicalAttributes = playerTechnicalAttributes;
+		notifyObservers();
 	}
 	
 	public Integer getCurrentTeamID() {
@@ -66,16 +69,13 @@ public class Player extends Person {
 		return playerOverallRating;
 	}
 	
-	public void setPlayerOverallRating(Integer playerOverallRating) {
-		this.playerOverallRating = playerOverallRating;
-	}
-	
 	public Double getPlayerValue() {
 		return playerValue;
 	}
 	
 	public void setPlayerValue(Double playerValue) {
 		this.playerValue = playerValue;
+		notifyObservers();
 	}
 	
 	public Double getPlayerWage() {
@@ -84,6 +84,7 @@ public class Player extends Person {
 	
 	public void setPlayerWage(Double playerWage) {
 		this.playerWage = playerWage;
+		notifyObservers();
 	}
 	
 	public EPosition getPlayersPosition() {
@@ -92,6 +93,7 @@ public class Player extends Person {
 	
 	public void setPlayersPosition(EPosition playersPosition) {
 		this.playersPosition = playersPosition;
+		notifyObservers();
 	}
 	
 	@Override
@@ -109,5 +111,22 @@ public class Player extends Person {
 				+ ", Value=" + getPlayerValue()
 				+ ", Wage=" + getPlayerWage()
 				+ ", " + playerTechnicalAttributes;
+	}
+	
+	@Override
+	public void addObserver(Observer observer) {
+		observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update();
+		}
 	}
 }

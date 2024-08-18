@@ -1,8 +1,11 @@
 package FootballApp.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Team extends BaseEntity {
+public class Team extends BaseEntity implements Subject{
+	private List<Observer> observers = new ArrayList<>();
+	
 	private static Integer teamCounter=0;
 	private int counter;
 	private String teamName;
@@ -34,17 +37,13 @@ public class Team extends BaseEntity {
 		return teamName;
 	}
 	
-	
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-	
 	public Double getTransferBudget() {
 		return transferBudget;
 	}
 	
 	public void setTransferBudget(Double transferBudget) {
 		this.transferBudget = transferBudget;
+		notifyObservers();
 	}
 	
 	public Double getWageBudget() {
@@ -53,8 +52,8 @@ public class Team extends BaseEntity {
 	
 	public void setWageBudget(Double wageBudget) {
 		this.wageBudget = wageBudget;
+		notifyObservers();
 	}
-	
 
 	public List<Integer> getTeamPlayerIDList() {
 		return teamPlayerIDList;
@@ -62,23 +61,17 @@ public class Team extends BaseEntity {
 	
 	public void setTeamPlayerIDList(List<Integer> teamPlayerIDList) {
 		this.teamPlayerIDList = teamPlayerIDList;
+		notifyObservers();
 	}
 	
 	public String getTeamLocation() {
 		return teamLocation;
 	}
 	
-	public void setTeamLocation(String teamLocation) {
-		this.teamLocation = teamLocation;
-	}
-	
 	public String getStadiumName() {
 		return stadiumName;
 	}
-	
-	public void setStadiumName(String stadiumName) {
-		this.stadiumName = stadiumName;
-	}
+
 	
 	@Override
 	public String toString() {
@@ -93,6 +86,23 @@ public class Team extends BaseEntity {
 		
 	}
 	
+	@Override
+	public void addObserver(Observer observer) {
+	 observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+	observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update();
+		}
+	}
+
 //	public String toString(boolean string) {
 //		if(string){
 //			return this.getId()+" "+this.getTeamName();

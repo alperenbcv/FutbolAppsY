@@ -25,11 +25,9 @@ public class Menu {
 		while(!validInput) {
 			if(loggedManager == null)
 			System.out.println("1-Log In");
-			if(loggedManager != null) {
-				System.out.println("2-Team Menu");
-				System.out.println("3-Player Menu");
-				System.out.println("4-Manager Menu");
-			}
+			System.out.println("2-Team Menu");
+			System.out.println("3-Player Menu");
+//			System.out.println("4-Manager Menu");
 			System.out.println("0-Exit");
 			System.out.print("Selection: ");
 			try {
@@ -43,7 +41,7 @@ public class Menu {
 					validInput = true;
 				}
 				else {
-					System.out.println("Please enter a valid option!");
+					System.out.println("You need to log in first!");
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("\nPlease enter a numeric value!");
@@ -57,7 +55,7 @@ public class Menu {
 			case 1 -> loggedManager=LogInModule.managerLogIn();
 			case 2 -> TeamModule.startTeamMenu();
 			case 3 -> PlayerModule.playerMenu();
-			case 4 -> ManagerModule.startManagerMenu();
+//			case 4 -> ManagerModule.startManagerMenu();
 			case 0 -> System.out.println("Have a nice day!");
 			default-> System.out.println("Please enter a valid value!");
 		}

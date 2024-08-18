@@ -4,16 +4,16 @@ import FootballApp.databases.ManagerDB;
 import FootballApp.databases.PlayerDB;
 import FootballApp.databases.TeamDB;
 import FootballApp.entities.Manager;
+import FootballApp.entities.Observer;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
 
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.*;
 
-public class DataIO {
+public class DataIO implements Observer {
 	public static TeamDB teamDB = new TeamDB();
 	public static ManagerDB managerDB = new ManagerDB();
 	public static PlayerDB playerDB = new PlayerDB();
@@ -23,12 +23,12 @@ public class DataIO {
 	static File file3 = new File("players.txt");
 	
 	public static void dataIOInitialize() {
-		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
-			savePlayersToFile();
-			saveTeamsToFile();
-			saveManagersToFile();
-			
-		}
+//		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
+//			savePlayersToFile();
+//			saveTeamsToFile();
+//			saveManagersToFile();
+//
+//		}
 		generateTeams();
 		generateManagers();
 		generatePlayers();
@@ -215,5 +215,12 @@ public class DataIO {
 				team.setTeamPlayerIDList(list);
 			}
 		}
+	}
+	
+	@Override
+	public void update() {
+		savePlayersToFile();
+		saveTeamsToFile();
+		saveManagersToFile();
 	}
 }

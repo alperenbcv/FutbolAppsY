@@ -6,6 +6,7 @@ import FootballApp.modules.ManagerModule;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.utility.DataGenerator;
+import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -65,7 +66,7 @@ public class TeamModule {
 		System.out.println("Enter the Team Name: 0=Back to Team Menu");
 		String teamName = sc.nextLine();
 		
-		List<Team> byTeamName = DataGenerator.teamDB.findByTeamName(teamName);
+		List<Team> byTeamName = DataIO.teamDB.findByTeamName(teamName);
 		if (byTeamName.isEmpty()) {
 			if (teamName.equalsIgnoreCase("0")) {
                 return;
@@ -81,7 +82,7 @@ public class TeamModule {
 		System.out.println("Enter Team ID: 0=Back to Team Menu");
 		Integer teamID = sc.nextInt();
 		sc.nextLine();
-		Optional<Team> teamByID = DataGenerator.teamDB.findByID(teamID);
+		Optional<Team> teamByID = DataIO.teamDB.findByID(teamID);
 		if (teamByID.isPresent()) {
 			System.out.println(teamByID.get());
 		}
@@ -95,15 +96,14 @@ public class TeamModule {
 	
 	public static void displayTeams(Manager manager) {
 		System.out.println("List of Teams");
-		List<Team> teams = DataGenerator.teamDB.listAll();
-		Optional<Team> byID = DataGenerator.teamDB.findByID(manager.getCurrentTeamID());
+		List<Team> teams = DataIO.teamDB.listAll();
+		Optional<Team> byID = DataIO.teamDB.findByID(manager.getCurrentTeamID());
 		if(byID.isPresent()) {
+			System.out.println("\nManager's Current Team:  ");
 			System.out.println(byID.get());
 		}
-		teams.forEach(team -> {
-			System.out.println("Team ID: " + team.getId() + ", Team Name: " + team.getTeamName());
-//			System.out.println("Team Players ID List: " + team.getTeamPlayerIDList());
-		});
+		System.out.println("\nOther Teams:  ");
+		teams.stream().filter(team -> team.getId()!= manager.getCurrentTeamID()).forEach(team -> System.out.println("TeamID: " + team.getId() + " Team Name: " + team.getTeamName()));
 		displayTeamDetails();
 	}
 	
@@ -113,7 +113,7 @@ public class TeamModule {
 		if(teamID==0){
 			return;
 		}
-		Optional<Team> teamByID = DataGenerator.teamDB.findByID(teamID);
+		Optional<Team> teamByID = DataIO.teamDB.findByID(teamID);
 		if (teamByID.isPresent()) {
 			System.out.println("Team Details:  ");
 			System.out.println(teamByID.get());
@@ -122,7 +122,7 @@ public class TeamModule {
 			System.out.println("There is no team by that ID.");
 			return;
 		}
-		List<Player> players = DataGenerator.playerDB.findByTeamID(teamID);
+		List<Player> players = DataIO.playerDB.findByTeamID(teamID);
 		if (players.isEmpty()) {
 			System.out.println("No players found for this team.");
 		} else {

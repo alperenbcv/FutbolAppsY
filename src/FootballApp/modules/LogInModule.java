@@ -2,6 +2,7 @@ package FootballApp.modules;
 
 import FootballApp.entities.Manager;
 import FootballApp.utility.DataGenerator;
+import FootballApp.utility.DataIO;
 
 import java.util.Optional;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class LogInModule {
 		String username = sc.nextLine();
 		System.out.println("Enter your Password:");
 		String password = sc.nextLine();
-		Optional<Manager> byUsernameAndPassword = DataGenerator.managerDB.findByUsernameAndPassword(username, password);
+		Optional<Manager> byUsernameAndPassword = DataIO.managerDB.findByUsernameAndPassword(username, password);
 		if (byUsernameAndPassword.isPresent()) {
 			System.out.println("Login Successful!");
 			loggedManager = byUsernameAndPassword.get();

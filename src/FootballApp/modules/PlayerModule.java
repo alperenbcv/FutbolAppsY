@@ -4,6 +4,7 @@ import FootballApp.databases.PlayerDB;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.utility.DataGenerator;
+import FootballApp.utility.DataIO;
 
 import javax.xml.crypto.Data;
 import java.util.InputMismatchException;
@@ -62,7 +63,7 @@ public class PlayerModule {
 	
 	private static void displayPlayersByTeam() {
 		System.out.println("List of all Player ID's by Team");
-		List<Team> teams = DataGenerator.teamDB.listAll();
+		List<Team> teams = DataIO.teamDB.listAll();
 		teams.forEach(team -> {
 			System.out.println("Team ID: " + team.getId() + ", Team Name: " + team.getTeamName());
 			System.out.println("Team Players ID List: " + team.getTeamPlayerIDList());
@@ -71,14 +72,14 @@ public class PlayerModule {
 	}
 	
 	private static void displayPlayerByID() {
-		int size = DataGenerator.playerDB.listAll().size();
+		int size = DataIO.playerDB.listAll().size();
 		System.out.println("Enter a Player ID 1-"+size+": 0=Back to Player Menu");
 		Integer playerID = sc.nextInt();
 		sc.nextLine();
 		if (playerID == 0) {
 			return;
 		}
-		Optional<Player> playerByID = DataGenerator.playerDB.findByID(playerID);
+		Optional<Player> playerByID = DataIO.playerDB.findByID(playerID);
 		if (playerByID.isPresent()) {
 			System.out.println(playerByID.get());
 		} else {
@@ -92,7 +93,7 @@ public class PlayerModule {
 		if (playerName.equalsIgnoreCase("0")) {
 			return;
 		}
-		List<Player> byPlayerName = DataGenerator.playerDB.findByPlayerName(playerName);
+		List<Player> byPlayerName = DataIO.playerDB.findByPlayerName(playerName);
 		if (byPlayerName.isEmpty()) {
 			System.out.println("Player not found!");
 			return;
@@ -107,7 +108,7 @@ public class PlayerModule {
 		if (teamName.equalsIgnoreCase("0")) {
 			return;
 		}
-		List<Player> byTeamName = DataGenerator.playerDB.findByTeamName(teamName);
+		List<Player> byTeamName = DataIO.playerDB.findByTeamName(teamName);
 		if (byTeamName.isEmpty()) {
 			return;
 		}
@@ -122,7 +123,7 @@ public class PlayerModule {
 		if (playerID == 0) {
 			return;
 		}
-		Optional<Player> player = DataGenerator.playerDB.findByID(playerID);
+		Optional<Player> player = DataIO.playerDB.findByID(playerID);
 		if (player.isPresent()) {
 			System.out.println("Player Details: ");
 			System.out.println(player.get());

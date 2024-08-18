@@ -1,4 +1,4 @@
-Fenerbahce,[],Istanbul,Sukru Saracoglu Stadyumu,1.5E7,2.0E7,
+Fenerbahce,[],Istanbul,Sukru Saracoglu Stadyumu,1.0,2.0E7,
 Galatasaray,[],Istanbul,RAMS Park,1.0E7,2.5E7,
 Besiktas,[],Istanbul,Tupras Stadyumu,1.0E7,2.5E7,
 Trabzonspor,[],Trabzon,Papara Park,8000000.0,2.2E7,
