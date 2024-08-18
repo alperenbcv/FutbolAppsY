@@ -27,7 +27,8 @@ public class Menu {
 			System.out.println("1-Log In");
 			System.out.println("2-Team Menu");
 			System.out.println("3-Player Menu");
-//			System.out.println("4-Manager Menu");
+			if(loggedManager!=null)
+			System.out.println("9-Log Out");
 			System.out.println("0-Exit");
 			System.out.print("Selection: ");
 			try {
@@ -35,7 +36,7 @@ public class Menu {
 				sc.nextLine();
 				if (loggedManager == null && (userInput == 1 )) {
 					validInput = true;
-				} else if(loggedManager!= null && (userInput == 2 || userInput == 3 || userInput==4)){
+				} else if(loggedManager!= null && (userInput == 2 || userInput == 3 || userInput==9)){
 					validInput=true;
 				} else if(userInput == 0){
 					validInput = true;
@@ -56,8 +57,9 @@ public class Menu {
 			case 2 -> TeamModule.startTeamMenu();
 			case 3 -> PlayerModule.playerMenu();
 //			case 4 -> ManagerModule.startManagerMenu();
+			case 9 -> loggedManager=LogInModule.managerLogOut();
 			case 0 -> System.out.println("\nHave a nice day!");
-			default-> System.out.println("Please enter a valid value!");
+			default-> System.out.println("\nPlease enter a valid value!");
 		}
 	}
 	

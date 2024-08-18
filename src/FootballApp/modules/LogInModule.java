@@ -76,4 +76,10 @@ public class LogInModule {
 			}
 		} while (true);
 	}
+
+	public static Manager managerLogOut(){
+		loggedManager=null;
+		System.out.println("You are logged out!");
+		return loggedManager;
+	}
 }
