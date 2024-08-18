@@ -1,15 +1,12 @@
 package FootballApp.entities;
 
-import FootballApp.databases.TeamDB;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
-import FootballApp.utility.DatabaseManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class Player extends Person implements Subject {
+public class Player extends Person implements Observable {
 	private List<Observer> observers = new ArrayList<>();
 	private static Integer playerCounter=0;
 	

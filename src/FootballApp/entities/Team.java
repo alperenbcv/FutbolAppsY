@@ -3,7 +3,7 @@ package FootballApp.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team extends BaseEntity implements Subject{
+public class Team extends BaseEntity implements Observable {
 	private List<Observer> observers = new ArrayList<>();
 	
 	private static Integer teamCounter=0;
@@ -25,7 +25,6 @@ public class Team extends BaseEntity implements Subject{
 		this.stadiumName = stadiumName;
 		this.transferBudget = transferBudget;
 		this.wageBudget = wageBudget;
-		notifyObservers();
 	}
 	
 

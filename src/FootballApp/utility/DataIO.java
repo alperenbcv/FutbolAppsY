@@ -38,7 +38,6 @@ public class DataIO implements Observer {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("teams.txt"))) {
 			for (Team team : teamDB.listAll()) {
 				writer.write(team.getTeamName()+ ","
-				             +new ArrayList<>()+","
 				             +team.getTeamLocation()+","
 				             +team.getStadiumName()+","
 				             +team.getTransferBudget()+","

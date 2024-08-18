@@ -3,14 +3,13 @@ package FootballApp.databases;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.utility.DatabaseManager;
+import FootballApp.utility.ObserverInitializer;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class TeamDB extends DatabaseManager<Team> {
-
-
 
 	public Optional<Team> findByID(Integer teamID) {
 		for (Team team : veriListesi) {

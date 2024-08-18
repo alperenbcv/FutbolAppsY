@@ -3,7 +3,7 @@ package FootballApp.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Manager extends Person implements Subject{
+public class Manager extends Person implements Observable {
 	private List<Observer> observers = new ArrayList<>();
 	private static Integer managerCounter=0;
 	
