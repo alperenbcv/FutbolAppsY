@@ -41,7 +41,7 @@ public class Menu {
 					validInput = true;
 				}
 				else {
-					System.out.println("You need to log in first!");
+					System.out.println("\nYou need to log in first!");
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("\nPlease enter a numeric value!");
@@ -56,7 +56,7 @@ public class Menu {
 			case 2 -> TeamModule.startTeamMenu();
 			case 3 -> PlayerModule.playerMenu();
 //			case 4 -> ManagerModule.startManagerMenu();
-			case 0 -> System.out.println("Have a nice day!");
+			case 0 -> System.out.println("\nHave a nice day!");
 			default-> System.out.println("Please enter a valid value!");
 		}
 	}
