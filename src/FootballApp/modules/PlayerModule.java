@@ -68,12 +68,16 @@ public class PlayerModule {
         System.out.println("\n------------------List of all Player ID's by Team-----------------------");
         List<Team> teams = DataIO.teamDB.listAll();
         teams.forEach(team -> {
-            System.out.println("\nTeam ID: " + team.getId() + ", Team Name: " + team.getTeamName());
-            System.out.println("Player ID's: ");
-            DataIO.playerDB.findByTeamID(team.getId()).forEach(player -> System.out.print(player.getId() + " "));
-            System.out.println();
-            System.out.println("---------------------------------------------------------------------------------");
-        });
+            if(!team.getTeamName().equalsIgnoreCase("bye")) {
+                System.out.println("\nTeam ID: " + team.getId() + ", Team Name: " + team.getTeamName());
+                System.out.println("Player ID's: ");
+                DataIO.playerDB.findByTeamID(team.getId()).forEach(player -> System.out.print(player.getId() + " "));
+                System.out.println();
+                System.out.println("---------------------------------------------------------------------------------");
+            }
+            });
+
+
         displayPlayerDetails();
     }
 

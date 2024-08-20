@@ -74,13 +74,19 @@ public class PlayerDB extends DatabaseManager<Player> {
 		Optional<Team> teamOpt = DataIO.teamDB.findByName(teamName);
 		
         if (teamOpt.isPresent()) {
-			Integer teamID = teamOpt.get().getId();
-			foundPlayers = playerListByID(teamID);
+			if(teamOpt.get().getTeamName().equalsIgnoreCase("BYE")){
+				System.out.println("Cannot Find the Team! \"" + teamName + "\" Please Enter a valid name");
+			}
+			else{
+				Integer teamID = teamOpt.get().getId();
+				foundPlayers = playerListByID(teamID);
+			}
+
         }
 		
 		if (teamOpt.isEmpty()) {
-			System.out.println("Cannot Find the Team! \"" + teamName + "\" Please Enter its full name");
-			return foundPlayers;  // Return an empty list if the team is not found
+			System.out.println("Cannot Find the Team! \"" + teamName + "\" Please Enter a valid name");
+			return foundPlayers;
 		}
 		
 		return foundPlayers;

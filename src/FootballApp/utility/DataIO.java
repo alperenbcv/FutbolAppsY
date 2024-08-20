@@ -1,13 +1,8 @@
 package FootballApp.utility;
 
-import FootballApp.databases.LeagueDB;
-import FootballApp.databases.ManagerDB;
-import FootballApp.databases.PlayerDB;
-import FootballApp.databases.TeamDB;
-import FootballApp.entities.Manager;
+import FootballApp.databases.*;
+import FootballApp.entities.*;
 import FootballApp.entities.Observer;
-import FootballApp.entities.Player;
-import FootballApp.entities.Team;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
 
@@ -19,8 +14,9 @@ public class DataIO implements Observer {
 	public static ManagerDB managerDB = new ManagerDB();
 	public static PlayerDB playerDB = new PlayerDB();
 	public static LeagueDB leagueDB = new LeagueDB();
-	
-	static File file = new File("teams.txt");
+    public static FixtureDB fixtureDB= new FixtureDB();
+
+    static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");
 	static File file3 = new File("players.txt");
 	
