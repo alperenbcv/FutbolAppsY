@@ -1,5 +1,6 @@
 package FootballApp.utility;
 
+import FootballApp.databases.LeagueDB;
 import FootballApp.databases.ManagerDB;
 import FootballApp.databases.PlayerDB;
 import FootballApp.databases.TeamDB;
@@ -17,6 +18,7 @@ public class DataIO implements Observer {
 	public static TeamDB teamDB = new TeamDB();
 	public static ManagerDB managerDB = new ManagerDB();
 	public static PlayerDB playerDB = new PlayerDB();
+	public static LeagueDB leagueDB = new LeagueDB();
 	
 	static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class DataGenerator {
 //    public static TeamDB teamDB = new TeamDB();
@@ -130,20 +131,4 @@ public class DataGenerator {
 //            }
 //
 //        }
-//	    public static void setCurrentPlayerList() {
-//        Integer teamID;
-//        for (Team team : teamDB.listAll()) {
-//            teamID = team.getId();
-//            Integer finalTeamID = teamID;
-//            List<Integer> list = DataGenerator.playerDB.listAll().stream().filter(player -> player.getCurrentTeamID()
-//                                  .equals(finalTeamID)).map(Player::getId) .toList();
-//
-//            Optional<Team> byID = teamDB.findByID(finalTeamID);
-//            if (byID.isPresent()) {
-//                team = byID.get();
-//                team.setTeamPlayerIDList(list);
-//            }
-//        }
-//    }
-    
 }

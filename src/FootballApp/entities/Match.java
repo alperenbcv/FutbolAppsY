@@ -10,6 +10,8 @@ import java.util.List;
 public class Match extends BaseGame{
 	private static Integer matchCounter=0;
 	
+	private Integer homeTeamID;
+	private Integer awayTeamID;
 	private Integer homeScore;
 	private Integer awayScore;
 	private EResult result;
@@ -20,11 +22,11 @@ public class Match extends BaseGame{
 		super(++matchCounter);
 	}
 	
-	public Match(Integer leagueID, Integer homeTeamID, Integer awayTeamID,
-	             EMatchStatus matchStatus, LocalDate gameDate, LocalTime startTime, EResult result,
+	public Match( Integer homeTeamID, Integer awayTeamID,
+	             EMatchStatus matchStatus, LocalTime startTime, EResult result,
 	             Integer homeScore, Integer awayScore, List<Integer> scorers) {
 		
-		super(++matchCounter, leagueID, homeTeamID, awayTeamID, matchStatus, gameDate, startTime);
+		super(++matchCounter);
 		this.result = result;
 		this.homeScore = homeScore;
 		this.awayScore = awayScore;

@@ -10,7 +10,7 @@ public enum ERegion {
     EREDIVISIE("Eredivisie"),
     PORTUGUESE_PRIMEIRA_LIGA("Primeira Liga"),
     RUSSIAN_PREMIER_LEAGUE("Russian Premier League"),
-    TURKISH_SUPER_LEAGUE("Turkish Super League"),
+    TURKISH_LEAGUE("Turkish Super League"),
     SCOTTISH_PREMIER_LEAGUE("Scottish Premier League");
 
     private final String ligAdi;
