@@ -4,6 +4,7 @@ import FootballApp.entities.League;
 import FootballApp.entities.Team;
 import FootballApp.utility.DatabaseManager;
 
+import java.util.List;
 import java.util.Optional;
 
 public class LeagueDB extends DatabaseManager<League> {
@@ -23,5 +24,14 @@ public class LeagueDB extends DatabaseManager<League> {
 			}
 		}
 		return Optional.empty();
+	}
+	
+	public List<League> listAll() {
+		if(veriListesi.isEmpty()){
+			return null;
+		}
+		else{
+			return veriListesi;
+		}
 	}
 }

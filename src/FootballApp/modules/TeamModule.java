@@ -16,7 +16,6 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class TeamModule {
-	static TeamDB teamDB = new TeamDB();
 	static Scanner sc = new Scanner(System.in);
 	
 	public static void startTeamMenu() {
@@ -36,14 +35,12 @@ public class TeamModule {
 			System.out.println("1-List of Teams");
 			System.out.println("2-Find Team by ID");
 			System.out.println("3-Find Team by Name");
-			System.out.println("8-fikstur");
-			System.out.println("9-My Team");
 			System.out.println("0-Main Menu");
 			System.out.print("Selection: ");
 			try {
 				userInput = sc.nextInt();
 				sc.nextLine();
-				if(userInput >= 0 && userInput <= 3 || userInput==9 || userInput==8) {
+				if(userInput >= 0 && userInput <= 3) {
 					validInput = true;
 				}
 				else {
@@ -62,38 +59,11 @@ public class TeamModule {
 			case 1 -> displayTeams(LogInModule.loggedManager);
 			case 2 -> displayTeamByID();
 			case 3 -> displayTeamByName();
-			case 8 -> displayTeamFixtureByName();
-			case 9 -> displayManagersTeam(LogInModule.loggedManager);
 			case 0 -> System.out.println("\nReturning to Main Menu...\n");
 			default-> System.out.println("Please enter a valid value!");
 		}
 	}
-
-	private static void displayTeamFixtureByName() {
-		System.out.println("Enter a team name:");
-		String name=sc.nextLine();
-		Optional<Fixture> fixtureByID = DataIO.fixtureDB.findByID(DataIO.teamDB.findByName(name).get().getId());
-		Fixture fixture=null;
-		if(fixtureByID.isPresent()){
-			fixture=fixtureByID.get();
-			Fixture.printFixtureDetailsOfATeam(fixture,name);
-		}
-
-	}
-
-	private static Team displayManagersTeam(Manager manager) {
-		Optional<Team> byID = DataIO.teamDB.findByID(manager.getCurrentTeamID());
-		Team team=null;
-		if(byID.isPresent()){
-			team = byID.get();
-			System.out.println(team);
-			List<Player> byTeamName = DataIO.playerDB.findByTeamName(team.getTeamName());
-			for (Player player:byTeamName){
-				System.out.println(player);
-			}
-		}
-		return team;
-	}
+	
 
 	private static void displayTeamByName() {
 		System.out.print("\nEnter the Team Name (0=Back to Team Menu): ");

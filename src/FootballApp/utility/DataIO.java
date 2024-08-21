@@ -5,7 +5,9 @@ import FootballApp.entities.*;
 import FootballApp.entities.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
+import FootballApp.enums.ERegion;
 
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.*;
 
@@ -19,18 +21,92 @@ public class DataIO implements Observer {
     static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");
 	static File file3 = new File("players.txt");
+	static File file4 = new File("fixtures.txt");
 	
 	public static void dataIOInitialize() {
+		
 		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
+			saveLeaguesToFile();
 			savePlayersToFile();
 			saveTeamsToFile();
 			saveManagersToFile();
+//			saveFixturesToFile();
 
 		}
 		generateTeams();
 		generateManagers();
 		generatePlayers();
+//		generateFixtures();
+		generateLeagues();
 	}
+	
+	private static List<League> generateLeagues() {
+		List<League> leagues = new ArrayList<>();
+		try (Scanner sc = new Scanner(new FileReader("leagues.txt"))) {
+			while (sc.hasNextLine()) {
+				String satir = sc.nextLine();
+				String[] split = satir.split(",");
+				
+				List<Integer> teams = new ArrayList<>();
+				
+				League league = new League(
+						split[0],
+						Integer.parseInt(split[1]),
+						teams,
+						Integer.parseInt(split[3]),
+						split[4],
+						Integer.parseInt(split[5]),
+						ERegion.valueOf(split[6])
+				);
+				leagues.add(league);
+			}
+			DataIO.leagueDB.saveAll(leagues);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+			System.err.println("Error parsing manager data: " + e.getMessage());
+		}
+		return leagues;
+	}
+	
+	private static void saveLeaguesToFile() {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter("leagues.txt"))) {
+			for (League league : DataIO.leagueDB.listAll()) {
+				writer.write(league.getLeagueName()+ ","
+						             +league.getLeagueStandingTableID()+","
+						             +league.getLeagueTeamIDList()+","
+						             +league.getLeagueFixtureID()+","
+						             +league.getSeason()+","
+						             +league.getDivision()+","
+						             +league.getRegionList()+","
+						             +"\n");
+			}
+		}
+		catch (IOException e) {
+			System.err.println("Error while writing teams.txt: " + e.getMessage());
+		}
+	}
+	
+	private static void generateFixtures() {
+	}
+	
+//	private static void saveFixturesToFile() {
+//		try (BufferedWriter writer = new BufferedWriter(new FileWriter("fixtures.txt"))) {
+//			for (Fixture fixture : DataIO.fixtureDB.listAll()) {
+//				writer.write(fixture.getTeamCount()+ ","
+//						             +fixture.getMatches().g.getHomeTeamId()+ ","
+//						             +league.getLeagueTeamIDList()+","
+//						             +league.getLeagueFixtureID()+","
+//						             +league.getSeason()+","
+//						             +league.getDivision()+","
+//						             +league.getRegionList()+","
+//						             +"\n");
+//			}
+//		}
+//		catch (IOException e) {
+//			System.err.println("Error while writing teams.txt: " + e.getMessage());
+//		}
+//	}
 	
 	public static void saveTeamsToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("teams.txt"))) {
