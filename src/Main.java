@@ -16,9 +16,6 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
-	static PlayerDB playerDB = new PlayerDB();
-	static Scanner sc = new Scanner(System.in);
-	static TeamDB teamDB = new TeamDB();
 	
 	public static void main(String[] args) {
 		DataIO.dataIOInitialize();
@@ -29,7 +26,6 @@ public class Main {
 		Fixture fixture = new Fixture(teamIds.size());
 		fixture.generateFixtures(teamIds, fixture.getTeamCount() * 2 - 2);
 		DataIO.fixtureDB.save(fixture);
-	//	Fixture.printFixtureDetails(fixture);
 
 		DataIO dataIO = new DataIO();
 		ObserverInitializer oi = new ObserverInitializer(dataIO, DataIO.teamDB, DataIO.playerDB, DataIO.managerDB);

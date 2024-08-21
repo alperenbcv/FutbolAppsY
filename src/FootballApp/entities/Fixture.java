@@ -62,25 +62,33 @@ public class Fixture extends BaseGame {
 				", teamCount=" + teamCount +
 				", seasonStartDate=" + seasonStartDate +
 				", seasonEndDate=" + seasonEndDate +
-				'}';
+				", matches=" + matches +
+                '}';
 	}
 
 	public void generateFixtures(List<Integer> teams, int rounds) {
 		LocalDate matchDate = this.seasonStartDate;
-
+		int home=0;
 		for (int round = 1; round <= rounds; round++) {
 			LocalDate[] matchDates = getWeekMatchDates(matchDate);
 			boolean reverseHomeAway = (round % 2 == 0);
 			for (int i = 0; i < teamCount / 2; i++) {
-				int home = teams.get(i);
+				home = teams.get(i);
 				int away = teams.get(teamCount - 1 - i);
 				if (reverseHomeAway) {
 					int temp = home;
 					home = away;
 					away = temp;
 				}
-				Match match = new Match(home, away, matchDates[i % 4], EMatchStatus.SCHEDULED);
-				this.addMatch(match);
+				if(home == teams.get(0)) {
+					Random random = new Random();
+					Match match = new Match(home, away, matchDates[random.nextInt(0,4)], EMatchStatus.SCHEDULED);
+					this.addMatch(match);
+				}
+				if(home != teams.get(0)) {
+					Match match = new Match(home, away, matchDates[i % 4], EMatchStatus.SCHEDULED);
+					this.addMatch(match);
+				}
 			}
 			Collections.rotate(teams.subList(1, teamCount), 1);
 			matchDate = matchDate.plusWeeks(1);
@@ -158,5 +166,3 @@ public class Fixture extends BaseGame {
 			}
 		}
 	}
-
-
