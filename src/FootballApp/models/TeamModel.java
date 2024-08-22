@@ -42,13 +42,13 @@ public class TeamModel {
 		System.out.println("Transfer Budget     : " + transferBudget);
 		System.out.println("Wage Budget     : "+ wageBudget);
 		System.out.println("Stadium     : "+ stadiumName);
+		System.out.println("--------------------------------------------------");
 		System.out.println("Players     : ");
-		for (int i = 0; i < teamPlayers.size(); i++) {
-			Player player = teamPlayers.get(i);
-			System.out.print(player.getName() + " " + player.getSurName());
-			if (i < teamPlayers.size() - 1) {
-				System.out.print(" - ");
-			}
+		System.out.println("--------------------------------------------------");
+		if (teamPlayers != null && !teamPlayers.isEmpty()) {
+			teamPlayers.forEach(player -> new PlayerModel(databaseModels,player).displayPlayerInfo());
+		} else {
+			System.out.println("No players found for this club.");
 		}
 		System.out.println("\n--------------------------------------------------");
 	}
