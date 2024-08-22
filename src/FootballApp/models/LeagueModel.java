@@ -35,22 +35,34 @@ public class LeagueModel {
 		this.seasonStartDate = LocalDate.of(2024, 8, 23);
 		this.seasonEndDate = LocalDate.of(2025, 6, 1);
 	}
-	public void displayClubInfo() {
+	public void displayLeagueInfo() {
 		System.out.println("--------------------------------------------------");
 		System.out.println("League Information:");
 		System.out.println("--------------------------------------------------");
 		System.out.println("League ID      : " + id);
 		System.out.println("League Name    : " + leagueName);
-		System.out.println("Region      : " + regionList);
-		System.out.println("Division     : " + division);
-		System.out.println("Team List     : ");
-		List<String> list = leagueTeamList.stream().map(team -> team.getId() + " " + team.getTeamName()).toList();
+		System.out.println("Region         : " + regionList);
+		System.out.println("Division       : " + division);
+		System.out.println("--------------------------------------------------");
+	}
+
+	public void displayLeagueTeams(){
+
+		System.out.println("Team List      : ");
+		System.out.println("--------------------------------------------------");
+		List<String> list = leagueTeamList.stream()
+				.filter(team -> !team.getTeamName().equalsIgnoreCase("BYE"))
+				.map(team -> team.getId() + " " + team.getTeamName())
+				.toList();
+
 		for (String teamInfo : list) {
 			System.out.println(teamInfo);
 		}
+		System.out.println("--------------------------------------------------");
 	}
-	
-    public void displayFixture() {
+
+
+	public void displayFixture() {
 	    
 	    System.out.println("\nFixture     : ");
 	    printFixtureDetails(id);

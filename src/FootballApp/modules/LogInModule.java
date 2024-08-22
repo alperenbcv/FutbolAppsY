@@ -1,6 +1,7 @@
 package FootballApp.modules;
 
 import FootballApp.entities.Manager;
+import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
 
@@ -15,13 +16,20 @@ public class LogInModule {
 
 	public static Manager managerLogIn() {
 		System.out.println("\nWelcome to the Football Manager App!");
-		System.out.println("\n---------------Available Managers------------------");
-		Optional<List<Manager>> all = DatabaseModels.managerDB.findAll();
-		if (all.isPresent()) {
-			all.get().forEach(manager -> {
-				System.out.println(manager.getId() + " " + manager.getName() + " " + manager.getSurName());
-			});
-		}
+		System.out.println("\nPlease choose a league first!");
+		System.out.println("---------------Available Leagues------------------");
+		LeagueModule.displayAllLeagues();
+		System.out.println("Please Enter a League ID: ");
+		Integer leagueID = sc.nextInt();
+		System.out.println("\n---------------Available Managers of The League------------------");
+		List<Manager> all = DatabaseModels.managerDB.findByLeagueID(leagueID);
+		all.stream().forEach(manager -> {
+			Optional<Team> byID = DatabaseModels.teamDB.findByID(manager.getCurrentTeamID());
+			if (byID.isPresent()) {
+				System.out.println(manager.getId() + " " + manager.getName() + " " + manager.getSurName() + " " + byID.get().getTeamName());
+			}
+		});
+
 
 		boolean validInput = false;
 		do {

@@ -27,7 +27,8 @@ public class Menu {
 				System.out.println("1-Log In");
 			System.out.println("2-Team Menu");
 			System.out.println("3-Player Menu");
-			System.out.println("4-Fixture Menu");
+			System.out.println("4-League Menu");
+			System.out.println("5-Fixture Menu");
 			if (loggedManager != null)
 				System.out.println("9-Log Out");
 			System.out.println("0-Exit");
@@ -39,13 +40,13 @@ public class Menu {
 				if (loggedManager == null) {
 					if (userInput == 1 || userInput == 0) {
 						validInput = true;
-					} else if (userInput == 2 || userInput == 3|| userInput == 4) {
+					} else if (userInput == 2 || userInput == 3|| userInput == 4 || userInput==5) {
 						System.out.println("\nYou need to log in first!");
 					} else {
 						System.out.println("\nPlease enter a valid value!\n");
 					}
 				} else {  // loggedManager != null
-					if (userInput == 2 || userInput == 3 || userInput == 9 || userInput == 0|| userInput == 4) {
+					if (userInput == 2 || userInput == 3 || userInput == 9 || userInput == 0|| userInput == 4 || userInput==5) {
 						validInput = true;
 					} else {
 						System.out.println("\nPlease enter a valid value!");
@@ -64,7 +65,8 @@ public class Menu {
 			case 1 -> loggedManager=LogInModule.managerLogIn();
 			case 2 -> TeamModule.startTeamMenu();
 			case 3 -> PlayerModule.playerMenu();
-			case 4 -> FixtureModule.startFixtureMenu();
+			case 4 -> LeagueModule.startLeagueMenu();
+			case 5 -> FixtureModule.startFixtureMenu();
 			case 9 -> loggedManager=LogInModule.managerLogOut();
 			case 0 -> System.out.println("\nHave a nice day!");
 			default-> System.out.println("\nPlease enter a valid value!");

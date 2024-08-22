@@ -17,4 +17,3 @@
 17,Ozhan,Pulat,39,Turkiye,ozhan,1234,
 18,Stanimir,Stoilov,57,Bulgaria,stanimir,1234,
 19,Ismet,Tasdemir,50,Turkiye,ismet,1234,
-20,Cihat,Arslan,54,Turkiye,cihat,1234,

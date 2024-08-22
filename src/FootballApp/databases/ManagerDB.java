@@ -1,10 +1,13 @@
 package FootballApp.databases;
 
+import FootballApp.entities.League;
 import FootballApp.entities.Manager;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DatabaseManager;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,4 +43,26 @@ public class ManagerDB extends DatabaseManager<Manager> {
         }
         return Optional.empty();
 	}
+
+	public List<Manager> findByLeagueID(Integer leagueID) {
+		Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+		List<Manager> matchingManagers = new ArrayList<>();
+
+		if (byID.isPresent()) {
+			League league = byID.get();
+			List<Integer> leagueTeamIDList = league.getLeagueTeamIDList();
+			List<Manager> managers = listAll();
+
+			for (Manager manager : managers) {
+				Integer managerTeamID = manager.getCurrentTeamID();
+				if (leagueTeamIDList.contains(managerTeamID)) {
+					matchingManagers.add(manager);
+				}
+			}
+		}
+
+		return matchingManagers;
+	}
+
+
 }

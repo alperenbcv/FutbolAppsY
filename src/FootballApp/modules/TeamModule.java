@@ -4,8 +4,8 @@ import FootballApp.entities.Manager;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
+import FootballApp.models.PlayerModel;
 import FootballApp.models.TeamModel;
-import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class TeamModule {
 	static Scanner sc = new Scanner(System.in);
+	static DatabaseModels databaseModel = new DatabaseModels();
 	
 	public static void startTeamMenu() {
 		int userInput;
@@ -53,7 +54,7 @@ public class TeamModule {
 	
 	private static void teamMenuSelection(int userInput) {
 		switch (userInput) {
-			case 1 -> displayTeams(LogInModule.loggedManager);
+			case 1 -> displayAllTeams(LogInModule.loggedManager);
 			case 2 -> displayTeamByID();
 			case 3 -> displayTeamByName();
 			case 0 -> System.out.println("\nReturning to Main Menu...\n");
@@ -91,15 +92,23 @@ public class TeamModule {
 			Integer teamID = sc.nextInt();
 			sc.nextLine();
 			Optional<Team> teamByID = DatabaseModels.teamDB.findByID(teamID);
-			DatabaseModels dm = new DatabaseModels();
 
 			if (teamByID.isPresent()) {
 				if (teamByID.get().getTeamName().equals("BYE")){
 					System.out.println("Team not found!");
 				}
 				else {
-					TeamModel teamModel = new TeamModel(dm,teamByID.get());
+					TeamModel teamModel = new TeamModel(databaseModel, teamByID.get());
 					teamModel.displayClubInfo();
+					List<Player> players = DatabaseModels.playerDB.findByTeamID(teamID);
+					if (players.isEmpty()) {
+						System.out.println("No players found for this team.");
+					} else {
+						System.out.println("\nTeam Players:  ");
+						for (Player player : players) {
+							System.out.println(player);
+						}
+					}
 				}
 			}
 			else {
@@ -115,7 +124,7 @@ public class TeamModule {
 
 	}
 	
-	public static void displayTeams(Manager manager) {
+	public static void displayAllTeams(Manager manager) {
 		System.out.println("\n-------------List of Teams-----------------------------------");
 		List<Team> teams = DatabaseModels.teamDB.listAll();
 		Optional<Team> byID = DatabaseModels.teamDB.findByID(manager.getCurrentTeamID());
@@ -137,8 +146,9 @@ public class TeamModule {
 			}
 			Optional<Team> teamByID = DatabaseModels.teamDB.findByID(teamID);
 			if (teamByID.isPresent()) {
+				TeamModel tm=new TeamModel(databaseModel,teamByID.get());
 				System.out.println("\nTeam Details:  ");
-				System.out.println(teamByID.get());
+				tm.displayClubInfo();
 			}
 			else {
 				System.out.println("There is no team by that ID.");
@@ -149,7 +159,10 @@ public class TeamModule {
 				System.out.println("No players found for this team.");
 			} else {
 				System.out.println("\nTeam Players:  ");
-				players.forEach(System.out::println);
+				for (Player player:players){
+					System.out.println(player);
+				}
+
 			}
 		}catch (InputMismatchException e){
 			System.out.println("\nPlease enter a numeric value!");

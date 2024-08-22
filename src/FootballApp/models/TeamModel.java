@@ -36,22 +36,26 @@ public class TeamModel {
 		System.out.println("--------------------------------------------------");
 		System.out.println("Team Information:");
 		System.out.println("--------------------------------------------------");
-		System.out.println("Team ID      : " + teamID);
-		System.out.println("Team Name    : " + teamName);
-		System.out.println("Location      : " + teamLocation);
-		System.out.println("Transfer Budget     : " + transferBudget);
-		System.out.println("Wage Budget     : "+ wageBudget);
-		System.out.println("Stadium     : "+ stadiumName);
+		System.out.println("Team ID     	 : " + teamID);
+		System.out.println("Team Name    	 : " + teamName);
+		System.out.println("Location     	 : " + teamLocation);
+		System.out.println("Transfer Budget  : " + transferBudget);
+		System.out.println("Wage Budget      : " + wageBudget);
+		System.out.println("Stadium   	     : " + stadiumName);
 		System.out.println("--------------------------------------------------");
-		System.out.println("Players     : ");
-		System.out.println("--------------------------------------------------");
-		if (teamPlayers != null && !teamPlayers.isEmpty()) {
-			teamPlayers.forEach(player -> new PlayerModel(databaseModels,player).displayPlayerInfo());
-		} else {
-			System.out.println("No players found for this club.");
-		}
-		System.out.println("\n--------------------------------------------------");
 	}
+
+	public void displayTeamPlayers(){
+			System.out.println("Players     : ");
+			System.out.println("--------------------------------------------------");
+			if (teamPlayers != null && !teamPlayers.isEmpty()) {
+				teamPlayers.forEach(player -> new PlayerModel(databaseModels,player).displayPlayerInfo());
+			} else {
+				System.out.println("No players found for this club.");
+			}
+			System.out.println("\n--------------------------------------------------");
+		}
+
 	public Integer getTeamID() {
 		return teamID;
 	}

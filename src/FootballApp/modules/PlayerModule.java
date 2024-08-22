@@ -3,6 +3,7 @@ package FootballApp.modules;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
+import FootballApp.models.PlayerModel;
 import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 public class PlayerModule {
     static Scanner sc = new Scanner(System.in);
+    static DatabaseModels databaseModel = new DatabaseModels();
 
     public static void playerMenu() {
         int userInput;
@@ -89,8 +91,8 @@ public class PlayerModule {
             }
             Optional<Player> byID = DatabaseModels.playerDB.findByID(playerID);
             if (byID.isPresent()) {
-                Player player = byID.get();
-                System.out.println(player);
+                PlayerModel playerModel=new PlayerModel(databaseModel,byID.get());
+                playerModel.displayPlayerInfo();
             } else {
                 System.out.println("Player not found!");
             }
@@ -144,7 +146,7 @@ public class PlayerModule {
                 validInput = true;
             } catch (InputMismatchException e) {
                 System.out.println("Please enter a numeric value!");
-                sc.nextLine(); // buffer'ı temizlemek için
+                sc.nextLine();
             }
         } while (!validInput);
 
@@ -154,8 +156,8 @@ public class PlayerModule {
 
         Optional<Player> player = DatabaseModels.playerDB.findByID(playerID);
         if (player.isPresent()) {
-            System.out.println("\n-----------------Player Details------------------------");
-            System.out.println(player.get());
+            PlayerModel playerModel=new PlayerModel(databaseModel,player.get());
+            playerModel.displayPlayerInfo();
         } else {
             System.out.println("Player not found!");
         }

@@ -5,6 +5,7 @@ import FootballApp.entities.League;
 import FootballApp.entities.Match;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
+import FootballApp.models.FixtureModel;
 import FootballApp.models.TeamModel;
 import FootballApp.utility.DataIO;
 
@@ -15,6 +16,7 @@ import java.util.Scanner;
 
 public class FixtureModule {
 	static Scanner sc = new Scanner(System.in);
+	static DatabaseModels databaseModel = new DatabaseModels();
 	public static void startFixtureMenu() {
 		int userInput;
 		do {
@@ -61,19 +63,27 @@ public class FixtureModule {
 	private static void displayTeamFixtureByName() {
 		System.out.println("Enter a team name:");
 		String name=sc.nextLine();
-		List<Match> byTeamName = DatabaseModels.matchDB.findByTeamName(name);
-		System.out.println(byTeamName);
-		
+		Optional<Team> byName = DatabaseModels.teamDB.findByName(name);
+		if(byName.isPresent()){
+			Integer leagueID = byName.get().getLeagueID();
+			Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+			if(byID.isPresent()){
+				FixtureModel fm=new FixtureModel(databaseModel,byID.get());
+				fm.displayTeamFixture(name);
+			}
+		}
+		else{
+			System.out.println("Team not found!");
+		}
 	}
 	
 	private static void displayFixtureByLeague() {
 		System.out.println("Enter a League ID:");
-		Integer id=sc.nextInt();
-		Optional<Fixture> byID = DatabaseModels.fixtureDB.findByID(DatabaseModels.leagueDB.findByID(id).get().getLeagueFixtureID());
-		Fixture fixture=null;
+		Integer leagueId=sc.nextInt();
+		Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueId);
 		if(byID.isPresent()){
-			fixture=byID.get();
-			Fixture.printFixtureDetails(fixture);
+		FixtureModel fm=new FixtureModel(databaseModel,byID.get());
+		fm.displayLeagueFixture();
 		}
 	}
 }
