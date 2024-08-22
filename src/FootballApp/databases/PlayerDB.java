@@ -3,13 +3,12 @@ package FootballApp.databases;
 
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
-import FootballApp.utility.DataGenerator;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
 import FootballApp.utility.DatabaseManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class PlayerDB extends DatabaseManager<Player> {
@@ -71,7 +70,7 @@ public class PlayerDB extends DatabaseManager<Player> {
 	public List<Player> findByTeamName(String teamName) {
 		List<Player> foundPlayers = new ArrayList<>();
 		
-		Optional<Team> teamOpt = DataIO.teamDB.findByName(teamName);
+		Optional<Team> teamOpt = DatabaseModels.teamDB.findByName(teamName);
 		
         if (teamOpt.isPresent()) {
 			if(teamOpt.get().getTeamName().equalsIgnoreCase("BYE")){

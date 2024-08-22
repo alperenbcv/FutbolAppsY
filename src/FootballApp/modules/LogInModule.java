@@ -1,7 +1,7 @@
 package FootballApp.modules;
 
 import FootballApp.entities.Manager;
-import FootballApp.utility.DataGenerator;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
@@ -16,7 +16,7 @@ public class LogInModule {
 	public static Manager managerLogIn() {
 		System.out.println("\nWelcome to the Football Manager App!");
 		System.out.println("\n---------------Available Managers------------------");
-		Optional<List<Manager>> all = DataIO.managerDB.findAll();
+		Optional<List<Manager>> all = DatabaseModels.managerDB.findAll();
 		if (all.isPresent()) {
 			all.get().forEach(manager -> {
 				System.out.println(manager.getId() + " " + manager.getName() + " " + manager.getSurName());
@@ -43,8 +43,8 @@ public class LogInModule {
 				if(id == 0){
 					return null;
 				}
-				if (id > 0 && id <= DataIO.managerDB.listAll().size()) {
-					Optional<Manager> byID = DataIO.managerDB.findByID(id);
+				if (id > 0 && id <= DatabaseModels.managerDB.listAll().size()) {
+					Optional<Manager> byID = DatabaseModels.managerDB.findByID(id);
 					if (byID.isPresent()) {
 						System.out.println("\n------------------------------------------------");
 						System.out.println("Username: " + byID.get().getManagerUserName() + ", Password: " + byID.get().getManagerPassword());
@@ -65,7 +65,7 @@ public class LogInModule {
 			System.out.print("Enter your Password: ");
 			String password = sc.nextLine();
 
-			Optional<Manager> byUsernameAndPassword = DataIO.managerDB.findByUsernameAndPassword(username, password);
+			Optional<Manager> byUsernameAndPassword = DatabaseModels.managerDB.findByUsernameAndPassword(username, password);
 			if (byUsernameAndPassword.isPresent()) {
 				System.out.println("Login Successful!");
 				System.out.println("\nYou are playing as: " + byUsernameAndPassword.get().getName() + " " + byUsernameAndPassword.get().getSurName() + "\n");

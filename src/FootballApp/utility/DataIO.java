@@ -6,17 +6,12 @@ import FootballApp.entities.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
 import FootballApp.enums.ERegion;
+import FootballApp.models.DatabaseModels;
 
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.*;
 
 public class DataIO implements Observer {
-	public static TeamDB teamDB = new TeamDB();
-	public static ManagerDB managerDB = new ManagerDB();
-	public static PlayerDB playerDB = new PlayerDB();
-	public static LeagueDB leagueDB = new LeagueDB();
-    public static FixtureDB fixtureDB= new FixtureDB();
 
     static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");
@@ -26,7 +21,7 @@ public class DataIO implements Observer {
 	public static void dataIOInitialize() {
 		
 		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0) {
-			saveLeaguesToFile();
+//			saveLeaguesToFile();
 			savePlayersToFile();
 			saveTeamsToFile();
 			saveManagersToFile();
@@ -37,7 +32,7 @@ public class DataIO implements Observer {
 		generateManagers();
 		generatePlayers();
 //		generateFixtures();
-		generateLeagues();
+//		generateLeagues();
 	}
 	
 	private static List<League> generateLeagues() {
@@ -60,7 +55,7 @@ public class DataIO implements Observer {
 				);
 				leagues.add(league);
 			}
-			DataIO.leagueDB.saveAll(leagues);
+			DatabaseModels.leagueDB.saveAll(leagues);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
@@ -71,7 +66,7 @@ public class DataIO implements Observer {
 	
 	private static void saveLeaguesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("leagues.txt"))) {
-			for (League league : DataIO.leagueDB.listAll()) {
+			for (League league : DatabaseModels.leagueDB.listAll()) {
 				writer.write(league.getLeagueName()+ ","
 						             +league.getLeagueStandingTableID()+","
 						             +league.getLeagueTeamIDList()+","
@@ -110,7 +105,7 @@ public class DataIO implements Observer {
 	
 	public static void saveTeamsToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("teams.txt"))) {
-			for (Team team : teamDB.listAll()) {
+			for (Team team : DatabaseModels.teamDB.listAll()) {
 				writer.write(team.getTeamName()+ ","
 				             +team.getTeamLocation()+","
 				             +team.getStadiumName()+","
@@ -126,7 +121,7 @@ public class DataIO implements Observer {
 	
 	public static void saveManagersToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("managers.txt"))) {
-			for (Manager manager : managerDB.listAll()) {
+			for (Manager manager : DatabaseModels.managerDB.listAll()) {
 				writer.write(manager.getCurrentTeamID()+ ","
 						+manager.getName() + ","
 						+ manager.getSurName() + ","
@@ -145,7 +140,7 @@ public class DataIO implements Observer {
 	
 	public static void savePlayersToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("players.txt"))) {
-			for (Player player : playerDB.listAll()) {
+			for (Player player : DatabaseModels.playerDB.listAll()) {
 				TechnicalAttributes ta=player.getPlayerTechnicalAttributes();
 				writer.write(player.getName() + ","
 						             + player.getSurName() + ","
@@ -196,7 +191,7 @@ public class DataIO implements Observer {
 				);
 				players.add(player);
 			}
-			playerDB.saveAll(players);
+			DatabaseModels.playerDB.saveAll(players);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
@@ -213,14 +208,16 @@ public class DataIO implements Observer {
 				String[] split = satir.split(",");
 				
 				try {
-					String teamName = split[0];
-					String city = split[1];
-					String stadiumName = split[2];
+					Integer leagueID = Integer.parseInt(split[0]);
+					String teamName = split[1];
+					String city = split[2];
+					String stadiumName = split[3];
 					
-					double transferBudget = Double.parseDouble(split[3]);
-					double wageBudget = Double.parseDouble(split[4]);
+					double transferBudget = Double.parseDouble(split[4]);
+					double wageBudget = Double.parseDouble(split[5]);
 					
 					Team team = new Team(
+							leagueID,
 							teamName,
 							city,
 							stadiumName,
@@ -232,7 +229,7 @@ public class DataIO implements Observer {
 					System.err.println("Error parsing number from line: " + satir);
 				}
 			}
-			teamDB.saveAll(teams);
+			DatabaseModels.teamDB.saveAll(teams);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
@@ -261,7 +258,7 @@ public class DataIO implements Observer {
 				);
 				managers.add(manager);
 			}
-			managerDB.saveAll(managers);
+			DatabaseModels.managerDB.saveAll(managers);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {

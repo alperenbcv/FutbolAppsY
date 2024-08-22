@@ -2,6 +2,7 @@ package FootballApp.entities;
 
 import FootballApp.enums.ERegion;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class League extends BaseEntity{
@@ -14,6 +15,8 @@ public class League extends BaseEntity{
 	private ERegion regionList;
 	private String season;
 	private Integer division;
+	private LocalDate seasonStartDate;
+	private LocalDate seasonEndDate;
 
 	public League() {
 		super(++leagueCounter);
@@ -29,6 +32,24 @@ public class League extends BaseEntity{
 		this.season = season;
 		this.division = division;
 		this.regionList = regionList;
+		this.seasonStartDate = LocalDate.of(2024, 8, 23);
+		this.seasonEndDate = LocalDate.of(2025, 6, 1);
+	}
+	
+	public LocalDate getSeasonStartDate() {
+		return seasonStartDate;
+	}
+	
+	public void setSeasonStartDate(LocalDate seasonStartDate) {
+		this.seasonStartDate = seasonStartDate;
+	}
+	
+	public LocalDate getSeasonEndDate() {
+		return seasonEndDate;
+	}
+	
+	public void setSeasonEndDate(LocalDate seasonEndDate) {
+		this.seasonEndDate = seasonEndDate;
 	}
 	
 	public static Integer getLeagueCounter() {

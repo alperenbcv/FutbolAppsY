@@ -43,7 +43,15 @@ public class TeamDB extends DatabaseManager<Team> {
 		}
 		return foundTeams;
 	}
-
+	public List<Team> findAllByLeagueID(Integer leagueID) {
+		List<Team> foundTeams = new ArrayList<>();
+		for (Team team : veriListesi) {
+			if (team.getLeagueID() == leagueID) {
+				foundTeams.add(team);
+			}
+		}
+		return foundTeams;
+	}
 
 
 }

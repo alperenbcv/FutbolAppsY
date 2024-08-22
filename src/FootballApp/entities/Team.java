@@ -12,14 +12,16 @@ public class Team extends BaseEntity implements Observable {
 	private Double transferBudget;
 	private Double wageBudget;
 	private String stadiumName;
+	private Integer leagueID;
 	
 	public Team() {
 		super(++teamCounter);
 	}
 	
-	public Team(String teamName, String teamLocation,
+	public Team(Integer LeagueID,String teamName, String teamLocation,
 	            String stadiumName, Double transferBudget, Double wageBudget) {
 		super(++teamCounter);
+		this.leagueID = LeagueID;
 		this.teamName = teamName;
 		this.teamLocation = teamLocation;
 		this.stadiumName = stadiumName;
@@ -27,7 +29,7 @@ public class Team extends BaseEntity implements Observable {
 		this.wageBudget = wageBudget;
 	}
 	
-
+	
 
 	public String getTeamName() {
 		return teamName;
@@ -51,6 +53,13 @@ public class Team extends BaseEntity implements Observable {
 		notifyObservers();
 	}
 	
+	public Integer getLeagueID() {
+		return leagueID;
+	}
+	
+	public void setLeagueID(Integer leagueID) {
+		this.leagueID = leagueID;
+	}
 	
 	public String getTeamLocation() {
 		return teamLocation;

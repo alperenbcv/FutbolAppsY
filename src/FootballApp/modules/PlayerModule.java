@@ -1,12 +1,10 @@
 package FootballApp.modules;
 
-import FootballApp.databases.PlayerDB;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
-import FootballApp.utility.DataGenerator;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
 
-import javax.xml.crypto.Data;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
@@ -66,12 +64,12 @@ public class PlayerModule {
 
     private static void displayPlayersByTeam() {
         System.out.println("\n------------------List of all Player ID's by Team-----------------------");
-        List<Team> teams = DataIO.teamDB.listAll();
+        List<Team> teams = DatabaseModels.teamDB.listAll();
         teams.forEach(team -> {
             if(!team.getTeamName().equalsIgnoreCase("bye")) {
                 System.out.println("\nTeam ID: " + team.getId() + ", Team Name: " + team.getTeamName());
                 System.out.println("Player ID's: ");
-                DataIO.playerDB.findByTeamID(team.getId()).forEach(player -> System.out.print(player.getId() + " "));
+                DatabaseModels.playerDB.findByTeamID(team.getId()).forEach(player -> System.out.print(player.getId() + " "));
                 System.out.println();
                 System.out.println("---------------------------------------------------------------------------------");
             }
@@ -82,14 +80,14 @@ public class PlayerModule {
     }
 
     private static void displayPlayerByID() {
-        int size = DataIO.playerDB.listAll().size();
+        int size = DatabaseModels.playerDB.listAll().size();
         System.out.print("\nEnter a Player ID 1-" + size + " (0=Back to Player Menu): ");
         try {
             int playerID = sc.nextInt();
             if (playerID == 0) {
                 return;
             }
-            Optional<Player> byID = DataIO.playerDB.findByID(playerID);
+            Optional<Player> byID = DatabaseModels.playerDB.findByID(playerID);
             if (byID.isPresent()) {
                 Player player = byID.get();
                 System.out.println(player);
@@ -114,7 +112,7 @@ public class PlayerModule {
             return;
         }
 
-        List<Player> byPlayerName = DataIO.playerDB.findByPlayerName(playerName);
+        List<Player> byPlayerName = DatabaseModels.playerDB.findByPlayerName(playerName);
         if (byPlayerName.isEmpty()) {
             System.out.println("Player not found!");
             return;
@@ -130,7 +128,7 @@ public class PlayerModule {
         if (teamName.equalsIgnoreCase("0")) {
             return;
         }
-        List<Player> byTeamName = DataIO.playerDB.findByTeamName(teamName);
+        List<Player> byTeamName = DatabaseModels.playerDB.findByTeamName(teamName);
         byTeamName.forEach(System.out::println);
     }
 
@@ -154,7 +152,7 @@ public class PlayerModule {
             return;
         }
 
-        Optional<Player> player = DataIO.playerDB.findByID(playerID);
+        Optional<Player> player = DatabaseModels.playerDB.findByID(playerID);
         if (player.isPresent()) {
             System.out.println("\n-----------------Player Details------------------------");
             System.out.println(player.get());
@@ -181,7 +179,7 @@ public class PlayerModule {
         }
 
         int rating = optionalRating.get();
-        List<Player> players = DataIO.playerDB.listAll();
+        List<Player> players = DatabaseModels.playerDB.listAll();
         List<Player> list = players.stream().filter(player -> player.getPlayerOverallRating() >= rating).toList();
         if (list.isEmpty()) {
             System.out.println("No players found with rating higher than or equal to " + rating + "!");

@@ -1,7 +1,9 @@
 package FootballApp.entities;
 
 import FootballApp.enums.EMatchStatus;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
+import FootballApp.utility.DatabaseManager;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -69,6 +71,7 @@ public class Fixture extends BaseGame {
 	public void generateFixtures(List<Integer> teams, int rounds) {
 		LocalDate matchDate = this.seasonStartDate;
 		int home=0;
+		
 		for (int round = 1; round <= rounds; round++) {
 			LocalDate[] matchDates = getWeekMatchDates(matchDate);
 			boolean reverseHomeAway = (round % 2 == 0);
@@ -82,12 +85,15 @@ public class Fixture extends BaseGame {
 				}
 				if(home == teams.get(0)) {
 					Random random = new Random();
-					Match match = new Match(home, away, matchDates[random.nextInt(0,4)], EMatchStatus.SCHEDULED);
+					Match match = new Match(home, away, matchDates[random.nextInt(0,4)], EMatchStatus.SCHEDULED,
+					                        DatabaseModels.teamDB.findByID(home).get().getLeagueID());
 					this.addMatch(match);
+					DatabaseModels.matchDB.save(match);
 				}
 				if(home != teams.get(0)) {
-					Match match = new Match(home, away, matchDates[i % 4], EMatchStatus.SCHEDULED);
+					Match match = new Match(home, away, matchDates[i % 4], EMatchStatus.SCHEDULED,DatabaseModels.teamDB.findByID(home).get().getLeagueID());
 					this.addMatch(match);
+					DatabaseModels.matchDB.save(match);
 				}
 			}
 			Collections.rotate(teams.subList(1, teamCount), 1);
@@ -126,8 +132,8 @@ public class Fixture extends BaseGame {
 		for (Map.Entry<Integer, List<Match>> entry : matchesByWeek.entrySet()) {
 			System.out.println("Week " + entry.getKey() + ":");
 			for (Match match : entry.getValue()) {
-				String homeTeamName = DataIO.teamDB.findByID(match.getHomeTeamId()).map(Team::getTeamName).orElse("Unknown");
-				String awayTeamName = DataIO.teamDB.findByID(match.getAwayTeamId()).map(Team::getTeamName).orElse("Unknown");
+				String homeTeamName = DatabaseModels.teamDB.findByID(match.getHomeTeamId()).map(Team::getTeamName).orElse("Unknown");
+				String awayTeamName = DatabaseModels.teamDB.findByID(match.getAwayTeamId()).map(Team::getTeamName).orElse("Unknown");
 				System.out.println("  " + match.getMatchDate() + ": " + homeTeamName + " vs " + awayTeamName);
 			}
 		}
@@ -156,9 +162,9 @@ public class Fixture extends BaseGame {
 		for (Map.Entry<Integer, List<Match>> entry : matchesByWeek.entrySet()) {
 			System.out.println("Week " + entry.getKey() + ":");
 			for (Match match : entry.getValue()) {
-				String homeTeamName = DataIO.teamDB.findByID(match.getHomeTeamId()).map(Team::getTeamName).orElse("Unknown");
-				String awayTeamName = DataIO.teamDB.findByID(match.getAwayTeamId()).map(Team::getTeamName).orElse("Unknown");
-				if(match.getHomeTeamId()==DataIO.teamDB.findByName(teamName).get().getId() || match.getAwayTeamId()==DataIO.teamDB.findByName(teamName).get().getId()){
+				String homeTeamName = DatabaseModels.teamDB.findByID(match.getHomeTeamId()).map(Team::getTeamName).orElse("Unknown");
+				String awayTeamName = DatabaseModels.teamDB.findByID(match.getAwayTeamId()).map(Team::getTeamName).orElse("Unknown");
+				if(match.getHomeTeamId()== DatabaseModels.teamDB.findByName(teamName).get().getId() || match.getAwayTeamId()== DatabaseModels.teamDB.findByName(teamName).get().getId()){
 					System.out.println("  " + match.getMatchDate() + ": " + homeTeamName + " vs " + awayTeamName);
 					}
 				}

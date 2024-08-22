@@ -8,13 +8,13 @@ import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 
 public class ObserverInitializer {
-	private DataIO dataIO;
+	private DataIO databaseModels;
 	private TeamDB teamDB;
 	private PlayerDB playerDB;
 	private ManagerDB managerDB;
 	
-	public ObserverInitializer(DataIO dataIO, TeamDB teamDB, PlayerDB playerDB, ManagerDB managerDB) {
-		this.dataIO = dataIO;
+	public ObserverInitializer(DataIO databaseModels, TeamDB teamDB, PlayerDB playerDB, ManagerDB managerDB) {
+		this.databaseModels = databaseModels;
 		this.teamDB = teamDB;
 		this.playerDB = playerDB;
 		this.managerDB = managerDB;
@@ -22,20 +22,20 @@ public class ObserverInitializer {
 	
 	public void initializeObservers() {
 		for (Team team : teamDB.listAll()) {
-			team.addObserver(dataIO);
+			team.addObserver(databaseModels);
 		}
 		
 		
 		for (Player player : playerDB.listAll()) {
-			player.addObserver(dataIO);
+			player.addObserver(databaseModels);
 		}
 		
 		
 		for (Manager manager : managerDB.listAll()) {
-			manager.addObserver(dataIO);
+			manager.addObserver(databaseModels);
 		}
 	}
 	public void addObserverToNewTeam(Team team) {
-		team.addObserver(dataIO);
+		team.addObserver(databaseModels);
 	}
 }

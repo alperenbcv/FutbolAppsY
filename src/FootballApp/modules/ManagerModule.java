@@ -1,13 +1,9 @@
 package FootballApp.modules;
 
 
-import FootballApp.databases.ManagerDB;
 import FootballApp.entities.Manager;
-import FootballApp.utility.DataGenerator;
-import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class ManagerModule {

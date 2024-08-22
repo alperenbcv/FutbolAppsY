@@ -1,15 +1,12 @@
 package FootballApp.modules;
 
-import FootballApp.databases.TeamDB;
-import FootballApp.entities.Fixture;
 import FootballApp.entities.Manager;
-import FootballApp.modules.ManagerModule;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
-import FootballApp.utility.DataGenerator;
+import FootballApp.models.DatabaseModels;
+import FootballApp.models.TeamModel;
 import FootballApp.utility.DataIO;
 
-import javax.xml.crypto.Data;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
@@ -69,7 +66,7 @@ public class TeamModule {
 		System.out.print("\nEnter the Team Name (0=Back to Team Menu): ");
 		String teamName = sc.nextLine();
 		
-		List<Team> byTeamName = DataIO.teamDB.findByTeamName(teamName);
+		List<Team> byTeamName = DatabaseModels.teamDB.findByTeamName(teamName);
 		if (byTeamName.isEmpty()) {
 			System.out.println("Team not found!");
 			return;
@@ -93,14 +90,16 @@ public class TeamModule {
 			System.out.print("\nEnter Team ID (0=Back to Team Menu): ");
 			Integer teamID = sc.nextInt();
 			sc.nextLine();
-			Optional<Team> teamByID = DataIO.teamDB.findByID(teamID);
+			Optional<Team> teamByID = DatabaseModels.teamDB.findByID(teamID);
+			DatabaseModels dm = new DatabaseModels();
 
 			if (teamByID.isPresent()) {
 				if (teamByID.get().getTeamName().equals("BYE")){
 					System.out.println("Team not found!");
 				}
 				else {
-					System.out.println("\n" + teamByID.get());
+					TeamModel teamModel = new TeamModel(dm,teamByID.get());
+					teamModel.displayClubInfo();
 				}
 			}
 			else {
@@ -118,8 +117,8 @@ public class TeamModule {
 	
 	public static void displayTeams(Manager manager) {
 		System.out.println("\n-------------List of Teams-----------------------------------");
-		List<Team> teams = DataIO.teamDB.listAll();
-		Optional<Team> byID = DataIO.teamDB.findByID(manager.getCurrentTeamID());
+		List<Team> teams = DatabaseModels.teamDB.listAll();
+		Optional<Team> byID = DatabaseModels.teamDB.findByID(manager.getCurrentTeamID());
 		if(byID.isPresent()) {
 			System.out.println("Manager's Current Team:  ");
 			System.out.println(byID.get());
@@ -136,7 +135,7 @@ public class TeamModule {
 			if(teamID==0){
 				return;
 			}
-			Optional<Team> teamByID = DataIO.teamDB.findByID(teamID);
+			Optional<Team> teamByID = DatabaseModels.teamDB.findByID(teamID);
 			if (teamByID.isPresent()) {
 				System.out.println("\nTeam Details:  ");
 				System.out.println(teamByID.get());
@@ -145,7 +144,7 @@ public class TeamModule {
 				System.out.println("There is no team by that ID.");
 				return;
 			}
-			List<Player> players = DataIO.playerDB.findByTeamID(teamID);
+			List<Player> players = DatabaseModels.playerDB.findByTeamID(teamID);
 			if (players.isEmpty()) {
 				System.out.println("No players found for this team.");
 			} else {

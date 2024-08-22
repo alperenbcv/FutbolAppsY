@@ -4,18 +4,26 @@ import FootballApp.enums.EMatchStatus;
 
 import java.time.LocalDate;
 
-public class Match {
-
+public class Match extends BaseEntity {
+    private static Integer matchCounter = 0;
+    
     private int homeTeamId;
     private int awayTeamId;
     private LocalDate matchDate;
     private EMatchStatus status;
-
-    public Match(int homeTeamId, int awayTeamId, LocalDate matchDate, EMatchStatus status) {
+    private Integer leagueId;
+    
+    public Match() {
+        super(++matchCounter);
+    }
+    
+    public Match(int homeTeamId, int awayTeamId, LocalDate matchDate, EMatchStatus status, Integer leagueId) {
+        super(++matchCounter);
         this.homeTeamId = homeTeamId;
         this.awayTeamId = awayTeamId;
         this.matchDate = matchDate;
         this.status = status;
+        this.leagueId = leagueId;
     }
 
     public int getHomeTeamId() {
@@ -37,7 +45,15 @@ public class Match {
     public void setStatus(EMatchStatus status) {
         this.status = status;
     }
-
+    
+    public Integer getLeagueId() {
+        return leagueId;
+    }
+    
+    public void setLeagueId(Integer leagueId) {
+        this.leagueId = leagueId;
+    }
+    
     @Override
     public String toString() {
         return "Match{" +
