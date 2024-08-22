@@ -1,6 +1,7 @@
 package FootballApp.entities;
 
 import FootballApp.enums.EMatchStatus;
+import FootballApp.models.DatabaseModels;
 
 import java.time.LocalDate;
 
@@ -24,6 +25,7 @@ public class Match extends BaseEntity {
         this.matchDate = matchDate;
         this.status = status;
         this.leagueId = leagueId;
+        DatabaseModels.matchDB.save(this);
     }
 
     public int getHomeTeamId() {

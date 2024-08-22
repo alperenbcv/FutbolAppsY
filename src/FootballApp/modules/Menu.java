@@ -1,6 +1,5 @@
 package FootballApp.modules;
 
-import FootballApp.entities.Fixture;
 import FootballApp.entities.Manager;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,9 +24,9 @@ public class Menu {
 		while (!validInput) {
 			if (loggedManager == null)
 				System.out.println("1-Log In");
-			System.out.println("2-Team Menu");
-			System.out.println("3-Player Menu");
-			System.out.println("4-League Menu");
+			System.out.println("2-League Menu");
+			System.out.println("3-Team Menu");
+			System.out.println("4-Player Menu");
 			System.out.println("5-Fixture Menu");
 			if (loggedManager != null)
 				System.out.println("9-Log Out");
@@ -63,9 +62,9 @@ public class Menu {
 	private static void menuSelection(int userInput) {
 		switch (userInput) {
 			case 1 -> loggedManager=LogInModule.managerLogIn();
-			case 2 -> TeamModule.startTeamMenu();
-			case 3 -> PlayerModule.playerMenu();
-			case 4 -> LeagueModule.startLeagueMenu();
+			case 2 -> LeagueModule.startLeagueMenu();
+			case 3 -> TeamModule.startTeamMenu();
+			case 4 -> PlayerModule.startPlayerMenu();
 			case 5 -> FixtureModule.startFixtureMenu();
 			case 9 -> loggedManager=LogInModule.managerLogOut();
 			case 0 -> System.out.println("\nHave a nice day!");

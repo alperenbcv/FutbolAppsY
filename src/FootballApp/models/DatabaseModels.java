@@ -7,6 +7,5 @@ public class DatabaseModels {
 	public static ManagerDB managerDB = new ManagerDB();
 	public static PlayerDB playerDB = new PlayerDB();
 	public static LeagueDB leagueDB = new LeagueDB();
-	public static FixtureDB fixtureDB= new FixtureDB();
 	public static MatchDB matchDB = new MatchDB();
 }

@@ -123,6 +123,27 @@ public class LeagueModule {
             lm.displayLeagueInfo();
         }
     }
-
-
+    
+    protected static Integer validLeagueIDControl() {
+        Integer leagueID=null;
+        boolean validLeagueID = false;
+        do {
+            try {
+                System.out.print("Please Enter a League ID: ");
+                leagueID = sc.nextInt();
+                sc.nextLine();
+                Optional<League> league = DatabaseModels.leagueDB.findByID(leagueID);
+                if (league.isPresent()) {
+                    validLeagueID = true;
+                } else {
+                    System.out.println("Please enter a valid League ID.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a numeric value!");
+                sc.nextLine();
+            }
+        } while (!validLeagueID);
+        
+        return leagueID;
+    }
 }

@@ -2,11 +2,9 @@ package FootballApp.models;
 
 import FootballApp.entities.*;
 import FootballApp.enums.ERegion;
-import FootballApp.utility.DataIO;
 
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LeagueModel {
 	private static Integer leagueCounter=0;
@@ -27,7 +25,7 @@ public class LeagueModel {
 		this.databaseModel=databaseModel;
 		this.id=league.getId();
 		this.leagueName=league.getLeagueName();
-		this.regionList=league.getRegionList();
+		this.regionList=league.getRegion();
 		this.season=league.getSeason();
 		this.division=league.getDivision();
 		this.leagueTeamList= DatabaseModels.teamDB.findAllByLeagueID(id);

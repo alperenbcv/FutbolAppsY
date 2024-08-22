@@ -1,5 +1,7 @@
 package FootballApp.entities;
 
+import FootballApp.models.DatabaseModels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class Team extends BaseEntity implements Observable {
 		this.stadiumName = stadiumName;
 		this.transferBudget = transferBudget;
 		this.wageBudget = wageBudget;
+		DatabaseModels.teamDB.save(this);
 	}
 	
 	

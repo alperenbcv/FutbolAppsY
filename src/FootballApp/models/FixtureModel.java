@@ -1,6 +1,5 @@
 package FootballApp.models;
 
-import FootballApp.entities.Fixture;
 import FootballApp.entities.League;
 import FootballApp.entities.Match;
 import FootballApp.entities.Team;

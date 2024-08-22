@@ -1,16 +1,11 @@
 package FootballApp.modules;
 
-import FootballApp.entities.Fixture;
 import FootballApp.entities.League;
-import FootballApp.entities.Match;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
 import FootballApp.models.FixtureModel;
-import FootballApp.models.TeamModel;
-import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 

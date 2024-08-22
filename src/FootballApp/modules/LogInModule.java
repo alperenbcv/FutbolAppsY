@@ -1,5 +1,6 @@
 package FootballApp.modules;
 
+import FootballApp.entities.League;
 import FootballApp.entities.Manager;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
@@ -13,15 +14,34 @@ import java.util.Scanner;
 public class LogInModule {
 	static Scanner sc = new Scanner(System.in);
 	static Manager loggedManager = null;
-
+	
 	public static Manager managerLogIn() {
 		System.out.println("\nWelcome to the Football Manager App!");
 		System.out.println("\nPlease choose a league first!");
-		System.out.println("---------------Available Leagues------------------");
+		System.out.println("\n---------------Available Leagues------------------");
 		LeagueModule.displayAllLeagues();
-		System.out.println("Please Enter a League ID: ");
-		Integer leagueID = sc.nextInt();
-		System.out.println("\n---------------Available Managers of The League------------------");
+		
+		Integer leagueID = null;
+		boolean validLeagueID = false;
+		
+		do {
+			try {
+				System.out.print("Please Enter a League ID: ");
+				leagueID = sc.nextInt();
+				sc.nextLine();
+				Optional<League> league = DatabaseModels.leagueDB.findByID(leagueID);
+				if (league.isPresent()) {
+					validLeagueID = true;
+				} else {
+					System.out.println("Please enter a valid League ID.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Enter a numeric value!");
+				sc.nextLine();
+			}
+		} while (!validLeagueID);
+		
+		System.out.println("\n---------------Available Managers in The League------------------");
 		List<Manager> all = DatabaseModels.managerDB.findByLeagueID(leagueID);
 		all.stream().forEach(manager -> {
 			Optional<Team> byID = DatabaseModels.teamDB.findByID(manager.getCurrentTeamID());
@@ -29,13 +49,12 @@ public class LogInModule {
 				System.out.println(manager.getId() + " " + manager.getName() + " " + manager.getSurName() + " " + byID.get().getTeamName());
 			}
 		});
-
-
+		
 		boolean validInput = false;
 		do {
 			System.out.print("Enter a Manager ID to see login information: ");
 			Optional<Integer> managerID = Optional.empty();
-
+			
 			try {
 				managerID = Optional.of(sc.nextInt());
 			} catch (InputMismatchException e) {
@@ -43,12 +62,12 @@ public class LogInModule {
 				sc.nextLine();
 				continue;
 			}
-
+			
 			sc.nextLine();
-
+			
 			if (managerID.isPresent()) {
 				int id = managerID.get();
-				if(id == 0){
+				if (id == 0) {
 					return null;
 				}
 				if (id > 0 && id <= DatabaseModels.managerDB.listAll().size()) {
@@ -66,13 +85,13 @@ public class LogInModule {
 				}
 			}
 		} while (!validInput);
-
+		
 		do {
 			System.out.print("\nEnter your Username: ");
 			String username = sc.nextLine();
 			System.out.print("Enter your Password: ");
 			String password = sc.nextLine();
-
+			
 			Optional<Manager> byUsernameAndPassword = DatabaseModels.managerDB.findByUsernameAndPassword(username, password);
 			if (byUsernameAndPassword.isPresent()) {
 				System.out.println("Login Successful!");

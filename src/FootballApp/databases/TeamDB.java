@@ -2,6 +2,7 @@ package FootballApp.databases;
 
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
+import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DatabaseManager;
 import FootballApp.utility.ObserverInitializer;
 
@@ -52,6 +53,15 @@ public class TeamDB extends DatabaseManager<Team> {
 		}
 		return foundTeams;
 	}
-
+	
+	public List<Integer> findAllTeamIDsByLeagueID(Integer leagueID) {
+		List<Integer> foundTeams = new ArrayList<>();
+		for (Team team : veriListesi) {
+			if (team.getLeagueID() == leagueID) {
+				foundTeams.add(team.getId());
+			}
+		}
+		return foundTeams;
+	}
 
 }

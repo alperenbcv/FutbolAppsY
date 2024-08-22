@@ -1,8 +1,10 @@
 package FootballApp.entities;
 
 import FootballApp.enums.ERegion;
+import FootballApp.models.DatabaseModels;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class League extends BaseEntity{
@@ -10,30 +12,36 @@ public class League extends BaseEntity{
 	
 	private String leagueName;
 	private Integer leagueStandingTableID;
-	private List<Integer> leagueTeamIDList;
-	private Integer leagueFixtureID;
-	private ERegion regionList;
+	private ERegion region;
 	private String season;
 	private Integer division;
 	private LocalDate seasonStartDate;
 	private LocalDate seasonEndDate;
+	private List<Integer> leagueTeamIDList;
 
 	public League() {
 		super(++leagueCounter);
 	}
 
-	public League(String leagueName,Integer leagueStandingTable, List<Integer> leagueTeamIDList, Integer leagueFixtureID, String season, Integer division, ERegion regionList) {
+	public League(String leagueName,Integer leagueStandingTable, String season, Integer division, ERegion region) {
 		super(++leagueCounter);
 		this.leagueName = leagueName;
 		this.leagueStandingTableID = leagueStandingTable;
-		this.leagueTeamIDList = leagueTeamIDList;
-		this.leagueFixtureID = leagueFixtureID;
-//		this.teamIDList = teamIDList;
 		this.season = season;
 		this.division = division;
-		this.regionList = regionList;
+		this.region = region;
+		this.leagueTeamIDList = new ArrayList<>();
 		this.seasonStartDate = LocalDate.of(2024, 8, 23);
 		this.seasonEndDate = LocalDate.of(2025, 6, 1);
+		DatabaseModels.leagueDB.save(this);
+	}
+	
+	public List<Integer> getLeagueTeamIDList() {
+		return leagueTeamIDList;
+	}
+	
+	public void setLeagueTeamIDList(Integer teamID) {
+		this.leagueTeamIDList.add(teamID);
 	}
 	
 	public LocalDate getSeasonStartDate() {
@@ -76,28 +84,12 @@ public class League extends BaseEntity{
 		this.leagueStandingTableID = leagueStandingTableID;
 	}
 	
-	public List<Integer> getLeagueTeamIDList() {
-		return leagueTeamIDList;
+	public ERegion getRegion() {
+		return region;
 	}
 	
-	public void setLeagueTeamIDList(List<Integer> leagueTeamIDList) {
-		this.leagueTeamIDList = leagueTeamIDList;
-	}
-	
-	public Integer getLeagueFixtureID() {
-		return leagueFixtureID;
-	}
-	
-	public void setLeagueFixtureID(Integer leagueFixtureID) {
-		this.leagueFixtureID = leagueFixtureID;
-	}
-	
-	public ERegion getRegionList() {
-		return regionList;
-	}
-	
-	public void setRegionList(ERegion regionList) {
-		this.regionList = regionList;
+	public void setRegion(ERegion region) {
+		this.region = region;
 	}
 	
 	public String getSeason() {
@@ -118,6 +110,6 @@ public class League extends BaseEntity{
 	
 	@Override
 	public String toString() {
-		return "League{" + "id=" + getId() + ", leagueName='" + getLeagueName() + '\'' + ", regionList=" + getRegionList() + ", division=" + division + ", season='" + season + '\'' + ", leagueTeamIDList=" + leagueTeamIDList + ", leagueStandingTableID=" + leagueStandingTableID + ", leagueFixtureID=" + leagueFixtureID + '}';
+		return "League{" + "id=" + getId() + ", leagueName='" + getLeagueName() + '\'' + ", regionList=" + getRegion() + ", division=" + division + ", season='" + season + '\'' + ", leagueTeamIDList=" + leagueTeamIDList + ", leagueStandingTableID=" + leagueStandingTableID+'}';
 	}
 }

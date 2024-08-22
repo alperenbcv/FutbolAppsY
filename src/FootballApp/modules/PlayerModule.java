@@ -4,7 +4,6 @@ import FootballApp.entities.Player;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
 import FootballApp.models.PlayerModel;
-import FootballApp.utility.DataIO;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -15,7 +14,7 @@ public class PlayerModule {
     static Scanner sc = new Scanner(System.in);
     static DatabaseModels databaseModel = new DatabaseModels();
 
-    public static void playerMenu() {
+    public static void startPlayerMenu() {
         int userInput;
         do {
             userInput = playerMenuEntry();
@@ -65,8 +64,9 @@ public class PlayerModule {
     }
 
     private static void displayPlayersByTeam() {
+        Integer leagueID = LeagueModule.validLeagueIDControl();
         System.out.println("\n------------------List of all Player ID's by Team-----------------------");
-        List<Team> teams = DatabaseModels.teamDB.listAll();
+        List<Team> teams = DatabaseModels.teamDB.findAllByLeagueID(leagueID);
         teams.forEach(team -> {
             if(!team.getTeamName().equalsIgnoreCase("bye")) {
                 System.out.println("\nTeam ID: " + team.getId() + ", Team Name: " + team.getTeamName());

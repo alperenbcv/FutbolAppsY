@@ -1,5 +1,6 @@
 package FootballApp.modules;
 
+import FootballApp.entities.League;
 import FootballApp.entities.Manager;
 import FootballApp.entities.Player;
 import FootballApp.entities.Team;
@@ -125,8 +126,9 @@ public class TeamModule {
 	}
 	
 	public static void displayAllTeams(Manager manager) {
+		Integer leagueID = LeagueModule.validLeagueIDControl();
 		System.out.println("\n-------------List of Teams-----------------------------------");
-		List<Team> teams = DatabaseModels.teamDB.listAll();
+		List<Team> teams = DatabaseModels.teamDB.findAllByLeagueID(leagueID);
 		Optional<Team> byID = DatabaseModels.teamDB.findByID(manager.getCurrentTeamID());
 		if(byID.isPresent()) {
 			System.out.println("Manager's Current Team:  ");
