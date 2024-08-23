@@ -1,6 +1,7 @@
 package FootballApp.models;
 
 import FootballApp.entities.*;
+import FootballApp.enums.EMatchStatus;
 import FootballApp.enums.ERegion;
 
 import java.time.LocalDate;
@@ -49,44 +50,65 @@ public class LeagueModel {
 			teamStanding.put(rank++,ts);
 		}
 	}
-
+	
 	public void displayStandingTable() {
 		System.out.println("League Standings:");
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Rank | Team Name            | Played | Points | Avg | GF | GA ");
 		System.out.println("----------------------------------------------------------------");
-
-		int rank = 1; // Takım sıralaması için sayaç
-
+		
 		for (Map.Entry<Integer, TeamStats> entry : teamStanding.entrySet()) {
+			Integer rank = entry.getKey();
 			TeamStats stats = entry.getValue();
 			String teamName = DatabaseModels.teamDB.findByID(stats.getTeamID())
-					.map(Team::getTeamName)
-					.orElse("Unknown");
-
-			// Eğer takım adı "BYE" ise, atla
+			                                       .map(Team::getTeamName)
+			                                       .orElse("Unknown");
+			
+			
 			if ("BYE".equalsIgnoreCase(teamName)) {
 				continue;
 			}
-
+			
 			System.out.printf("%-4d | %-20s | %-6d | %-6d | %-3d | %-3d | %-3d \n",
-					rank,
-					teamName,
-					stats.getGamesPlayed(),
-					stats.getTotalPoint(),
-					stats.getAverage(),
-					stats.getGoalScored(),
-					stats.getGoalConceded());
-
-			rank++; // Her döngüde sıralamayı artır
+			                  rank,
+			                  teamName,
+			                  stats.getGamesPlayed(),
+			                  stats.getTotalPoint(),
+			                  stats.getAverage(),
+			                  stats.getGoalScored(),
+			                  stats.getGoalConceded());
 		}
-
+		
 		System.out.println("----------------------------------------------------------------");
 	}
-
-
-
-
+	
+	
+	public void displayConcludedMatches() {
+		System.out.println("Played Matches in League: " + this.leagueName);
+		System.out.println("--------------------------------------------------");
+		
+		matchList.sort(Comparator.comparing(Match::getMatchDate));
+		for (Match match : matchList) {
+			
+			if (match.getStatus() == EMatchStatus.PLAYED) {
+				
+				String homeTeamName = DatabaseModels.teamDB.findByID(match.getHomeTeamId())
+				                                           .map(Team::getTeamName)
+				                                           .orElse("Unknown");
+				String awayTeamName = DatabaseModels.teamDB.findByID(match.getAwayTeamId())
+				                                           .map(Team::getTeamName)
+				                                           .orElse("Unknown");
+				
+				
+				System.out.println("Date: " + match.getMatchDate() + " | " + homeTeamName +" "+ match.getHomeTeamScore() +" - "+ match.getAwayTeamScore() +" "+ awayTeamName);
+			}
+		}
+		
+		System.out.println("--------------------------------------------------");
+	}
+	
+	
+	
 	public void displayLeagueInfo() {
 		System.out.println("--------------------------------------------------");
 		System.out.println("League Information:");

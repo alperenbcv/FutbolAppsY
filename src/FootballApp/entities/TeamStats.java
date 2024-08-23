@@ -36,7 +36,7 @@ public class TeamStats extends BaseEntity {
 		this.average = 0;
 		this.gamesPlayed = 0;
 		this.totalPoint = 0;
-		this.lastUpdateDate = LocalDate.MIN; // Initialize to the earliest possible date
+		this.lastUpdateDate = LocalDate.of(2024, 8, 22);
 		DatabaseModels.tsDB.save(this);
 	}
 

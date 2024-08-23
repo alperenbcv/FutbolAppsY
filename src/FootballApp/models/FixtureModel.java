@@ -49,6 +49,7 @@ public class FixtureModel {
             }
         }
     }
+    
     public void displayTeamFixture(String teamName) {
         System.out.println("--------------------------------------------------");
         System.out.println("Fixture Information:");

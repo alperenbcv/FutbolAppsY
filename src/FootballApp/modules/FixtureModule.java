@@ -73,12 +73,30 @@ public class FixtureModule {
 	}
 	
 	private static void displayFixtureByLeague() {
-		System.out.println("Enter a League ID:");
-		Integer leagueId=sc.nextInt();
-		Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueId);
-		if(byID.isPresent()){
-		FixtureModel fm=new FixtureModel(DatabaseModels.getInstance(),byID.get());
-		fm.displayLeagueFixture();
+		Integer leagueId = null;
+		boolean validInput = false;
+		
+		do {
+			try {
+				System.out.println("Enter a League ID:");
+				leagueId = sc.nextInt();
+				sc.nextLine();
+				validInput = true;
+			} catch (InputMismatchException e) {
+				System.out.println("Please enter a numeric value!");
+				sc.nextLine();
+			}
+		} while (!validInput);
+		
+		if (leagueId != null) {
+			Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueId);
+			if (byID.isPresent()) {
+				FixtureModel fm = new FixtureModel(DatabaseModels.getInstance(), byID.get());
+				fm.displayLeagueFixture();
+			} else {
+				System.out.println("Please enter a valid League ID!");
+			}
 		}
 	}
+	
 }

@@ -1,15 +1,13 @@
 package FootballApp.modules;
 
-import FootballApp.databases.TeamStatDB;
 import FootballApp.entities.Match;
 import FootballApp.entities.TeamStats;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
-import FootballApp.models.LeagueModel;
 import FootballApp.models.MatchModel;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -60,17 +58,21 @@ public class MatchModule {
 			case 1 -> displayTodaysGame();
 			case 2 -> displayCurrentDate();
 			case 3 -> displayResults();
-			case 4 -> displayTodayResults();
+			case 4 -> displayYesterdaysResults();
 			case 5 -> skipDay();
 			case 0 -> System.out.println("\nReturning to Main Menu...\n");
 			default-> System.out.println("Please enter a valid value!");
 		}
 	}
 	
-	private static void displayTodayResults() {
+	private static void displayYesterdaysResults() {
 		List<Match> matchesOfTheDay =
 				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(gameLocalDate.minusDays(1)))
 				                      .collect(Collectors.toList());
+		if(matchesOfTheDay.isEmpty()){
+			System.out.println("\nNo match played yesterday! " + gameLocalDate.minusDays(1));
+			return;
+		}
 		for (Match match : matchesOfTheDay) {
 			MatchModel mm = new MatchModel(DatabaseModels.getInstance(), match);
 			mm.displayPlayedMatchInfo();
@@ -78,15 +80,30 @@ public class MatchModule {
 	}
 	
 	private static void displayResults() {
-		System.out.println("Enter a date to display match results (YYYY-MM-DD): ");
-		LocalDate selectedDate = LocalDate.parse(sc.nextLine());
-		List<Match> matchesOfTheDay =
-				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(selectedDate))
-				                      .collect(Collectors.toList());
-		if (matchesOfTheDay.isEmpty()) {
-			System.out.println("No matches played for the day!");
+		
+		LocalDate selectedDate = null;
+		boolean validInput = false;
+		
+		while (!validInput) {
+			System.out.println("\nEnter a date to display match results (YYYY-MM-DD): ");
+			try {
+				selectedDate = LocalDate.parse(sc.nextLine());
+				validInput = true;
+			} catch (DateTimeParseException e) {
+				System.out.println("Please enter a valid date (YYYY-MM-DD)!");
+			}
 		}
-		else {
+		
+		final LocalDate finalSelectedDate = selectedDate;
+		
+		List<Match> matchesOfTheDay =
+				DatabaseModels.matchDB.listAll().stream()
+				                      .filter(match -> match.getMatchDate().equals(finalSelectedDate))
+				                      .collect(Collectors.toList());
+		
+		if (matchesOfTheDay.isEmpty()) {
+			System.out.println("\nNo matches played for the day!");
+		} else {
 			for (Match match : matchesOfTheDay) {
 				MatchModel mm = new MatchModel(DatabaseModels.getInstance(), match);
 				mm.displayPlayedMatchInfo();
@@ -94,19 +111,23 @@ public class MatchModule {
 		}
 	}
 	
+	
+	
 	private static void skipDay() {
 		simulateGames();
 		gameLocalDate = gameLocalDate.plusDays(1);
-		System.out.println("Day skipped to: " + gameLocalDate);
+		System.out.println("\nDay skipped to: " + gameLocalDate);
+		int gameCount = simulateGames();
+		System.out.println(gameCount + " games simulated" );
 	}
 	
-	private static void simulateGames() {
+	private static Integer simulateGames() {
 		List<Match> matchesOfTheDay =
 				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(gameLocalDate))
 				                      .toList();
 		
 		if (matchesOfTheDay.isEmpty()) {
-			System.out.println("No matches scheduled for today!");
+			System.out.println("\nNo matches scheduled for today!");
 		}
 		else {
 			Random random = new Random();
@@ -138,18 +159,22 @@ public class MatchModule {
 				DatabaseModels.tsDB.update(ts);
 			}
 		}
+		return matchesOfTheDay.size();
 	}
 
 	private static void displayCurrentDate() {
-		System.out.println("Current Game Date: " + gameLocalDate);
+		System.out.println("\nCurrent Game Date: " + gameLocalDate);
 	}
 	
 	private static void displayTodaysGame() {
-		System.out.println("Matches of the Day (" + gameLocalDate + "):");
+		System.out.println("\nMatches of the Day (" + gameLocalDate + "):");
 		
 		List<Match> matchesOfTheDay =
 				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(gameLocalDate))
 				                      .collect(Collectors.toList());
+		
+		System.out.println("\n"+matchesOfTheDay.size() + " matches scheduled today!");
+		System.out.println();
 		
 		if(matchesOfTheDay.isEmpty()) {
 			System.out.println("No matches scheduled for today!");

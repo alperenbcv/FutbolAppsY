@@ -34,12 +34,13 @@ public class LeagueModule {
             System.out.println("2-Find League by ID");
             System.out.println("3-Find League by Name");
             System.out.println("4-League Standing Table");
+            System.out.println("5-Concluded Matches of the Selected League");
             System.out.println("0-Main Menu");
             System.out.print("Selection: ");
             try {
                 userInput = sc.nextInt();
                 sc.nextLine();
-                if(userInput >= 0 && userInput <= 4) {
+                if(userInput >= 0 && userInput <= 5) {
                     validInput = true;
                 }
                 else {
@@ -59,33 +60,69 @@ public class LeagueModule {
             case 2 -> displayLeagueByID();
             case 3 -> displayLeagueByName();
             case 4 -> displayStandingTable();
+            case 5 -> displayConcludedMatches();
             case 0 -> System.out.println("\nReturning to Main Menu...\n");
             default-> System.out.println("Please enter a valid value!");
         }
     }
-
-    private static void displayStandingTable(){
-        System.out.println("Enter a League ID to display Standing Table: (0=Back to Team Menu)");
+    
+    private static void displayConcludedMatches() {
         Integer leagueID = null;
-        try {
-            leagueID = sc.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Please enter a numeric value!");
+        boolean validInput = false;
+        do {
+            System.out.println("Enter a League ID to display Concluded Matches: (0=Back to Team Menu)");
+            try {
+                leagueID = sc.nextInt();
+                if (leagueID == 0) {
+                    return;
+                }
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a numeric value!");
+                sc.nextLine();
+            }
+        } while (!validInput);
+        
+        Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+        if (byID.isPresent()) {
+            LeagueModel leagueModel = new LeagueModel(DatabaseModels.getInstance(), byID.get());
+            leagueModel.displayConcludedMatches();
+        } else {
+            System.out.println("League not found!");
         }
-        if(leagueID==0){
+    }
+    
+    
+    private static void displayStandingTable() {
+        Integer leagueID = null;
+        boolean validInput = false;
+        
+        do {
+            System.out.println("\nEnter a League ID to display Standing Table: (0=Back to Team Menu)");
+            try {
+                leagueID = sc.nextInt();
+                sc.nextLine();
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a numeric value!");
+                sc.nextLine();
+            }
+        } while (!validInput);
+        
+        if (leagueID == 0) {
             return;
         }
-
+        
         Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
-        if(byID.isPresent()){
-            LeagueModel leagueModel=new LeagueModel(DatabaseModels.getInstance(),byID.get());
+        if (byID.isPresent()) {
+            LeagueModel leagueModel = new LeagueModel(DatabaseModels.getInstance(), byID.get());
             leagueModel.displayStandingTable();
-        }
-        else {
+        } else {
             System.out.println("Please enter a valid ID!");
         }
     }
-
+    
+    
     private static void displayLeagueByName() {
         System.out.println("Enter a League Name: (0=Back to Team Menu)");
         String leagueName=sc.nextLine();
@@ -94,7 +131,7 @@ public class LeagueModule {
         }
         List<League> byPartialLeagueName = DatabaseModels.leagueDB.findByPartialLeagueName(leagueName);
         if(byPartialLeagueName.isEmpty()){
-            System.out.println("No league found with the name you've entered!");
+            System.out.println("\nNo league found with the name you've entered!");
             return;
         }
         else {
@@ -131,7 +168,7 @@ public class LeagueModule {
                         System.out.println("An error occurred while displaying league information: " + e.getMessage());
                     }
                 } else {
-                    System.out.println("League not found! Please enter a valid ID.");
+                    System.out.println("\nLeague not found! Please enter a valid ID.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Enter a numeric value!");
@@ -171,7 +208,7 @@ public class LeagueModule {
                     System.out.println("An error occurred while displaying league information: " + e.getMessage());
                 }
             } else {
-                System.out.println("League not found! Please enter a valid ID.");
+                System.out.println("\nLeague not found! Please enter a valid ID.");
             }
         }
     }
