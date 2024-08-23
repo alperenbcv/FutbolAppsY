@@ -16,6 +16,9 @@ public class DatabaseModels implements Observer {
 	public static MatchDB matchDB = new MatchDB();
 	
 	
+	private DatabaseModels() {
+	}
+	
 	public static DatabaseModels getInstance() {
 		return instance;
 	}

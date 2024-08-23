@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class LeagueModule {
 
     static Scanner sc = new Scanner(System.in);
-    static DatabaseModels databaseModel = new DatabaseModels();
+   
 
     public static void startLeagueMenu() {
         int userInput;
@@ -98,7 +98,7 @@ public class LeagueModule {
                 Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
                 if (byID.isPresent()) {
                     try {
-                        LeagueModel lm = new LeagueModel(databaseModel, byID.get());
+                        LeagueModel lm = new LeagueModel(DatabaseModels.getInstance(), byID.get());
                         lm.displayLeagueInfo();
                         lm.displayLeagueTeams();
                         break;
@@ -138,7 +138,7 @@ public class LeagueModule {
             Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
             if (byID.isPresent()) {
                 try {
-                    LeagueModel lm = new LeagueModel(databaseModel, byID.get());
+                    LeagueModel lm = new LeagueModel(DatabaseModels.getInstance(), byID.get());
                     lm.displayLeagueInfo();
                     lm.displayLeagueTeams();
                     break;
@@ -155,7 +155,7 @@ public class LeagueModule {
     protected static void displayAllLeagues() {
         List<League> leagues = DatabaseModels.leagueDB.listAll();
         for(League league:leagues){
-            LeagueModel lm=new LeagueModel(databaseModel,league);
+            LeagueModel lm=new LeagueModel(DatabaseModels.getInstance(),league);
             lm.displayLeagueInfo();
         }
     }

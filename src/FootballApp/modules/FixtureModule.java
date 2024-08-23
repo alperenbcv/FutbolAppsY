@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class FixtureModule {
 	static Scanner sc = new Scanner(System.in);
-	static DatabaseModels databaseModel = new DatabaseModels();
+	
 	public static void startFixtureMenu() {
 		int userInput;
 		do {
@@ -63,7 +63,7 @@ public class FixtureModule {
 			Integer leagueID = byName.get().getLeagueID();
 			Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
 			if(byID.isPresent()){
-				FixtureModel fm=new FixtureModel(databaseModel,byID.get());
+				FixtureModel fm=new FixtureModel(DatabaseModels.getInstance(),byID.get());
 				fm.displayTeamFixture(name);
 			}
 		}
@@ -77,7 +77,7 @@ public class FixtureModule {
 		Integer leagueId=sc.nextInt();
 		Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueId);
 		if(byID.isPresent()){
-		FixtureModel fm=new FixtureModel(databaseModel,byID.get());
+		FixtureModel fm=new FixtureModel(DatabaseModels.getInstance(),byID.get());
 		fm.displayLeagueFixture();
 		}
 	}

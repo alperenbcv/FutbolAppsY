@@ -30,9 +30,9 @@ public class Match extends BaseEntity implements Observable {
         this.matchDate = matchDate;
         this.status = status;
         this.leagueId = leagueId;
-        DatabaseModels.matchDB.save(this);
         this.homeTeamScore=0;
         this.awayTeamScore=0;
+        DatabaseModels.matchDB.save(this);
     }
     
     public Integer getHomeTeamScore() {

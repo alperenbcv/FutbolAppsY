@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class PlayerModule {
     static Scanner sc = new Scanner(System.in);
-    static DatabaseModels databaseModel = new DatabaseModels();
 
     public static void startPlayerMenu() {
         int userInput;
@@ -91,7 +90,7 @@ public class PlayerModule {
             }
             Optional<Player> byID = DatabaseModels.playerDB.findByID(playerID);
             if (byID.isPresent()) {
-                PlayerModel playerModel=new PlayerModel(databaseModel,byID.get());
+                PlayerModel playerModel=new PlayerModel(DatabaseModels.getInstance(),byID.get());
                 playerModel.displayPlayerInfo();
             } else {
                 System.out.println("Player not found!");
@@ -156,7 +155,7 @@ public class PlayerModule {
 
         Optional<Player> player = DatabaseModels.playerDB.findByID(playerID);
         if (player.isPresent()) {
-            PlayerModel playerModel=new PlayerModel(databaseModel,player.get());
+            PlayerModel playerModel=new PlayerModel(DatabaseModels.getInstance(),player.get());
             playerModel.displayPlayerInfo();
         } else {
             System.out.println("Player not found!");

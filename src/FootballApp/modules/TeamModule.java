@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class TeamModule {
 	static Scanner sc = new Scanner(System.in);
-	static DatabaseModels databaseModel = new DatabaseModels();
+	
 	
 	public static void startTeamMenu() {
 		int userInput;
@@ -99,7 +99,7 @@ public class TeamModule {
 					System.out.println("Team not found!");
 				}
 				else {
-					TeamModel teamModel = new TeamModel(databaseModel, teamByID.get());
+					TeamModel teamModel = new TeamModel(DatabaseModels.getInstance(), teamByID.get());
 					teamModel.displayClubInfo();
 					List<Player> players = DatabaseModels.playerDB.findByTeamID(teamID);
 					if (players.isEmpty()) {
@@ -148,7 +148,7 @@ public class TeamModule {
 			}
 			Optional<Team> teamByID = DatabaseModels.teamDB.findByID(teamID);
 			if (teamByID.isPresent()) {
-				TeamModel tm=new TeamModel(databaseModel,teamByID.get());
+				TeamModel tm=new TeamModel(DatabaseModels.getInstance(),teamByID.get());
 				System.out.println("\nTeam Details:  ");
 				tm.displayClubInfo();
 			}

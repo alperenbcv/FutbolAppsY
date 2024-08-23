@@ -1,7 +1,6 @@
 package FootballApp.utility;
 
 import FootballApp.entities.*;
-import FootballApp.entities.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.enums.EPosition;
@@ -22,21 +21,25 @@ public class DataIO{
 	static FixtureGenerator fg = new FixtureGenerator();
 	
 	public static void dataIOInitialize() {
-		if (!file.exists() || file.length() == 0 && !file2.exists() || file2.length() == 0 && !file3.exists() || file3.length() == 0 && !file5.exists() || file5.length() == 0 && !file4.exists() || file4.length() == 0) {
-			savePlayersToFile();
-			saveTeamsToFile();
-			saveManagersToFile();
-			saveLeaguesToFile();
-			saveMatchesToFile();
-		}
 		generateLeagues();
 		generateTeams();
 		setTeamsToLeague();
 		generateManagers();
 		generatePlayers();
-		generateMatches();
-//		generateFixtures();
+		readMatches();
 		initializeObservers();
+		
+//	    	generateFixtures();
+//			savePlayersToFile();
+//			saveTeamsToFile();
+//			saveManagersToFile();
+//			saveLeaguesToFile();
+//			saveMatchesToFile();
+		
+	
+		
+		
+		
 		System.out.println("Total loaded entities: " + totalEntities());
 		}
 	
@@ -67,14 +70,17 @@ public class DataIO{
 						             + match.getAwayTeamId() + ","
 						             + match.getMatchDate() + ","
 						             + match.getStatus() + ","
-						             + match.getLeagueId() + "\n");
+						             + match.getLeagueId() + ","
+						             + match.getHomeTeamScore() + ","
+						             + match.getAwayTeamScore() + ","
+						             + "\n");
 			}
 		} catch (IOException e) {
 			System.err.println("Error while writing matches.txt: " + e.getMessage());
 		}
 	}
 	
-	public static void generateMatches() {
+	public static void readMatches() {
 		
 		try (Scanner sc = new Scanner(new FileReader("matches.txt"))) {
 			while (sc.hasNextLine()) {
