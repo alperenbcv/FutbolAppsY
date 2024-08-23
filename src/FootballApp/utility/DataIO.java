@@ -28,6 +28,7 @@ public class DataIO{
 		generatePlayers();
 		readMatches();
 		initializeObservers();
+		TeamStats.teamStatGenerator();
 		
 //	    	generateFixtures();
 //			savePlayersToFile();

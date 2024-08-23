@@ -16,12 +16,12 @@ public class LeagueModel {
 	private String season;
 	private Integer division;
 	private List<Team> leagueTeamList;
-	//standing table field ekle!
 	private List<Match> matchList;
 	private LocalDate seasonStartDate;
 	private LocalDate seasonEndDate;
-//	Map<Team,List<Match>>
-//	Map<Integer,Stats>
+	private Map<Integer,TeamStats> teamStanding;
+
+
 	public LeagueModel(DatabaseModels databaseModel, League league) {
 		this.databaseModel=databaseModel;
 		this.id=league.getId();
@@ -33,7 +33,60 @@ public class LeagueModel {
 		this.matchList=DatabaseModels.matchDB.findByLeagueID(id);
 		this.seasonStartDate = LocalDate.of(2024, 8, 23);
 		this.seasonEndDate = LocalDate.of(2025, 6, 1);
+		this.teamStanding=new LinkedHashMap<>();
+		initializeStandingTable();
 	}
+
+	public void initializeStandingTable(){
+		List<TeamStats> teamStatsList = DatabaseModels.tsDB.findByLeagueID(this.id);
+		teamStatsList.sort(Comparator.comparing(TeamStats::getTotalPoint)
+				.thenComparing(TeamStats::getAverage)
+				.thenComparing(TeamStats::getGoalScored)
+				.reversed());
+
+		int rank=1;
+		for(TeamStats ts:teamStatsList){
+			teamStanding.put(rank++,ts);
+		}
+	}
+
+	public void displayStandingTable() {
+		System.out.println("League Standings:");
+		System.out.println("----------------------------------------------------------------");
+		System.out.println("Rank | Team Name            | Played | Points | Avg | GF | GA ");
+		System.out.println("----------------------------------------------------------------");
+
+		int rank = 1; // Takım sıralaması için sayaç
+
+		for (Map.Entry<Integer, TeamStats> entry : teamStanding.entrySet()) {
+			TeamStats stats = entry.getValue();
+			String teamName = DatabaseModels.teamDB.findByID(stats.getTeamID())
+					.map(Team::getTeamName)
+					.orElse("Unknown");
+
+			// Eğer takım adı "BYE" ise, atla
+			if ("BYE".equalsIgnoreCase(teamName)) {
+				continue;
+			}
+
+			System.out.printf("%-4d | %-20s | %-6d | %-6d | %-3d | %-3d | %-3d \n",
+					rank,
+					teamName,
+					stats.getGamesPlayed(),
+					stats.getTotalPoint(),
+					stats.getAverage(),
+					stats.getGoalScored(),
+					stats.getGoalConceded());
+
+			rank++; // Her döngüde sıralamayı artır
+		}
+
+		System.out.println("----------------------------------------------------------------");
+	}
+
+
+
+
 	public void displayLeagueInfo() {
 		System.out.println("--------------------------------------------------");
 		System.out.println("League Information:");

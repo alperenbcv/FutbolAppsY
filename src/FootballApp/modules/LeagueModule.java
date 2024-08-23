@@ -2,6 +2,7 @@ package FootballApp.modules;
 
 import FootballApp.entities.League;
 import FootballApp.entities.Manager;
+import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
 import FootballApp.models.LeagueModel;
 
@@ -32,12 +33,13 @@ public class LeagueModule {
             System.out.println("1-List of Leagues");
             System.out.println("2-Find League by ID");
             System.out.println("3-Find League by Name");
+            System.out.println("4-League Standing Table");
             System.out.println("0-Main Menu");
             System.out.print("Selection: ");
             try {
                 userInput = sc.nextInt();
                 sc.nextLine();
-                if(userInput >= 0 && userInput <= 3) {
+                if(userInput >= 0 && userInput <= 4) {
                     validInput = true;
                 }
                 else {
@@ -56,8 +58,31 @@ public class LeagueModule {
             case 1 -> displayAllLeagues();
             case 2 -> displayLeagueByID();
             case 3 -> displayLeagueByName();
+            case 4 -> displayStandingTable();
             case 0 -> System.out.println("\nReturning to Main Menu...\n");
             default-> System.out.println("Please enter a valid value!");
+        }
+    }
+
+    private static void displayStandingTable(){
+        System.out.println("Enter a League ID to display Standing Table: (0=Back to Team Menu)");
+        Integer leagueID = null;
+        try {
+            leagueID = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a numeric value!");
+        }
+        if(leagueID==0){
+            return;
+        }
+
+        Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+        if(byID.isPresent()){
+            LeagueModel leagueModel=new LeagueModel(DatabaseModels.getInstance(),byID.get());
+            leagueModel.displayStandingTable();
+        }
+        else {
+            System.out.println("Please enter a valid ID!");
         }
     }
 

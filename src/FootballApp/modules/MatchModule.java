@@ -1,16 +1,16 @@
 package FootballApp.modules;
 
+import FootballApp.databases.TeamStatDB;
 import FootballApp.entities.Match;
+import FootballApp.entities.TeamStats;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
+import FootballApp.models.LeagueModel;
 import FootballApp.models.MatchModel;
 
 import java.sql.SQLOutput;
 import java.time.LocalDate;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MatchModule {
@@ -97,14 +97,13 @@ public class MatchModule {
 	private static void skipDay() {
 		simulateGames();
 		gameLocalDate = gameLocalDate.plusDays(1);
-		
 		System.out.println("Day skipped to: " + gameLocalDate);
 	}
 	
 	private static void simulateGames() {
 		List<Match> matchesOfTheDay =
 				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(gameLocalDate))
-				                      .collect(Collectors.toList());
+				                      .toList();
 		
 		if (matchesOfTheDay.isEmpty()) {
 			System.out.println("No matches scheduled for today!");
@@ -116,10 +115,12 @@ public class MatchModule {
 				if(match.getHomeTeamId() == DatabaseModels.teamDB.findByName("BYE").get().getId()){
 					match.setHomeTeamScore(0);
 					match.setAwayTeamScore(3);
+					match.setStatus(EMatchStatus.PLAYED);
 				}
 				else if(match.getAwayTeamId() == DatabaseModels.teamDB.findByName("BYE").get().getId()){
                     match.setHomeTeamScore(3);
                     match.setAwayTeamScore(0);
+					match.setStatus(EMatchStatus.PLAYED);
                 }
 				else {
 					int homeTeamScore = random.nextInt(4);
@@ -130,8 +131,15 @@ public class MatchModule {
 				}
 			}
 		}
+		Optional<List<TeamStats>> all = DatabaseModels.tsDB.findAll();
+		if(all.isPresent()) {
+			for (TeamStats ts : all.get()) {
+				ts.teamStatUpdater(gameLocalDate);
+				DatabaseModels.tsDB.update(ts);
+			}
+		}
 	}
-	
+
 	private static void displayCurrentDate() {
 		System.out.println("Current Game Date: " + gameLocalDate);
 	}
