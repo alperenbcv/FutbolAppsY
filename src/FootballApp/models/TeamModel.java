@@ -1,12 +1,10 @@
 package FootballApp.models;
 
 import FootballApp.entities.*;
+import FootballApp.enums.EMatchStatus;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TeamModel {
 	
@@ -31,6 +29,32 @@ public class TeamModel {
 		this.teamsMatches = DatabaseModels.matchDB.findByTeamID(team.getId());
 		this.teamPlayers = DatabaseModels.playerDB.findByTeamID(team.getId());
 	}
+	
+	public void displayConcludedMatchesofaTeam() {
+		System.out.println("Played Matches of the Team: " + this.teamName);
+		System.out.println("--------------------------------------------------");
+		
+		teamsMatches.sort(Comparator.comparing(Match::getMatchDate));
+		for (Match match : teamsMatches) {
+			
+			if (match.getStatus() == EMatchStatus.PLAYED) {
+				
+				String homeTeamName = DatabaseModels.teamDB.findByID(match.getHomeTeamId())
+				                                           .map(Team::getTeamName)
+				                                           .orElse("Unknown");
+				String awayTeamName = DatabaseModels.teamDB.findByID(match.getAwayTeamId())
+				                                           .map(Team::getTeamName)
+				                                           .orElse("Unknown");
+				
+				
+				System.out.println("Date: " + match.getMatchDate() + " | " + homeTeamName +" "+ match.getHomeTeamScore() +" - "+ match.getAwayTeamScore() +" "+ awayTeamName);
+			}
+		}
+		
+		System.out.println("--------------------------------------------------");
+	}
+	
+	
 	
 	public void displayClubInfo() {
 		System.out.println("--------------------------------------------------");

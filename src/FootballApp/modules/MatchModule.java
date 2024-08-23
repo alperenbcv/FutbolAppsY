@@ -115,10 +115,11 @@ public class MatchModule {
 	
 	private static void skipDay() {
 		simulateGames();
-		gameLocalDate = gameLocalDate.plusDays(1);
-		System.out.println("\nDay skipped to: " + gameLocalDate);
 		int gameCount = simulateGames();
-		System.out.println(gameCount + " games simulated" );
+		System.out.println("\n"+gameCount + " games simulated" );
+		gameLocalDate = gameLocalDate.plusDays(1);
+		System.out.println("Day skipped to: " + gameLocalDate);
+		
 	}
 	
 	private static Integer simulateGames() {

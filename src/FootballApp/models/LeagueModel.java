@@ -108,7 +108,6 @@ public class LeagueModel {
 	}
 	
 	
-	
 	public void displayLeagueInfo() {
 		System.out.println("--------------------------------------------------");
 		System.out.println("League Information:");
