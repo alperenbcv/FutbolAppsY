@@ -20,7 +20,8 @@ public class LeagueModel {
 	private List<Match> matchList;
 	private LocalDate seasonStartDate;
 	private LocalDate seasonEndDate;
-	
+//	Map<Team,List<Match>>
+//	Map<Integer,Stats>
 	public LeagueModel(DatabaseModels databaseModel, League league) {
 		this.databaseModel=databaseModel;
 		this.id=league.getId();

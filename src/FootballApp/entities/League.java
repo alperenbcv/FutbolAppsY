@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class League extends BaseEntity{
+public class League extends BaseEntity implements Observable{
+	private List<Observer> observers = new ArrayList<>();
 	private static Integer leagueCounter=0;
 	
 	private String leagueName;
@@ -50,6 +51,7 @@ public class League extends BaseEntity{
 	
 	public void setSeasonStartDate(LocalDate seasonStartDate) {
 		this.seasonStartDate = seasonStartDate;
+		notifyObservers();
 	}
 	
 	public LocalDate getSeasonEndDate() {
@@ -58,22 +60,11 @@ public class League extends BaseEntity{
 	
 	public void setSeasonEndDate(LocalDate seasonEndDate) {
 		this.seasonEndDate = seasonEndDate;
-	}
-	
-	public static Integer getLeagueCounter() {
-		return leagueCounter;
-	}
-	
-	public static void setLeagueCounter(Integer leagueCounter) {
-		League.leagueCounter = leagueCounter;
+		notifyObservers();
 	}
 	
 	public String getLeagueName() {
 		return leagueName;
-	}
-	
-	public void setLeagueName(String leagueName) {
-		this.leagueName = leagueName;
 	}
 	
 	public Integer getLeagueStandingTableID() {
@@ -82,15 +73,13 @@ public class League extends BaseEntity{
 	
 	public void setLeagueStandingTableID(Integer leagueStandingTableID) {
 		this.leagueStandingTableID = leagueStandingTableID;
+		notifyObservers();
 	}
 	
 	public ERegion getRegion() {
 		return region;
 	}
 	
-	public void setRegion(ERegion region) {
-		this.region = region;
-	}
 	
 	public String getSeason() {
 		return season;
@@ -98,18 +87,32 @@ public class League extends BaseEntity{
 	
 	public void setSeason(String season) {
 		this.season = season;
+		notifyObservers();
 	}
 	
 	public Integer getDivision() {
 		return division;
 	}
-	
-	public void setDivision(Integer division) {
-		this.division = division;
-	}
-	
+
 	@Override
 	public String toString() {
 		return "League{" + "id=" + getId() + ", leagueName='" + getLeagueName() + '\'' + ", regionList=" + getRegion() + ", division=" + division + ", season='" + season + '\'' + ", leagueTeamIDList=" + leagueTeamIDList + ", leagueStandingTableID=" + leagueStandingTableID+'}';
+	}
+	
+	@Override
+	public void addObserver(Observer observer) {
+		observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update(this);
+		}
 	}
 }

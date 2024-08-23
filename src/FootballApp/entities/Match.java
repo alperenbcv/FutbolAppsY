@@ -4,8 +4,11 @@ import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Match extends BaseEntity {
+public class Match extends BaseEntity implements Observable {
+    private List<Observer> observers = new ArrayList<>();
     private static Integer matchCounter = 0;
     
     private int homeTeamId;
@@ -13,6 +16,8 @@ public class Match extends BaseEntity {
     private LocalDate matchDate;
     private EMatchStatus status;
     private Integer leagueId;
+    private Integer homeTeamScore;
+    private Integer awayTeamScore;
     
     public Match() {
         super(++matchCounter);
@@ -26,8 +31,26 @@ public class Match extends BaseEntity {
         this.status = status;
         this.leagueId = leagueId;
         DatabaseModels.matchDB.save(this);
+        this.homeTeamScore=0;
+        this.awayTeamScore=0;
     }
-
+    
+    public Integer getHomeTeamScore() {
+        return homeTeamScore;
+    }
+    
+    public void setHomeTeamScore(Integer homeTeamScore) {
+        this.homeTeamScore = homeTeamScore;
+    }
+    
+    public Integer getAwayTeamScore() {
+        return awayTeamScore;
+    }
+    
+    public void setAwayTeamScore(Integer awayTeamScore) {
+        this.awayTeamScore = awayTeamScore;
+    }
+    
     public int getHomeTeamId() {
         return homeTeamId;
     }
@@ -64,5 +87,22 @@ public class Match extends BaseEntity {
                 ", matchDate=" + matchDate +
                 ", status=" + status +
                 '}';
+    }
+    
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+    
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+    
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(this);
+        }
     }
 }

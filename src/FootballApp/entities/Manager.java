@@ -1,5 +1,7 @@
 package FootballApp.entities;
 
+import FootballApp.models.DatabaseModels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class Manager extends Person implements Observable {
 		this.managerUserName = managerUserName;
 		this.managerPassword = managerPassword;
 		this.currentTeamID= currentTeamID;
+		DatabaseModels.managerDB.save(this);
 	}
 	
 	public String getManagerUserName() {
@@ -67,7 +70,7 @@ public class Manager extends Person implements Observable {
 	@Override
 	public void notifyObservers() {
 		for (Observer observer : observers) {
-			observer.update();
+			observer.update(this);
 		}
 	}
 }

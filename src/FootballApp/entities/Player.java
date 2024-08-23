@@ -2,6 +2,7 @@ package FootballApp.entities;
 
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EPosition;
+import FootballApp.models.DatabaseModels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class Player extends Person implements Observable {
 		this.playersPosition = EplayersPosition;
 		this.playerTechnicalAttributes = technicalAttributes;
 		this.playerOverallRating=calculateOverallRating();
+		DatabaseModels.playerDB.save(this);
 	}
 	
 	private Integer calculateOverallRating() {
@@ -151,7 +153,7 @@ public class Player extends Person implements Observable {
 	@Override
 	public void notifyObservers() {
 		for (Observer observer : observers) {
-			observer.update();
+			observer.update(this);
 		}
 	}
 }

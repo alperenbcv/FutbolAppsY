@@ -52,7 +52,7 @@ public class LogInModule {
 		
 		boolean validInput = false;
 		do {
-			System.out.print("Enter a Manager ID to see login information: ");
+			System.out.print("Enter a Manager ID to see login information: (0 to Menu): ");
 			Optional<Integer> managerID = Optional.empty();
 			
 			try {

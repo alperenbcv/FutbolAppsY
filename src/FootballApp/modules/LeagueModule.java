@@ -81,41 +81,77 @@ public class LeagueModule {
         displayLeagueByDetails();
 
     }
-
+    
     private static void displayLeagueByDetails() {
-        System.out.print("\nWhich league do you want to select? Please enter the League ID (0=Back to Team Menu): ");
-        Integer leagueID=sc.nextInt();
-        if(leagueID==0){
-            return;
-        }
-        Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
-        if(byID.isPresent()){
-            LeagueModel lm=new LeagueModel(databaseModel,byID.get());
-            lm.displayLeagueInfo();
-            lm.displayLeagueTeams();
-        }
-        else{
-            System.out.println("League not found!");
+        Integer leagueID = null;
+        
+        while (true) {
+            try {
+                System.out.print("\nWhich league do you want to select? Please enter the League ID (0=Back to Team Menu): ");
+                leagueID = sc.nextInt();
+                sc.nextLine();
+                
+                if (leagueID == 0) {
+                    return;
+                }
+                
+                Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+                if (byID.isPresent()) {
+                    try {
+                        LeagueModel lm = new LeagueModel(databaseModel, byID.get());
+                        lm.displayLeagueInfo();
+                        lm.displayLeagueTeams();
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while displaying league information: " + e.getMessage());
+                    }
+                } else {
+                    System.out.println("League not found! Please enter a valid ID.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a numeric value!");
+                sc.nextLine();
+            }
         }
     }
-
+    
+    
     private static void displayLeagueByID() {
-        System.out.println("Enter a League ID: (0=Back to Team Menu)");
-        Integer leagueID=sc.nextInt();
-        if(leagueID==0){
-            return;
-        }
-        Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
-        if(byID.isPresent()){
-            LeagueModel lm=new LeagueModel(databaseModel,byID.get());
-            lm.displayLeagueInfo();
-            lm.displayLeagueTeams();
-        }
-        else{
-            System.out.println("League not found!");
+        Integer leagueID = null;
+        
+        while (true) {
+            System.out.println("Enter a League ID: (0=Back to Team Menu)");
+            
+            try {
+                leagueID = sc.nextInt();
+                sc.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a numeric value!");
+                sc.nextLine();
+                continue;
+            }
+            
+            if (leagueID == 0) {
+                return;
+            }
+            
+            Optional<League> byID = DatabaseModels.leagueDB.findByID(leagueID);
+            if (byID.isPresent()) {
+                try {
+                    LeagueModel lm = new LeagueModel(databaseModel, byID.get());
+                    lm.displayLeagueInfo();
+                    lm.displayLeagueTeams();
+                    break;
+                } catch (Exception e) {
+                    System.out.println("An error occurred while displaying league information: " + e.getMessage());
+                }
+            } else {
+                System.out.println("League not found! Please enter a valid ID.");
+            }
         }
     }
-
+    
+    
     protected static void displayAllLeagues() {
         List<League> leagues = DatabaseModels.leagueDB.listAll();
         for(League league:leagues){

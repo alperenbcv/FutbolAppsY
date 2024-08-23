@@ -12,7 +12,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
-public class DataIO implements Observer {
+public class DataIO{
 	
 	static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");
@@ -36,9 +36,30 @@ public class DataIO implements Observer {
 		generatePlayers();
 		generateMatches();
 //		generateFixtures();
-		
+		initializeObservers();
+		System.out.println("Total loaded entities: " + totalEntities());
 		}
 	
+	
+	private static void initializeObservers() {
+		ObserverInitializer observerInitializer = new ObserverInitializer(DatabaseModels.getInstance());
+		
+		observerInitializer.initializeObservers();
+	}
+		
+		
+		public static int totalEntities() {
+		int totalSize;
+			int size1 = DatabaseModels.matchDB.listAll().size();
+			int size2 = DatabaseModels.teamDB.listAll().size();
+			int size3 = DatabaseModels.playerDB.listAll().size();
+			int size4 = DatabaseModels.managerDB.listAll().size();
+			int size5 = DatabaseModels.leagueDB.listAll().size();
+			totalSize=size1 + size2 + size3 + size4 + size5;
+			return totalSize;
+		}
+		
+		
 	public static void saveMatchesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("matches.txt"))) {
 			for (Match match : DatabaseModels.matchDB.listAll()) {
@@ -54,7 +75,7 @@ public class DataIO implements Observer {
 	}
 	
 	public static void generateMatches() {
-		List<Match> matches = new ArrayList<>();
+		
 		try (Scanner sc = new Scanner(new FileReader("matches.txt"))) {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
@@ -66,10 +87,10 @@ public class DataIO implements Observer {
 				EMatchStatus matchStatus = EMatchStatus.valueOf(split[3]);
 				Integer leagueID = Integer.parseInt(split[4]);
 				
-				Match match = new Match(homeTeamId, awayTeamId, matchDate, matchStatus, leagueID);
-				matches.add(match);
+				new Match(homeTeamId, awayTeamId, matchDate, matchStatus, leagueID);
+				
 			}
-			DatabaseModels.matchDB.saveAll(matches);
+			
 		} catch (FileNotFoundException e) {
 			System.err.println("matches.txt not found: " + e.getMessage());
 		} catch (IOException | NumberFormatException e) {
@@ -121,7 +142,7 @@ public class DataIO implements Observer {
 		}
 	}
 	
-	private static void saveLeaguesToFile() {
+	public static void saveLeaguesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("leagues.txt"))) {
 			for (League league : DatabaseModels.leagueDB.listAll()) {
 				writer.write(league.getLeagueName() + ","
@@ -177,8 +198,7 @@ public class DataIO implements Observer {
 		}
 	}
 	
-	public static List<Player> generatePlayers() {
-		List<Player> players = new ArrayList<>();
+	public static void generatePlayers() {
 		try (Scanner sc = new Scanner(new FileReader("players.txt"))) {
 			while (sc.hasNextLine()) {
 				String satir = sc.nextLine();
@@ -189,13 +209,12 @@ public class DataIO implements Observer {
 						                        Integer.parseInt(split[6]), Integer.parseInt(split[7]),
 						                        Integer.parseInt(split[8]));
 				
-				Player player =
+				
 						new Player(split[0], split[1], Integer.parseInt(split[2]), split[3], ta,
 						           Integer.parseInt(split[9]), Double.parseDouble(split[10]),
 						           Double.parseDouble(split[11]), EPosition.valueOf(split[12]));
-				players.add(player);
 			}
-			DatabaseModels.playerDB.saveAll(players);
+			
 		}
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -203,11 +222,10 @@ public class DataIO implements Observer {
 		catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 			System.err.println("Error parsing player data: " + e.getMessage());
 		}
-		return players;
 	}
 	
-	public static List<Team> generateTeams() {
-		List<Team> teams = new ArrayList<>();
+	public static void generateTeams() {
+		
 		try (Scanner sc = new Scanner(new FileReader("teams.txt"))) {
 			while (sc.hasNextLine()) {
 				String satir = sc.nextLine().trim();
@@ -222,8 +240,8 @@ public class DataIO implements Observer {
 					double transferBudget = Double.parseDouble(split[4]);
 					double wageBudget = Double.parseDouble(split[5]);
 					
-					Team team = new Team(leagueID, teamName, city, stadiumName, transferBudget, wageBudget);
-					teams.add(team);
+					new Team(leagueID, teamName, city, stadiumName, transferBudget, wageBudget);
+					
 				}
 				catch (NumberFormatException e) {
 					System.err.println("Error parsing number from line: " + satir);
@@ -236,12 +254,10 @@ public class DataIO implements Observer {
 		catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 			System.err.println("Error parsing team data: " + e.getMessage());
 		}
-		return teams;
 	}
 	
 	
-	public static List<Manager> generateManagers() {
-		List<Manager> managers = new ArrayList<>();
+	public static void generateManagers() {
 		try (Scanner sc = new Scanner(new FileReader("managers.txt"))) {
 			while (sc.hasNextLine()) {
 				String satir = sc.nextLine();
@@ -251,9 +267,9 @@ public class DataIO implements Observer {
 				Manager manager =
 						new Manager(Integer.parseInt(split[0]), split[1], split[2], Integer.parseInt(split[3]),
 						            split[4], split[5], split[6]);
-				managers.add(manager);
+				
 			}
-			DatabaseModels.managerDB.saveAll(managers);
+			
 		}
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -261,14 +277,6 @@ public class DataIO implements Observer {
 		catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 			System.err.println("Error parsing manager data: " + e.getMessage());
 		}
-		return managers;
 	}
-	
-	
-	@Override
-	public void update() {
-		savePlayersToFile();
-		saveTeamsToFile();
-		saveManagersToFile();
-	}
+
 }
