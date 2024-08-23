@@ -41,6 +41,7 @@ public class Match extends BaseEntity implements Observable {
     
     public void setHomeTeamScore(Integer homeTeamScore) {
         this.homeTeamScore = homeTeamScore;
+        notifyObservers();
     }
     
     public Integer getAwayTeamScore() {
@@ -49,6 +50,7 @@ public class Match extends BaseEntity implements Observable {
     
     public void setAwayTeamScore(Integer awayTeamScore) {
         this.awayTeamScore = awayTeamScore;
+        notifyObservers();
     }
     
     public int getHomeTeamId() {
