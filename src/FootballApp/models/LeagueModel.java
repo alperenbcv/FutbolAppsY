@@ -54,7 +54,7 @@ public class LeagueModel {
 	public void displayStandingTable() {
 		System.out.println("League Standings:");
 		System.out.println("----------------------------------------------------------------");
-		System.out.println("Rank | Team Name            | Played | Points | Avg | GF | GA ");
+		System.out.println("Rank | Team Name            | Played | Points | Avg | GS | GC ");
 		System.out.println("----------------------------------------------------------------");
 		
 		for (Map.Entry<Integer, TeamStats> entry : teamStanding.entrySet()) {

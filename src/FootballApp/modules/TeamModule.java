@@ -34,12 +34,13 @@ public class TeamModule {
 			System.out.println("1-List of Teams");
 			System.out.println("2-Find Team by ID");
 			System.out.println("3-Find Team by Name");
+			System.out.println("4-Played Matches of a Team");
 			System.out.println("0-Main Menu");
 			System.out.print("Selection: ");
 			try {
 				userInput = sc.nextInt();
 				sc.nextLine();
-				if(userInput >= 0 && userInput <= 3) {
+				if(userInput >= 0 && userInput <= 4) {
 					validInput = true;
 				}
 				else {
@@ -58,12 +59,24 @@ public class TeamModule {
 			case 1 -> displayAllTeams(LogInModule.loggedManager);
 			case 2 -> displayTeamByID();
 			case 3 -> displayTeamByName();
+			case 4 -> displayPlayedMatchesTeam();
 			case 0 -> System.out.println("\nReturning to Main Menu...\n");
 			default-> System.out.println("Please enter a valid value!");
 		}
 	}
 	
-
+	private static void displayPlayedMatchesTeam() {
+		System.out.println("Enter a Team ID to view their played matches: ");
+		Integer teamID = sc.nextInt();
+		Optional<Team> byID = DatabaseModels.teamDB.findByID(teamID);
+		if (byID.isPresent()) {
+			TeamModel teamModel = new TeamModel(DatabaseModels.getInstance(), byID.get());
+			teamModel.displayConcludedMatchesofaTeam();
+		}
+		
+	}
+	
+	
 	private static void displayTeamByName() {
 		System.out.print("\nEnter the Team Name (0=Back to Team Menu): ");
 		String teamName = sc.nextLine();
