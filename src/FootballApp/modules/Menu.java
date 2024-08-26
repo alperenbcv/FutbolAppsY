@@ -1,6 +1,8 @@
 package FootballApp.modules;
 
 import FootballApp.entities.Manager;
+import FootballApp.utility.DataIO;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -71,9 +73,20 @@ public class Menu {
 			case 6 -> MatchModule.startMatchMenu();
 			case 7 -> MyTeamModule.startMyTeamMenu();
 			case 9 -> loggedManager=LogInModule.managerLogOut();
-			case 0 -> System.out.println("\nHave a nice day!");
+			case 0 -> quit();
 			default-> System.out.println("\nPlease enter a valid value!");
 		}
+	}
+	
+	public static void quit() {
+		System.out.println("Do you want to save your changes? (y/n)");
+		String choice = sc.next();
+		sc.nextLine();
+		if (choice.equalsIgnoreCase("y")) {
+            DataIO.getInstance().save();
+			System.out.println("Changes saved successfully!");
+        }
+		System.out.println("\nHave a nice day!");
 	}
 	
 }

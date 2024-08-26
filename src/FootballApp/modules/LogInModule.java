@@ -5,6 +5,7 @@ import FootballApp.entities.Manager;
 import FootballApp.entities.Team;
 import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;
+import FootballApp.utility.FixtureGenerator;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -17,6 +18,7 @@ public class LogInModule {
 	
 	public static Manager managerLogIn() {
 		System.out.println("\nWelcome to the Football Manager App!");
+		loadGame();
 		System.out.println("\nPlease choose a league first!");
 		System.out.println("\n---------------Available Leagues------------------");
 		LeagueModule.displayAllLeagues();
@@ -109,4 +111,31 @@ public class LogInModule {
 		System.out.println("You are logged out!");
 		return loggedManager;
 	}
+	
+	public static void loadGame() {
+		System.out.println("\nDo you want to load your last session? (y/n): ");
+		String s = sc.nextLine();
+		if(s.equalsIgnoreCase("y")) {
+			DataIO.generateLeagues();
+			DataIO.generateTeams();
+			DataIO.setTeamsToLeague();
+			DataIO.generateManagers();
+			DataIO.generatePlayers();
+			DataIO.readMatches();
+			DataIO.readTeamStats();
+			MatchModule.readDate();
+		}
+        else if(s.equalsIgnoreCase("n")) {
+			DataIO.generateLeagues();
+			DataIO.generateTeams();
+			DataIO.setTeamsToLeague();
+			DataIO.generateManagers();
+			DataIO.generatePlayers();
+			DataIO.readMatchesNoSave();
+			DataIO.readTeamStatsNoSave();
+			MatchModule.unsavedDate();
+			}
+            
+            System.out.println("\nGame loaded successfully!");
+		}
 }

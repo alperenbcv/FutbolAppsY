@@ -16,12 +16,8 @@ import java.util.stream.Collectors;
 
 public class MatchModule {
 	static Scanner sc = new Scanner(System.in);
-	//	static GameDate gd=new GameDate(loadDateFromFile());
 	static LocalDate currentDate;
-	static {
-		
-		readDate();
-	}
+	
 	
 	public static void saveDatesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("date.txt",true))) {
@@ -33,6 +29,10 @@ public class MatchModule {
 		} catch (IOException e) {
 			System.err.println("Error while writing matches.txt: " + e.getMessage());
 		}
+	}
+	
+	public static void unsavedDate(){
+		currentDate=LocalDate.of(2024,8,23);
 	}
 	
 	public static void readDate() {

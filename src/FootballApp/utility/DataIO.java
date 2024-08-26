@@ -139,6 +139,47 @@ public class DataIO implements Observer {
 		}
 	}
 	
+	public static void readTeamStatsNoSave() {
+		
+		try (Scanner sc = new Scanner(new FileReader("ts2.txt"))) {
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				String[] split = line.split(",");
+				
+				Integer teamID = Integer.parseInt(split[0]);
+				Integer average = Integer.parseInt(split[1]);
+				Integer leagueID = Integer.parseInt(split[2]);
+				Integer gamesPlayed = Integer.parseInt(split[3]);
+				Integer gamesDrawn = Integer.parseInt(split[4]);
+				Integer gamesWon = Integer.parseInt(split[5]);
+				Integer gamesLost = Integer.parseInt(split[6]);
+				Integer goalScored = Integer.parseInt(split[7]);
+				Integer goalConceded = Integer.parseInt(split[8]);
+				Integer totalPoint = Integer.parseInt(split[9]);
+				LocalDate lastUpdateDate = LocalDate.parse(split[10]);
+				
+				
+				TeamStats ts=new TeamStats(teamID);
+				ts.setAverage(average);
+				ts.setTeamLeagueID(leagueID);
+				ts.setGamesDrawn(gamesDrawn);
+				ts.setGamesLost(gamesLost);
+				ts.setGamesPlayed(gamesPlayed);
+				ts.setGamesWon(gamesWon);
+				ts.setGoalConceded(goalConceded);
+				ts.setGoalScored(goalScored);
+				ts.setTotalPoint(totalPoint);
+				ts.setLastUpdateDate(lastUpdateDate);
+				
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.err.println("matches.txt not found: " + e.getMessage());
+		} catch (IOException | NumberFormatException e) {
+			System.err.println("Error parsing match data: " + e.getMessage());
+		}
+	}
+	
 	public static void saveMatchesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("matches.txt"))) {
 			for (Match match : DatabaseModels.matchDB.listAll()) {
@@ -179,8 +220,30 @@ public class DataIO implements Observer {
 			System.err.println("Error parsing match data: " + e.getMessage());
 		}
 	}
-
 	
+	public static void readMatchesNoSave() {
+		
+		try (Scanner sc = new Scanner(new FileReader("matches2.txt"))) {
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				String[] split = line.split(",");
+				
+				Integer homeTeamId = Integer.parseInt(split[0]);
+				Integer awayTeamId = Integer.parseInt(split[1]);
+				LocalDate matchDate = LocalDate.parse(split[2]);
+				EMatchStatus matchStatus = EMatchStatus.valueOf(split[3]);
+				Integer leagueID = Integer.parseInt(split[4]);
+				
+				new Match(homeTeamId, awayTeamId, matchDate, matchStatus, leagueID);
+				
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.err.println("matches.txt not found: " + e.getMessage());
+		} catch (IOException | NumberFormatException e) {
+			System.err.println("Error parsing match data: " + e.getMessage());
+		}
+	}
 	private static void generateFixtures() {
 		List<League> leagues = DatabaseModels.leagueDB.listAll();
 		List<Integer> leagueIDList = leagues.stream().map(league -> league.getId()).toList();
@@ -190,7 +253,7 @@ public class DataIO implements Observer {
 	}
 	
 	
-	private static void setTeamsToLeague() {
+	public static void setTeamsToLeague() {
 		List<League> leagues = DatabaseModels.leagueDB.listAll();
 		List<Team> teams = DatabaseModels.teamDB.listAll();
 		for (League league : leagues) {
@@ -205,7 +268,7 @@ public class DataIO implements Observer {
 	
 	
 	
-	private static void generateLeagues() {
+	public static void generateLeagues() {
 		try (Scanner sc = new Scanner(new FileReader("leagues.txt"))) {
 			while (sc.hasNextLine()) {
 				String satir = sc.nextLine();
@@ -363,6 +426,17 @@ public class DataIO implements Observer {
 	
 	@Override
 	public void update(Observable observable) {
+		saveMatchesToFile();
+		saveTeamsToFile();
+		saveManagersToFile();
+		savePlayersToFile();
+		saveLeaguesToFile();
+		saveTeamStatsToFile();
+		
+	}
+	
+	
+	public void save() {
 		saveMatchesToFile();
 		saveTeamsToFile();
 		saveManagersToFile();
