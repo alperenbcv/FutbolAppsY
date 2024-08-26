@@ -54,7 +54,9 @@ public class LeagueModel {
 	public void displayStandingTable() {
 		System.out.println("League Standings:");
 		System.out.println("----------------------------------------------------------------");
-		System.out.println("Rank | Team Name            | Played | Points | Avg | GS | GC ");
+		System.out.println("Rank | Team Name            | Played | Win   |  Lose |  Draw | Points | Avg | " +
+				                   "GS | " +
+				                   "GC |");
 		System.out.println("----------------------------------------------------------------");
 		
 		for (Map.Entry<Integer, TeamStats> entry : teamStanding.entrySet()) {
@@ -64,15 +66,17 @@ public class LeagueModel {
 			                                       .map(Team::getTeamName)
 			                                       .orElse("Unknown");
 			
-			
 			if ("BYE".equalsIgnoreCase(teamName)) {
 				continue;
 			}
 			
-			System.out.printf("%-4d | %-20s | %-6d | %-6d | %-3d | %-3d | %-3d \n",
+			System.out.printf("%-4d | %-20s | %-6d | %-5d | %-5d | %-5d | %-6d | %-3d | %-2d | %-2d | \n",
 			                  rank,
 			                  teamName,
 			                  stats.getGamesPlayed(),
+							  stats.getGamesWon(),
+							  stats.getGamesLost(),
+							  stats.getGamesDrawn(),
 			                  stats.getTotalPoint(),
 			                  stats.getAverage(),
 			                  stats.getGoalScored(),

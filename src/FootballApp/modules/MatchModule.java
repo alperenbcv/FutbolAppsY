@@ -114,9 +114,9 @@ public class MatchModule {
 	
 	
 	private static void skipDay() {
-		simulateGames();
-		int gameCount = simulateGames();
-		System.out.println("\n"+gameCount + " games simulated" );
+//		simulateGames();
+		Integer i = simulateGames();
+		System.out.println("\n"+i + " games simulated" );
 		gameLocalDate = gameLocalDate.plusDays(1);
 		System.out.println("Day skipped to: " + gameLocalDate);
 		
@@ -160,7 +160,8 @@ public class MatchModule {
 				DatabaseModels.tsDB.update(ts);
 			}
 		}
-		return matchesOfTheDay.size();
+		int size = matchesOfTheDay.size();
+		return size;
 	}
 
 	private static void displayCurrentDate() {
