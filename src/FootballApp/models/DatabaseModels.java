@@ -15,6 +15,7 @@ public class DatabaseModels implements Observer {
 	public static LeagueDB leagueDB = new LeagueDB();
 	public static MatchDB matchDB = new MatchDB();
 	public static TeamStatDB tsDB = new TeamStatDB();
+	public static DateDB dateDB = new DateDB();
 	
 	
 	private DatabaseModels() {

@@ -1,17 +1,20 @@
 package FootballApp.utility;
 
 import FootballApp.entities.*;
+import FootballApp.entities.Observable;
+import FootballApp.entities.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.enums.EPosition;
 import FootballApp.enums.ERegion;
 import FootballApp.models.DatabaseModels;
+import FootballApp.modules.MatchModule;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
-public class DataIO{
+public class DataIO implements Observer {
 	
 	static File file = new File("teams.txt");
 	static File file2 = new File("managers.txt");
@@ -19,17 +22,25 @@ public class DataIO{
 	static File file4 = new File("matches.txt");
 	static File file5 = new File("leagues.txt");
 	static FixtureGenerator fg = new FixtureGenerator();
+	private static DataIO instance = new DataIO();
+	
+	public static DataIO getInstance() {
+		return instance;
+	}
 	
 	public static void dataIOInitialize() {
+		
+//		MatchModule.loadDateFromFile();
 		generateLeagues();
 		generateTeams();
 		setTeamsToLeague();
 		generateManagers();
 		generatePlayers();
 		readMatches();
+		readTeamStats();
+//		TeamStats.teamStatGenerator();
+//		saveTeamStatsToFile();
 		initializeObservers();
-		TeamStats.teamStatGenerator();
-		
 //	    	generateFixtures();
 //			savePlayersToFile();
 //			saveTeamsToFile();
@@ -59,11 +70,75 @@ public class DataIO{
 			int size3 = DatabaseModels.playerDB.listAll().size();
 			int size4 = DatabaseModels.managerDB.listAll().size();
 			int size5 = DatabaseModels.leagueDB.listAll().size();
-			totalSize=size1 + size2 + size3 + size4 + size5;
+			int size6 = DatabaseModels.tsDB.findAll().get().size();
+			totalSize=size1 + size2 + size3 + size4 + size5 + size6;
 			return totalSize;
 		}
+	
+	
+	
+	public static void saveTeamStatsToFile() {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter("ts.txt"))) {
+			for (TeamStats teamStats : DatabaseModels.tsDB.findAll().get()) {
+				writer.write(teamStats.getTeamID() + ","
+						             + teamStats.getAverage() + ","
+						             + teamStats.getTeamLeagueID() + ","
+						             + teamStats.getGamesPlayed() + ","
+						             + teamStats.getGamesDrawn() + ","
+						             + teamStats.getGamesWon() + ","
+						             + teamStats.getGamesLost() + ","
+						             + teamStats.getGoalScored() + ","
+						             + teamStats.getGoalConceded() + ","
+									 + teamStats.getTotalPoint() + ","
+									 + teamStats.getLastUpdateDate() + ","
+						             + "\n");
+			}
+		} catch (IOException e) {
+			System.err.println("Error while writing matches.txt: " + e.getMessage());
+		}
+	}
+	
+	public static void readTeamStats() {
 		
-		
+		try (Scanner sc = new Scanner(new FileReader("ts.txt"))) {
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				String[] split = line.split(",");
+				
+				Integer teamID = Integer.parseInt(split[0]);
+				Integer average = Integer.parseInt(split[1]);
+				Integer leagueID = Integer.parseInt(split[2]);
+				Integer gamesPlayed = Integer.parseInt(split[3]);
+				Integer gamesDrawn = Integer.parseInt(split[4]);
+				Integer gamesWon = Integer.parseInt(split[5]);
+				Integer gamesLost = Integer.parseInt(split[6]);
+				Integer goalScored = Integer.parseInt(split[7]);
+				Integer goalConceded = Integer.parseInt(split[8]);
+				Integer totalPoint = Integer.parseInt(split[9]);
+				LocalDate lastUpdateDate = LocalDate.parse(split[10]);
+				
+				
+				TeamStats ts=new TeamStats(teamID);
+				ts.setAverage(average);
+				ts.setTeamLeagueID(leagueID);
+				ts.setGamesDrawn(gamesDrawn);
+				ts.setGamesLost(gamesLost);
+				ts.setGamesPlayed(gamesPlayed);
+				ts.setGamesWon(gamesWon);
+				ts.setGoalConceded(goalConceded);
+				ts.setGoalScored(goalScored);
+				ts.setTotalPoint(totalPoint);
+				ts.setLastUpdateDate(lastUpdateDate);
+				
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.err.println("matches.txt not found: " + e.getMessage());
+		} catch (IOException | NumberFormatException e) {
+			System.err.println("Error parsing match data: " + e.getMessage());
+		}
+	}
+	
 	public static void saveMatchesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("matches.txt"))) {
 			for (Match match : DatabaseModels.matchDB.listAll()) {
@@ -285,5 +360,15 @@ public class DataIO{
 			System.err.println("Error parsing manager data: " + e.getMessage());
 		}
 	}
-
+	
+	@Override
+	public void update(Observable observable) {
+		saveMatchesToFile();
+		saveTeamsToFile();
+		saveManagersToFile();
+		savePlayersToFile();
+		saveLeaguesToFile();
+		saveTeamStatsToFile();
+		
+	}
 }

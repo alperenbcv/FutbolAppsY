@@ -2,6 +2,7 @@ package FootballApp.entities;
 
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
+import FootballApp.utility.DataIO;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -71,6 +72,7 @@ public class Match extends BaseEntity implements Observable {
 
     public void setStatus(EMatchStatus status) {
         this.status = status;
+        notifyObservers();
     }
     
     public Integer getLeagueId() {
@@ -79,6 +81,7 @@ public class Match extends BaseEntity implements Observable {
     
     public void setLeagueId(Integer leagueId) {
         this.leagueId = leagueId;
+        notifyObservers();
     }
     
     @Override
@@ -104,7 +107,7 @@ public class Match extends BaseEntity implements Observable {
     @Override
     public void notifyObservers() {
         for (Observer observer : observers) {
-            observer.update(this);
+            DataIO.getInstance().update(this);
         }
     }
 }

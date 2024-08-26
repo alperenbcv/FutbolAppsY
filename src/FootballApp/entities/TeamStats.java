@@ -2,12 +2,15 @@ package FootballApp.entities;
 
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
+import FootballApp.utility.DataIO;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class TeamStats extends BaseEntity {
+public class TeamStats extends BaseEntity implements Observable {
+	private List<Observer> observers = new ArrayList<>();
 	private static Integer tableCounter=0;
 
 
@@ -47,6 +50,7 @@ public class TeamStats extends BaseEntity {
 			teamAverageCalculator();
 			calculateGamesPlayed();
 			lastUpdateDate = currentDate;
+			notifyObservers();
 		}
 	}
 
@@ -124,8 +128,16 @@ public class TeamStats extends BaseEntity {
 			}
 		}
 	}
-
-
+	
+	
+	public LocalDate getLastUpdateDate() {
+		return lastUpdateDate;
+	}
+	
+	public void setLastUpdateDate(LocalDate lastUpdateDate) {
+		this.lastUpdateDate = lastUpdateDate;
+	}
+	
 	public Integer getTeamID() {
 		return teamID;
 	}
@@ -204,5 +216,22 @@ public class TeamStats extends BaseEntity {
 
 	public void setTeamLeagueID(Integer teamLeagueID) {
 		this.teamLeagueID = teamLeagueID;
+	}
+	
+	@Override
+	public void addObserver(Observer observer) {
+		observers.add(observer);
+	}
+	
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+	}
+	
+	@Override
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			DataIO.getInstance().update(this);
+		}
 	}
 }
