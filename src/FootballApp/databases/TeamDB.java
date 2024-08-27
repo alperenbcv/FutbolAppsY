@@ -63,5 +63,10 @@ public class TeamDB extends DatabaseManager<Team> {
 		}
 		return foundTeams;
 	}
+	
+	public List<Player> findPlayersByTeamID(Integer teamID) {
+		List<Player> byTeamID = DatabaseModels.playerDB.findByTeamID(teamID);
+		return byTeamID;
+	}
 
 }

@@ -7,6 +7,7 @@ import FootballApp.entities.TeamStats;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
 import FootballApp.models.MatchModel;
+import FootballApp.utility.MatchEngine;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -189,12 +190,18 @@ public class MatchModule {
 					match.setStatus(EMatchStatus.PLAYED);
                 }
 				else {
-					int homeTeamScore = random.nextInt(4);
-					int awayTeamScore = random.nextInt(4);
-					match.setHomeTeamScore(homeTeamScore);
-					match.setAwayTeamScore(awayTeamScore);
+					MatchEngine matchEngine = new MatchEngine();
+					matchEngine.simulateMatch(match);
 					match.setStatus(EMatchStatus.PLAYED);
 				}
+				
+//				else {
+//					int homeTeamScore = random.nextInt(4);
+//					int awayTeamScore = random.nextInt(4);
+//					match.setHomeTeamScore(homeTeamScore);
+//					match.setAwayTeamScore(awayTeamScore);
+//					match.setStatus(EMatchStatus.PLAYED);
+//				}
 			}
 		}
 		Optional<List<TeamStats>> all = DatabaseModels.tsDB.findAll();
