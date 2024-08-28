@@ -3,6 +3,8 @@ package FootballApp.models;
 
 import FootballApp.databases.*;
 import FootballApp.entities.*;
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.utility.DataIO;
 
 public class DatabaseModels implements Observer {

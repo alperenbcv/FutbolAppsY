@@ -4,9 +4,12 @@ import FootballApp.entities.attributes.GKAttributes;
 import FootballApp.entities.attributes.MentalAttributes;
 import FootballApp.entities.attributes.PhysicalAttributes;
 import FootballApp.entities.attributes.TechnicalAttributes;
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.enums.EPosition;
 import FootballApp.models.DatabaseModels;
 
+import javax.swing.text.Position;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +26,6 @@ public class Player extends Person implements Observable {
 	private MentalAttributes playerMentalAttributes;
 	private PhysicalAttributes playerPhysicalAttributes;
 	private GKAttributes gkAttributes;
-	private Position position;
 	
 	public Player() {
 		super(++playerCounter);
@@ -57,10 +59,6 @@ public class Player extends Person implements Observable {
 		DatabaseModels.playerDB.save(this);
 	}
 	
-	public void move(int deltaX) {
-		// Update the player's position by delta values
-		this.position.setLength(this.position.getLength() + deltaX);
-	}
 	
 	private Integer calculateOverallRating() {
 		if(playersPosition.equals(EPosition.ST)){
@@ -199,13 +197,6 @@ public class Player extends Person implements Observable {
 		notifyObservers();
 	}
 	
-	public Position getPosition() {
-		return position;
-	}
-	
-	public void setPosition(Position position) {
-		this.position = position;
-	}
 	
 	@Override
 	public String toString() {

@@ -1,14 +1,12 @@
 package FootballApp.utility;
 
 import FootballApp.entities.*;
-import FootballApp.entities.Observable;
-import FootballApp.entities.Observer;
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EMatchStatus;
-import FootballApp.enums.EPosition;
 import FootballApp.enums.ERegion;
 import FootballApp.models.DatabaseModels;
-import FootballApp.modules.MatchModule;
 
 import java.io.*;
 import java.time.LocalDate;

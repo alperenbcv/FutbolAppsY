@@ -1,5 +1,7 @@
 package FootballApp.entities;
 
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.models.DatabaseModels;
 
 import java.util.ArrayList;

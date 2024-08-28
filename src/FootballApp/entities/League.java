@@ -1,5 +1,7 @@
 package FootballApp.entities;
 
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.enums.ERegion;
 import FootballApp.models.DatabaseModels;
 
@@ -7,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class League extends BaseEntity implements Observable{
+public class League extends BaseEntity implements Observable {
 	private List<Observer> observers = new ArrayList<>();
 	private static Integer leagueCounter=0;
 	

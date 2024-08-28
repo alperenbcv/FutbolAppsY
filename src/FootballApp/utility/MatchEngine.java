@@ -3,6 +3,10 @@ package FootballApp.utility;
 import FootballApp.entities.*;
 import FootballApp.enums.EPosition;
 import FootballApp.models.DatabaseModels;
+import FootballApp.utility.events.CrossEvent;
+import FootballApp.utility.events.DribblingEvent;
+import FootballApp.utility.events.PassEvent;
+import FootballApp.utility.events.ShootEvent;
 
 import java.util.ArrayList;
 import java.util.List;

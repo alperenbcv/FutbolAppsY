@@ -1,5 +1,8 @@
-package FootballApp.entities;
+package FootballApp.utility.events;
 
+import FootballApp.entities.Ball;
+import FootballApp.entities.Match;
+import FootballApp.entities.Player;
 import FootballApp.utility.AverageCalculator;
 import FootballApp.utility.ChanceConstantCalculator;
 

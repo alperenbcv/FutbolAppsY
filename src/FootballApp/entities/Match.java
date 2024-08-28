@@ -1,5 +1,7 @@
 package FootballApp.entities;
 
+import FootballApp.entities.observerPatterns.Observable;
+import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.enums.EMatchStatus;
 import FootballApp.models.DatabaseModels;
 import FootballApp.utility.DataIO;

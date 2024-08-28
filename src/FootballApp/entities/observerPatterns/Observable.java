@@ -1,4 +1,4 @@
-package FootballApp.entities;
+package FootballApp.entities.observerPatterns;
 
 public interface Observable {
 	void addObserver(Observer observer);
