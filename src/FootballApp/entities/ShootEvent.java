@@ -3,8 +3,8 @@ package FootballApp.entities;
 import FootballApp.utility.AverageCalculator;
 import FootballApp.utility.ChanceConstantCalculator;
 
-public class ShootEvent {
-	public boolean shootEvent(Ball ball, Player defender, Player goalkeeper) {
+public class ShootEvent extends Event {
+	public boolean shootEvent(Ball ball, Player defender, Player goalkeeper, Match match) {
 		// Şut çeken oyuncunun yetenekleri
 		Integer finishing = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getFinishing();
 		Integer shotPower = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getShotPower();
@@ -45,17 +45,26 @@ public class ShootEvent {
 					return true;
 				}
 				else {
-//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
-					ball.setPosition(0);
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId()) {
+						ball.setPosition(-50);
+						ball.setPlayerWithBall(goalkeeper);
+					}
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId()){
+						ball.setPosition(50);
+						ball.setPlayerWithBall(goalkeeper);
+					}
 					System.out.println("Shot saved by " + goalkeeper.getName() + " on one on one.");
 					return false;
 				}
 			}
 			else {
-//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
+				if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId())
+					ball.setPosition(-50);
+				if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId())
+					ball.setPosition(50);
 				System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall()
 				                                                           .getName() + " on one on one.");
-				ball.setPosition(0);
+				ball.setPlayerWithBall(goalkeeper);
 				return false;
 			}
 		}
@@ -73,18 +82,23 @@ public class ShootEvent {
 					}
 					else {
 						//kaleci kurtardi
-//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
-						ball.setPosition(0);
+						if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId())
+							ball.setPosition(-50);
+						if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId())
+							ball.setPosition(50);
 						ball.setPlayerWithBall(goalkeeper);
 						System.out.println("Shot saved by " + goalkeeper.getName() + ".");
 						return false;
 					}
 				}
 				else {
-//                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId())
+						ball.setPosition(-50);
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId())
+						ball.setPosition(50);
 					System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall().getName() + ".");
 					ball.setPlayerWithBall(goalkeeper);
-					ball.setPosition(0);
+
 					return false;
 				}
 			}
@@ -110,7 +124,10 @@ public class ShootEvent {
 					else {
 						//kaleci kurtardi
 //                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
-						ball.setPosition(0);
+						if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId())
+						ball.setPosition(-50);
+						if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId())
+						ball.setPosition(50);
 						ball.setPlayerWithBall(goalkeeper);
 						System.out.println("Shot saved by " + goalkeeper.getName() + ".");
 						return false;
@@ -118,10 +135,12 @@ public class ShootEvent {
 				}
 				else {
 					//disari vurdu
-//                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getHomeTeamId())
+						ball.setPosition(-50);
+					if(ball.getPlayerWithBall().getCurrentTeamID()==match.getAwayTeamId())
+						ball.setPosition(50);
 					System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall().getName() + ".");
 					ball.setPlayerWithBall(goalkeeper);
-					ball.setPosition(0);
 					return false;
 				}
 			}

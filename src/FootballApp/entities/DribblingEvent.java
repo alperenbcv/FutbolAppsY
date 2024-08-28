@@ -5,7 +5,7 @@ import FootballApp.utility.ChanceConstantCalculator;
 
 import java.util.Random;
 
-public class DribblingEvent {
+public class DribblingEvent extends Event{
 	
 	public boolean dribblingEvent(Ball ball, Player defender, Match match) {
 		// Topu süren oyuncunun yetenekleri
@@ -31,6 +31,7 @@ public class DribblingEvent {
 		if(avgDribble*chance > avgDefense) {
 			// Dribbling başarılı
 			ball.setPosition(ball.getPosition() + 10*dribblingDirection(ball,match)); // Top 10 metre ilerler
+			ball.setPlayerWithBall(ball.getPlayerWithBall());
 			System.out.println("Dribble succeeded! Ball is now at position " + ball.getPosition());
 			return true;
 		} else {

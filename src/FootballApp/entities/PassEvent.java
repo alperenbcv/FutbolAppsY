@@ -5,7 +5,7 @@ import FootballApp.utility.ChanceConstantCalculator;
 
 import java.util.Random;
 
-public class PassEvent {
+public class PassEvent extends Event {
 
 	
 	public boolean passEvent10m(Ball ball, Player ballReceiver, Player defender, Match match) {
@@ -31,14 +31,19 @@ public class PassEvent {
 		int[] defenseAbility = {tackle, positioning};
 		double defAverage = AverageCalculator.calculateAverage(defenseAbility);
 		
-		Double randomFactor = (Math.random() * 10);
+		Double randomFactor = (Math.random() * 9);
 		
 		
-		if (ball.getPosition() <= 40 ||ball.getPosition() >= -40) {
+		if (ball.getPosition() <= 40 && ball.getPosition() >= -40) {
 			if (passAverage*chance > defAverage) {
 				if (firstTouch > randomFactor) {
 					ball.setPlayerWithBall(ballReceiver);
-					ball.setPosition(ball.getPosition() + 20*passDirection(ball,match));
+					if(ball.getPlayerWithBall().getCurrentTeamID() == match.getHomeTeamId()){
+						ball.setPosition(ball.getPosition() - 10);
+					}
+					else{
+						ball.setPosition(ball.getPosition() + 10);
+					}
 					System.out.println("Pass succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
 					return true;
 				}
@@ -83,11 +88,16 @@ public class PassEvent {
 		Double randomFactor = (Math.random() * 16);
 		
 		
-		if (ball.getPosition() <= 30 ||ball.getPosition() >= -30) {
+		if (ball.getPosition() <= 30 && ball.getPosition() >= -30) {
 			if (passAverage*chance > defAverage) {
 				if (firstTouch > randomFactor) {
 					ball.setPlayerWithBall(ballReceiver);
-					ball.setPosition(ball.getPosition() + 20*passDirection(ball,match));
+					if(ball.getPlayerWithBall().getCurrentTeamID() == match.getHomeTeamId()){
+						ball.setPosition(ball.getPosition() - 20);
+					}
+					else{
+						ball.setPosition(ball.getPosition() + 20);
+					}
 					//Top 20 metre ilerler
 					System.out.println("Pass succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
 					return true;

@@ -19,7 +19,6 @@ public class Match extends BaseEntity implements Observable {
     private Integer leagueId;
     private Integer homeTeamScore;
     private Integer awayTeamScore;
-    private Field field;
     private Ball ball;
     
     public Match() {
@@ -48,14 +47,6 @@ public class Match extends BaseEntity implements Observable {
     
     public void setMatchDate(LocalDate matchDate) {
         this.matchDate = matchDate;
-    }
-    
-    public Field getField() {
-        return field;
-    }
-    
-    public void setField(Field field) {
-        this.field = field;
     }
     
     public Ball getBall() {

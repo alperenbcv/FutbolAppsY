@@ -5,7 +5,7 @@ import FootballApp.utility.ChanceConstantCalculator;
 
 import java.util.Random;
 
-public class CrossEvent {
+public class CrossEvent extends Event {
 	
 	public boolean crossEvent20m(Ball ball, Player ballReceiver, Player backPlayer, Player defender, Player goalkeeper, Match match) {
 		// Orta açan oyuncunun yetenekleri
@@ -25,14 +25,14 @@ public class CrossEvent {
 		double avgBack = AverageCalculator.calculateAverage(backStats);
 		
 		
-		if (ball.getPosition() <= 30 || ball.getPosition() >= -30) {
+		if (ball.getPosition() <= 30 && ball.getPosition() >= -30) {
 			if (avgCross*chance > avgBack) {
 				if (Math.random() * 20 < ballReceiver.getPlayerTechnicalAttributes().getFirstTouch()) {
 					ball.setPosition(ball.getPosition() + 20*crossDirection(ball,match)); // Top 20 metre ilerler
 					System.out.println("Cross succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
 					
 					// Top savunmacıya gider ve kafa mücadelesi başlar
-					return handleHeaderDuel(ball, ballReceiver, defender, goalkeeper);
+					return handleHeaderDuel(ball, ballReceiver, defender, goalkeeper, match);
 				} else {
 					ball.setPlayerWithBall(defender);
 					ball.setPosition(ball.getPosition() + 20);
@@ -65,12 +65,12 @@ public class CrossEvent {
 		int[] backStats={positioningBack, tackleBack};
 		double avgBack = AverageCalculator.calculateAverage(backStats);
 		
-		if (ball.getPosition() <= 20 || ball.getPosition() >= -20) {
+		if (ball.getPosition() <= 20 && ball.getPosition() >= -20) {
 			if (avgCross*chance > avgBack) {
 				if (Math.random() * 25 < ballReceiver.getPlayerTechnicalAttributes().getFirstTouch()) {
 					ball.setPosition(ball.getPosition() + 30*crossDirection(ball,match)); // Top 30 metre ilerler
 					System.out.println("Cross succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
-					return handleHeaderDuel(ball, ballReceiver, defender, goalkeeper);
+					return handleHeaderDuel(ball, ballReceiver, defender, goalkeeper, match);
 				} else {
 					ball.setPlayerWithBall(defender);
 					ball.setPosition(ball.getPosition()+30);
@@ -90,14 +90,12 @@ public class CrossEvent {
 		if(ball.getPlayerWithBall().getCurrentTeamID() == match.getHomeTeamId()) {
 			return -1;
 		}
-		else {
 		    return 1;
-		}
 	}
 	
 	
 	
-	private boolean handleHeaderDuel(Ball ball, Player attacker, Player defender, Player goalkeeper) {
+	private boolean handleHeaderDuel(Ball ball, Player attacker, Player defender, Player goalkeeper, Match match) {
 		// Hava topu mücadelesi
 		Integer attackerHeader = attacker.getPlayerTechnicalAttributes().getHeader();
 		Integer attackerJumping = attacker.getPlayerPhysicalAttributes().getJumping();
@@ -113,7 +111,7 @@ public class CrossEvent {
 		if (avgAttack*chance > avgDefend) {
 			ball.setPlayerWithBall(attacker);
 			System.out.println(attacker.getName() + " wins the header and directs the ball towards the goal!");
-			return handleShotOnGoal(ball, attacker, goalkeeper);
+			return handleShotOnGoal(ball, attacker, goalkeeper, match);
 		} else {
 			ball.setPlayerWithBall(defender);
 			System.out.println(defender.getName() + " wins the header and clears the ball away!");
@@ -121,7 +119,7 @@ public class CrossEvent {
 		}
 	}
 	
-	private boolean handleShotOnGoal(Ball ball, Player attacker, Player goalkeeper) {
+	private boolean handleShotOnGoal(Ball ball, Player attacker, Player goalkeeper, Match match) {
 		// Kaleye şut
 		Integer finishing = attacker.getPlayerTechnicalAttributes().getFinishing();
 		Integer shotPower = attacker.getPlayerTechnicalAttributes().getShotPower();
@@ -138,12 +136,17 @@ public class CrossEvent {
 		
 		if (avgShot*chance > avgSave) {
 			System.out.println("Goal! " + attacker.getName() + " scores a header!");
-			ball.setPosition(50);
+			ball.setPosition(0);
 			return true;
 		} else {
 			System.out.println(goalkeeper.getName() + " makes a great save against a header!");
-			ball.setPosition(0);
 			ball.setPlayerWithBall(goalkeeper);
+			if(goalkeeper.getCurrentTeamID() == match.getHomeTeamId()) {
+				ball.setPosition(50);
+			}
+			if(goalkeeper.getCurrentTeamID() == match.getAwayTeamId()) {
+				ball.setPosition(-50);
+			}
 			return false;
 		}
 	}
