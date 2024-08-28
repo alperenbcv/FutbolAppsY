@@ -10,6 +10,11 @@ public class TechnicalAttributes extends BaseEntity implements PlayerAttributes 
 	private Integer dribbling;
 	private Integer tackle;
 	private Integer shotPower;
+	private Integer crossing;
+	private Integer header;
+	private Integer positioning;
+	private Integer firstTouch;
+	
 	
 	public TechnicalAttributes(Integer finishing, Integer pass, Integer dribbling, Integer tackle, Integer shotPower) {
 		super(++technicalCount);
@@ -18,6 +23,26 @@ public class TechnicalAttributes extends BaseEntity implements PlayerAttributes 
 		this.dribbling = dribbling;
 		this.tackle = tackle;
 		this.shotPower = shotPower;
+		this.crossing = 10;
+		this.header = 10;
+		this.positioning = 10;
+		this.firstTouch=10;
+	}
+	
+	public Integer getFirstTouch() {
+		return firstTouch;
+	}
+	
+	public void setFirstTouch(Integer firstTouch) {
+		this.firstTouch = firstTouch;
+	}
+	
+	public Integer getPositioning() {
+		return positioning;
+	}
+	
+	public void setPositioning(Integer positioning) {
+		this.positioning = positioning;
 	}
 	
 	public Integer getFinishing() {
@@ -58,6 +83,22 @@ public class TechnicalAttributes extends BaseEntity implements PlayerAttributes 
 	
 	public void setShotPower(Integer shotPower) {
 		this.shotPower = shotPower;
+	}
+	
+	public Integer getCrossing() {
+		return crossing;
+	}
+	
+	public void setCrossing(Integer crossing) {
+		this.crossing = crossing;
+	}
+	
+	public Integer getHeader() {
+		return header;
+	}
+	
+	public void setHeader(Integer header) {
+		this.header = header;
 	}
 	
 	@Override

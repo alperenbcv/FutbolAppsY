@@ -35,7 +35,7 @@ public class DataIO implements Observer {
 		generateTeams();
 		setTeamsToLeague();
 		generateManagers();
-		generatePlayers();
+//		generatePlayers();
 		readMatches();
 		readTeamStats();
 //		TeamStats.teamStatGenerator();
@@ -343,31 +343,31 @@ public class DataIO implements Observer {
 		}
 	}
 	
-	public static void generatePlayers() {
-		try (Scanner sc = new Scanner(new FileReader("players.txt"))) {
-			while (sc.hasNextLine()) {
-				String satir = sc.nextLine();
-				String[] split = satir.split(",");
-				
-				TechnicalAttributes ta =
-						new TechnicalAttributes(Integer.parseInt(split[4]), Integer.parseInt(split[5]),
-						                        Integer.parseInt(split[6]), Integer.parseInt(split[7]),
-						                        Integer.parseInt(split[8]));
-				
-				
-						new Player(split[0], split[1], Integer.parseInt(split[2]), split[3], ta,
-						           Integer.parseInt(split[9]), Double.parseDouble(split[10]),
-						           Double.parseDouble(split[11]), EPosition.valueOf(split[12]));
-			}
-			
-		}
-		catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
-			System.err.println("Error parsing player data: " + e.getMessage());
-		}
-	}
+//	public static void generatePlayers() {
+//		try (Scanner sc = new Scanner(new FileReader("players.txt"))) {
+//			while (sc.hasNextLine()) {
+//				String satir = sc.nextLine();
+//				String[] split = satir.split(",");
+//
+//				TechnicalAttributes ta =
+//						new TechnicalAttributes(Integer.parseInt(split[4]), Integer.parseInt(split[5]),
+//						                        Integer.parseInt(split[6]), Integer.parseInt(split[7]),
+//						                        Integer.parseInt(split[8]));
+//
+//
+//						new Player(split[0], split[1], Integer.parseInt(split[2]), split[3], ta,
+//						           Integer.parseInt(split[9]), Double.parseDouble(split[10]),
+//						           Double.parseDouble(split[11]), EPosition.valueOf(split[12]));
+//			}
+//
+//		}
+//		catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+//			System.err.println("Error parsing player data: " + e.getMessage());
+//		}
+//	}
 	
 	public static void generateTeams() {
 		

@@ -167,7 +167,7 @@ public class MatchModule {
 		
 	}
 	
-	private static Integer simulateGames() {
+	public static Integer simulateGames() {
 		List<Match> matchesOfTheDay =
 				DatabaseModels.matchDB.listAll().stream().filter(match -> match.getMatchDate().equals(currentDate)).filter(match -> match.getStatus() != EMatchStatus.PLAYED)
 				                      .toList();

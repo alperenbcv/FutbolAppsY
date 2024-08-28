@@ -19,6 +19,8 @@ public class Match extends BaseEntity implements Observable {
     private Integer leagueId;
     private Integer homeTeamScore;
     private Integer awayTeamScore;
+    private Field field;
+    private Ball ball;
     
     public Match() {
         super(++matchCounter);
@@ -34,6 +36,49 @@ public class Match extends BaseEntity implements Observable {
         this.homeTeamScore=0;
         this.awayTeamScore=0;
         DatabaseModels.matchDB.save(this);
+    }
+    
+    private void initializePlayerPositions() {
+        // Example: Place players at starting positions
+        List<Player> homeTeam = DatabaseModels.teamDB.findPlayersByTeamID(homeTeamId);
+        for (int i = 0; i < homeTeam.size(); i++) {
+            homeTeam.get(i).setPosition(new Position(10 + i * 10, 10 + i * 10));
+        }
+        
+        List<Player> awayTeam = DatabaseModels.teamDB.findPlayersByTeamID(awayTeamId);
+        
+        for (int i = 0; i < awayTeam.size(); i++) {
+            awayTeam.get(i).setPosition(new Position(field.getWidth() - 10 + i * 10, field.getLength()-10 + i * 10));
+        }
+        
+    }
+    
+    public void setHomeTeamId(int homeTeamId) {
+        this.homeTeamId = homeTeamId;
+    }
+    
+    public void setAwayTeamId(int awayTeamId) {
+        this.awayTeamId = awayTeamId;
+    }
+    
+    public void setMatchDate(LocalDate matchDate) {
+        this.matchDate = matchDate;
+    }
+    
+    public Field getField() {
+        return field;
+    }
+    
+    public void setField(Field field) {
+        this.field = field;
+    }
+    
+    public Ball getBall() {
+        return ball;
+    }
+    
+    public void setBall(Ball ball) {
+        this.ball = ball;
     }
     
     public Integer getHomeTeamScore() {
@@ -86,12 +131,7 @@ public class Match extends BaseEntity implements Observable {
     
     @Override
     public String toString() {
-        return "Match{" +
-                "homeTeamId=" + homeTeamId +
-                ", awayTeamId=" + awayTeamId +
-                ", matchDate=" + matchDate +
-                ", status=" + status +
-                '}';
+        return "Match= " + "Home Team: " + homeTeamId + " " + getHomeTeamScore() + " " + "Away Team: " + awayTeamId + " " + getAwayTeamScore();
     }
     
     @Override

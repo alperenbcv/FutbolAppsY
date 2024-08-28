@@ -120,7 +120,7 @@ public class LogInModule {
 			DataIO.generateTeams();
 			DataIO.setTeamsToLeague();
 			DataIO.generateManagers();
-			DataIO.generatePlayers();
+//			DataIO.generatePlayers();
 			DataIO.readMatches();
 			DataIO.readTeamStats();
 			MatchModule.readDate();
@@ -130,7 +130,7 @@ public class LogInModule {
 			DataIO.generateTeams();
 			DataIO.setTeamsToLeague();
 			DataIO.generateManagers();
-			DataIO.generatePlayers();
+//			DataIO.generatePlayers();
 			DataIO.readMatchesNoSave();
 			DataIO.readTeamStatsNoSave();
 			MatchModule.unsavedDate();
