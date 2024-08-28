@@ -1,53 +1,58 @@
 package FootballApp.entities;
 
+import FootballApp.utility.AverageCalculator;
+import FootballApp.utility.ChanceConstantCalculator;
+
 public class ShootEvent {
 	public boolean shootEvent(Ball ball, Player defender, Player goalkeeper) {
 		// Şut çeken oyuncunun yetenekleri
 		Integer finishing = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getFinishing();
 		Integer shotPower = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getShotPower();
 		Integer decisionMaking = ball.getPlayerWithBall().getPlayerMentalAttributes().getDecisionMaking();
+		int[] shootingValues = { finishing, shotPower, decisionMaking };
+		double avgShooting = AverageCalculator.calculateAverage(shootingValues);
+		double chance = ChanceConstantCalculator.chanceConstant(avgShooting);
 		
 		// Savunma oyuncusunun yetenekleri
 		Integer positioning = defender.getPlayerTechnicalAttributes().getPositioning();
 		Integer composure = defender.getPlayerMentalAttributes().getComposure();
-		
+		int[] defenseValues = { positioning, composure };
+		double avgDefense = AverageCalculator.calculateAverage(defenseValues);
+
 		// Kaleci uzaktan sut yetenekleri
 		Integer reflexes = goalkeeper.getGkAttributes().getReflexes();
 		Integer diving = goalkeeper.getGkAttributes().getDiving();
 		Integer gkpositioning = goalkeeper.getGkAttributes().getPositioning();
 		Integer oneOnOne = goalkeeper.getGkAttributes().getOneOnOne();
 		
-		//Uzaktan sut yeteneği
-		int shootingAbility = finishing + shotPower + decisionMaking;
-		
-		// Savunma yapma yeteneği
-		int defenseAbility = positioning + composure;
 		
 		//Kaleci uzaktan sut yeteneği
-		int goalkeeperDistanceShootAbility = reflexes + diving + gkpositioning;
+		int[] distanceGKValues = { reflexes, diving, gkpositioning };
+		double avgDistanceGK = AverageCalculator.calculateAverage(distanceGKValues);
 		
 		//kaleci 1e1 yeteneği
-		int goalkeeperOneOnOneAbility = oneOnOne + gkpositioning + reflexes;
+		int[] oneOnOneGKValues = { oneOnOne, gkpositioning, reflexes };
+		double avgOneOnOneGK = AverageCalculator.calculateAverage(oneOnOneGKValues);
 		
 		
 		//TOP 0 METREDE YANİ KALECİYLE KARSI KARSIYA
-		if (ball.getPosition() == 100) {
-			if (Math.random() > 0.05) {
-				if (finishing > goalkeeperOneOnOneAbility / 3.2) {
+		if (ball.getPosition() == 50 || ball.getPosition() == -50) {
+			if (ChanceConstantCalculator.oneOnOneOutChance(avgShooting)==0) {
+				if (avgShooting*chance > avgOneOnOneGK) {
 					//gol oldu
-					ball.setPosition(50);
+					ball.setPosition(0);
 					System.out.println("Goal!" + " by " + ball.getPlayerWithBall().getName() + " on one on one.");
 					return true;
 				}
 				else {
-					//kaleci kurtardi
+//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 					ball.setPosition(0);
 					System.out.println("Shot saved by " + goalkeeper.getName() + " on one on one.");
 					return false;
 				}
 			}
 			else {
-				//disari vurdu
+//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 				System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall()
 				                                                           .getName() + " on one on one.");
 				ball.setPosition(0);
@@ -55,20 +60,20 @@ public class ShootEvent {
 			}
 		}
 		//TOP 0-10 METRE ARASINDA
-		else if (ball.getPosition() < 100 && ball.getPosition() >= 90) {
-			if (shootingAbility / 3 > defenseAbility / 2) {
+		else if (ball.getPosition() < 50 && ball.getPosition() >= 40 || ball.getPosition() <= -40 && ball.getPosition() > -50) {
+			if (avgShooting*chance > avgDefense) {
 				// şut defans oyuncusunu geçti
-				double chance = calculateShotOnTargetProbability(ball.getPlayerWithBall());
-				if (chance > Math.random()) {
+				if (ChanceConstantCalculator.distantShootOutChance(avgShooting)==0) {
 					//top kaleye dogru gitti
-					if (shootingAbility / 3 > goalkeeperDistanceShootAbility / 3) {
+					if (avgShooting > avgDistanceGK) {
 						//gol oldu
-						ball.setPosition(50);
+						ball.setPosition(0);
 						System.out.println("Goal!" + " by " + ball.getPlayerWithBall().getName() + ".");
 						return true;
 					}
 					else {
 						//kaleci kurtardi
+//                      BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 						ball.setPosition(0);
 						ball.setPlayerWithBall(goalkeeper);
 						System.out.println("Shot saved by " + goalkeeper.getName() + ".");
@@ -76,7 +81,7 @@ public class ShootEvent {
 					}
 				}
 				else {
-					//disari vurdu
+//                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 					System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall().getName() + ".");
 					ball.setPlayerWithBall(goalkeeper);
 					ball.setPosition(0);
@@ -91,21 +96,20 @@ public class ShootEvent {
 			}
 		}
 		//TOP 10-20 METRE ARASINDA
-		else if (ball.getPosition() >= 80 && ball.getPosition() < 90) {
-			if (shootingAbility / 3 > defenseAbility / 1.8) {
+		else if (ball.getPosition() < 40 && ball.getPosition() >= 30 || ball.getPosition() <= -30 && ball.getPosition() > -40) {
+			if (avgShooting*chance > avgDefense) {
 				// şut defans oyuncusunu geçti
-				double chance = calculateShotOnTargetProbability(ball.getPlayerWithBall());
-				if (chance > Math.random()) {
+				if (ChanceConstantCalculator.distantShootOutChance(avgShooting)==0) {
 					//top kaleye dogru gitti
-					if (shootingAbility / 3 > goalkeeperDistanceShootAbility / 2.8) {
+					if (avgShooting*chance > avgDistanceGK) {
 						//gol oldu
-						ball.setPosition(50);
-						ball.setPlayerWithBall(goalkeeper);
+						ball.setPosition(0);
 						System.out.println("Goal!" + " by " + ball.getPlayerWithBall().getName() + " from long range.");
 						return true;
 					}
 					else {
 						//kaleci kurtardi
+//                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 						ball.setPosition(0);
 						ball.setPlayerWithBall(goalkeeper);
 						System.out.println("Shot saved by " + goalkeeper.getName() + ".");
@@ -114,6 +118,7 @@ public class ShootEvent {
 				}
 				else {
 					//disari vurdu
+//                  BURAYA TAKIMA GORE SETPOSITION EKLENECEK -50 VEYA 50 SEKLINDE
 					System.out.println("Out of the box! Shot missed by " + ball.getPlayerWithBall().getName() + ".");
 					ball.setPlayerWithBall(goalkeeper);
 					ball.setPosition(0);

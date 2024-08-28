@@ -38,21 +38,6 @@ public class Match extends BaseEntity implements Observable {
         DatabaseModels.matchDB.save(this);
     }
     
-    private void initializePlayerPositions() {
-        // Example: Place players at starting positions
-        List<Player> homeTeam = DatabaseModels.teamDB.findPlayersByTeamID(homeTeamId);
-        for (int i = 0; i < homeTeam.size(); i++) {
-            homeTeam.get(i).setPosition(new Position(10 + i * 10, 10 + i * 10));
-        }
-        
-        List<Player> awayTeam = DatabaseModels.teamDB.findPlayersByTeamID(awayTeamId);
-        
-        for (int i = 0; i < awayTeam.size(); i++) {
-            awayTeam.get(i).setPosition(new Position(field.getWidth() - 10 + i * 10, field.getLength()-10 + i * 10));
-        }
-        
-    }
-    
     public void setHomeTeamId(int homeTeamId) {
         this.homeTeamId = homeTeamId;
     }

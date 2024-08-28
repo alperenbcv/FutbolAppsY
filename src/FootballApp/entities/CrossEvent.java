@@ -1,33 +1,34 @@
 package FootballApp.entities;
 
+import FootballApp.utility.AverageCalculator;
+import FootballApp.utility.ChanceConstantCalculator;
+
+import java.util.Random;
+
 public class CrossEvent {
 	
-	public boolean crossEvent20m(Ball ball, Player ballReceiver, Player backPlayer, Player defender, Player goalkeeper) {
+	public boolean crossEvent20m(Ball ball, Player ballReceiver, Player backPlayer, Player defender, Player goalkeeper, Match match) {
 		// Orta açan oyuncunun yetenekleri
 		Integer crossing = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getCrossing();
 		Integer vision = ball.getPlayerWithBall().getPlayerMentalAttributes().getVision();
 		Integer decisionMaking = ball.getPlayerWithBall().getPlayerMentalAttributes().getDecisionMaking();
 		
-		// Savunma oyuncusunun yetenekleri
-		Integer tackle = backPlayer.getPlayerTechnicalAttributes().getTackle();
-		Integer positioning = backPlayer.getPlayerTechnicalAttributes().getPositioning();
-		
 		// Orta yapma yeteneği (crossing + vizyon + karar verme)
-		int crossAbility = crossing + vision + decisionMaking;
+		int[] crossStats={crossing, vision, decisionMaking};
+		double avgCross = AverageCalculator.calculateAverage(crossStats);
+		double chance = ChanceConstantCalculator.chanceConstant(avgCross);
 		
-		// Savunma yapma yeteneği (tackle + positioning)
-		int defenseAbility = tackle + positioning;
-		
+		//Bek özellikleri
 		Integer positioningBack = backPlayer.getPlayerTechnicalAttributes().getPositioning();
 		Integer tackleBack = backPlayer.getPlayerTechnicalAttributes().getTackle();
+		int[] backStats={positioningBack, tackleBack};
+		double avgBack = AverageCalculator.calculateAverage(backStats);
 		
-		//bek özellikleri
-		int backAbility = positioningBack + tackleBack;
 		
-		if (ball.getPosition() <= 80) {
-			if (crossAbility / 3 > backAbility / 1.5) {
+		if (ball.getPosition() <= 30 || ball.getPosition() >= -30) {
+			if (avgCross*chance > avgBack) {
 				if (Math.random() * 20 < ballReceiver.getPlayerTechnicalAttributes().getFirstTouch()) {
-					ball.setPosition(ball.getPosition() + 20); // Top 20 metre ilerler
+					ball.setPosition(ball.getPosition() + 20*crossDirection(ball,match)); // Top 20 metre ilerler
 					System.out.println("Cross succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
 					
 					// Top savunmacıya gider ve kafa mücadelesi başlar
@@ -47,32 +48,27 @@ public class CrossEvent {
 		return false;
 	}
 	
-	public boolean crossEvent30m(Ball ball, Player ballReceiver, Player backPlayer, Player defender, Player goalkeeper) {
+	public boolean crossEvent30m(Ball ball, Player ballReceiver, Player backPlayer, Player defender, Player goalkeeper, Match match) {
 		// Orta açan oyuncunun yetenekleri
 		Integer crossing = ball.getPlayerWithBall().getPlayerTechnicalAttributes().getCrossing();
 		Integer vision = ball.getPlayerWithBall().getPlayerMentalAttributes().getVision();
 		Integer decisionMaking = ball.getPlayerWithBall().getPlayerMentalAttributes().getDecisionMaking();
 		
-		// Savunma oyuncusunun yetenekleri
-		Integer tackle = defender.getPlayerTechnicalAttributes().getTackle();
-		Integer positioning = defender.getPlayerTechnicalAttributes().getPositioning();
-		
 		// Orta yapma yeteneği (crossing + vizyon + karar verme)
-		int crossAbility = crossing + vision + decisionMaking;
-		
-		// Savunma yapma yeteneği (tackle + positioning)
-		int defenseAbility = tackle + positioning;
-		
-		Integer positioningBack = backPlayer.getPlayerTechnicalAttributes().getPositioning();
-		Integer tackleBack = backPlayer.getPlayerTechnicalAttributes().getTackle();
+		int[] crossStats={crossing, vision, decisionMaking};
+		double avgCross = AverageCalculator.calculateAverage(crossStats);
+		double chance = ChanceConstantCalculator.chanceConstant(avgCross);
 		
 		//bek özellikleri
-		int backAbility = positioningBack + tackleBack;
+		Integer positioningBack = backPlayer.getPlayerTechnicalAttributes().getPositioning();
+		Integer tackleBack = backPlayer.getPlayerTechnicalAttributes().getTackle();
+		int[] backStats={positioningBack, tackleBack};
+		double avgBack = AverageCalculator.calculateAverage(backStats);
 		
-		if (ball.getPosition() <= 70) {
-			if (crossAbility / 3 > backAbility / 1.7) {
+		if (ball.getPosition() <= 20 || ball.getPosition() >= -20) {
+			if (avgCross*chance > avgBack) {
 				if (Math.random() * 25 < ballReceiver.getPlayerTechnicalAttributes().getFirstTouch()) {
-					ball.setPosition(ball.getPosition() + 30); // Top 30 metre ilerler
+					ball.setPosition(ball.getPosition() + 30*crossDirection(ball,match)); // Top 30 metre ilerler
 					System.out.println("Cross succeeded! Ball is now with " + ballReceiver.getName() + " at position " + ball.getPosition());
 					return handleHeaderDuel(ball, ballReceiver, defender, goalkeeper);
 				} else {
@@ -90,19 +86,31 @@ public class CrossEvent {
 		return false;
 	}
 	
+	private int crossDirection(Ball ball, Match match) {
+		if(ball.getPlayerWithBall().getCurrentTeamID() == match.getHomeTeamId()) {
+			return -1;
+		}
+		else {
+		    return 1;
+		}
+	}
+	
+	
 	
 	private boolean handleHeaderDuel(Ball ball, Player attacker, Player defender, Player goalkeeper) {
 		// Hava topu mücadelesi
 		Integer attackerHeader = attacker.getPlayerTechnicalAttributes().getHeader();
 		Integer attackerJumping = attacker.getPlayerPhysicalAttributes().getJumping();
+		int[] attackStats = {attackerHeader, attackerJumping};
+		double avgAttack = AverageCalculator.calculateAverage(attackStats);
+		double chance = ChanceConstantCalculator.chanceConstant(avgAttack);
 		
 		Integer defenderHeader = defender.getPlayerTechnicalAttributes().getHeader();
 		Integer defenderJumping = defender.getPlayerPhysicalAttributes().getJumping();
+		int[] defendStats = {defenderHeader, defenderJumping};
+		double avgDefend = AverageCalculator.calculateAverage(defendStats);
 		
-		int attackerAbility = attackerHeader + attackerJumping;
-		int defenderAbility = defenderHeader + defenderJumping;
-		
-		if (Math.random() * attackerAbility > Math.random() * (defenderAbility * 1.1)) {
+		if (avgAttack*chance > avgDefend) {
 			ball.setPlayerWithBall(attacker);
 			System.out.println(attacker.getName() + " wins the header and directs the ball towards the goal!");
 			return handleShotOnGoal(ball, attacker, goalkeeper);
@@ -117,15 +125,18 @@ public class CrossEvent {
 		// Kaleye şut
 		Integer finishing = attacker.getPlayerTechnicalAttributes().getFinishing();
 		Integer shotPower = attacker.getPlayerTechnicalAttributes().getShotPower();
+		int[] shotStats = {finishing, shotPower};
+		double avgShot = AverageCalculator.calculateAverage(shotStats);
+		double chance = ChanceConstantCalculator.chanceConstant(avgShot);
 		
 		Integer gkHandling = goalkeeper.getGkAttributes().getDiving();
 		Integer gkReflexes = goalkeeper.getGkAttributes().getReflexes();
 		Integer positioning = goalkeeper.getGkAttributes().getPositioning();
+		int[] saveStats = {gkHandling, gkReflexes, positioning};
+		double avgSave = AverageCalculator.calculateAverage(saveStats);
 		
-		int shotAbility = finishing + shotPower;
-		int saveAbility = gkHandling + gkReflexes + positioning;
 		
-		if (Math.random() * shotAbility > Math.random() * (saveAbility * 1.2)) {
+		if (avgShot*chance > avgSave) {
 			System.out.println("Goal! " + attacker.getName() + " scores a header!");
 			ball.setPosition(50);
 			return true;
