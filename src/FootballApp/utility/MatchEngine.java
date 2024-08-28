@@ -45,6 +45,7 @@ public class MatchEngine {
 						ball.setPlayerWithBall(selectRandomDefender(homeTeam));
 						ball.setPosition(40);
 						System.out.println("GK gives the ball to closest defender. "+ ball.getPlayerWithBall().getName() + " is at " + ball.getPosition());
+						continue;
 					}
 				}
 				if (ball.getPosition() > 0 && ball.getPosition() <= 50) {
@@ -59,6 +60,7 @@ public class MatchEngine {
                         ball.setPlayerWithBall(selectRandomDefender(awayTeam));
 						ball.setPosition(-40);
 	                    System.out.println("GK gives the ball to closest defender. "+ ball.getPlayerWithBall().getName() + " is at " + ball.getPosition());
+	                    continue;
                     }
                 }
 				if (ball.getPosition() >= -50 && ball.getPosition() < 0) {
