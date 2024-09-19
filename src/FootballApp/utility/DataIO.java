@@ -1,10 +1,14 @@
 package FootballApp.utility;
 
 import FootballApp.entities.*;
+import FootballApp.entities.attributes.GKAttributes;
+import FootballApp.entities.attributes.MentalAttributes;
+import FootballApp.entities.attributes.PhysicalAttributes;
 import FootballApp.entities.observerPatterns.Observable;
 import FootballApp.entities.observerPatterns.Observer;
 import FootballApp.entities.attributes.TechnicalAttributes;
 import FootballApp.enums.EMatchStatus;
+import FootballApp.enums.EPosition;
 import FootballApp.enums.ERegion;
 import FootballApp.models.DatabaseModels;
 
@@ -332,15 +336,34 @@ public class DataIO implements Observer {
 	public static void savePlayersToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("players.txt"))) {
 			for (Player player : DatabaseModels.playerDB.listAll()) {
-				TechnicalAttributes ta = player.getPlayerTechnicalAttributes();
-				writer.write(player.getName() + "," + player.getSurName() + "," + player.getAge() + "," + player.getNationality() + "," + ta.getFinishing() + "," + ta.getPass() + "," + ta.getDribbling() + "," + ta.getTackle() + "," + ta.getShotPower() + "," + player.getCurrentTeamID() + "," + player.getPlayerValue() + "," + player.getPlayerWage() + "," + player.getPlayersPosition() + "," + "\n");
+				if (player.getPlayersPosition() == EPosition.GK) { // Kaleci kontrolü
+					GKAttributes gk = player.getGkAttributes();
+					writer.write(player.getName() + "," + player.getSurName() + "," + player.getAge() + "," + player.getNationality() + ","
+							             + gk.getReflexes() + "," + gk.getPositioning() + "," + gk.getDiving() + "," + gk.getOneOnOne() + ","
+							             + player.getCurrentTeamID() + "," + player.getPlayerValue() + "," + player.getPlayerWage() + "," + player.getPlayersPosition() + "," + "\n");
+				} else {
+					TechnicalAttributes ta = player.getPlayerTechnicalAttributes();
+					MentalAttributes ma = player.getPlayerMentalAttributes();
+					PhysicalAttributes pa = player.getPlayerPhysicalAttributes();
+					
+					// Null kontrolü
+					if (ta != null && ma != null && pa != null) {
+						writer.write(player.getName() + "," + player.getSurName() + "," + player.getAge() + "," + player.getNationality() + ","
+								             + ta.getFinishing() + "," + ta.getPass() + "," + ta.getDribbling() + "," + ta.getTackle() + "," + ta.getShotPower() + "," + ta.getCrossing() + "," + ta.getHeader() + "," + ta.getPositioning() + "," + ta.getFirstTouch() + ","
+								             + ma.getComposure() + "," + ma.getVision() + "," + ma.getDecisionMaking() + ","
+								             + pa.getStamina() + "," + pa.getSpeed() + "," + pa.getStrength() + "," + pa.getJumping() + "," + pa.getHeight() + ","
+								             + player.getCurrentTeamID() + "," + player.getPlayerValue() + "," + player.getPlayerWage() + "," + player.getPlayersPosition() + "," + "\n");
+					} else {
+						System.err.println("Error: Player " + player.getName() + " has missing attributes.");
+					}
+				}
 			}
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			System.err.println("Error while writing players.txt: " + e.getMessage());
 		}
 	}
-	
+
+
 //	public static void generatePlayers() {
 //		try (Scanner sc = new Scanner(new FileReader("players.txt"))) {
 //			while (sc.hasNextLine()) {
@@ -421,6 +444,119 @@ public class DataIO implements Observer {
 			System.err.println("Error parsing manager data: " + e.getMessage());
 		}
 	}
+	
+	public static void readPlayers() {
+		try (Scanner sc = new Scanner(new FileReader("players.txt"))) {
+			while (sc.hasNextLine()) {
+				String satir = sc.nextLine();
+				String[] split = satir.split(",");
+				
+				String name = split[0];
+				String surname = split[1];
+				Integer age = Integer.parseInt(split[2]);
+				String nationality = split[3];
+				
+				EPosition position = null;
+				
+				if (split.length == 12) {
+					// Kaleci için pozisyon 11. indeksde
+					try {
+						position = EPosition.valueOf(split[11]);
+					} catch (IllegalArgumentException e) {
+						System.err.println("Error: Invalid position value for player: " + name + " " + surname);
+						continue; // Geçersiz veri olduğunda bu oyuncuyu atla
+					}
+					GKAttributes gkAttributes = new GKAttributes(
+							Integer.parseInt(split[4]), Integer.parseInt(split[5]),
+							Integer.parseInt(split[6]), Integer.parseInt(split[7])
+					);
+					Integer teamID = Integer.parseInt(split[8]);
+					Double playerValue = Double.parseDouble(split[9]);
+					Double playerWage = Double.parseDouble(split[10]);
+					
+					// Kaleci constructor'ı ile oyuncu oluşturma
+					Player player = new Player(name, surname, age, nationality, gkAttributes, teamID, playerValue, playerWage);
+				} else if (split.length >= 25) {
+					// Diğer pozisyonlar için pozisyon 24. indeksde
+					try {
+						position = EPosition.valueOf(split[24]);
+					} catch (IllegalArgumentException e) {
+						System.err.println("Error: Invalid position value for player: " + name + " " + surname);
+						continue; // Geçersiz veri olduğunda bu oyuncuyu atla
+					}
+					
+					TechnicalAttributes ta = new TechnicalAttributes(
+							Integer.parseInt(split[4]), Integer.parseInt(split[5]), Integer.parseInt(split[6]),
+							Integer.parseInt(split[7]), Integer.parseInt(split[8]), Integer.parseInt(split[9]),
+							Integer.parseInt(split[10]), Integer.parseInt(split[11]), Integer.parseInt(split[12])
+					);
+					
+					MentalAttributes ma = new MentalAttributes(
+							Integer.parseInt(split[13]), Integer.parseInt(split[14]), Integer.parseInt(split[15])
+					);
+					
+					PhysicalAttributes pa = new PhysicalAttributes(
+							Integer.parseInt(split[16]), Integer.parseInt(split[17]), Integer.parseInt(split[18]),
+							Integer.parseInt(split[19]), Integer.parseInt(split[20])
+					);
+					
+					Integer teamID = Integer.parseInt(split[21]);
+					Double playerValue = Double.parseDouble(split[22]);
+					Double playerWage = Double.parseDouble(split[23]);
+					
+					// Diğer pozisyonlar için oyuncu oluşturma
+					Player player = new Player(name, surname, age, nationality, ta, ma, pa, teamID, playerValue, playerWage, position);
+				} else {
+					System.err.println("Error: Unexpected data format for player: " + name + " " + surname);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+			System.err.println("Error parsing player data: " + e.getMessage());
+		}
+	}
+	
+	
+	
+	
+	public static void playerGenerator() {
+		Random random = new Random();
+		
+		String[] names = {"Ali", "Ahmet", "Baris", "Ceren", "Deniz", "Kemal", "Mert", "Burak", "Okan", "Emre", "Can", "Arda", "Ege", "Serkan", "Omer", "Gokhan", "Bora", "Mustafa", "Melis"};
+		String[] surnames = {"Yıldırım", "Kaya", "Güneş", "Öztürk", "Kılıç", "Eren", "Özgür", "Bilgin", "Kaya", "Özdemir", "Korkmaz", "Özkan", "Kılıç", "Ergin", "Öz", "Korkmaz", "Kılıç", "Özdemir", "Korkmaz"};
+		Integer[] ages = {18, 19, 20, 21, 22, 23, 24, 25};
+		String nationality = "Turkiye";
+		EPosition[] positions = {EPosition.CB, EPosition.LB, EPosition.RB, EPosition.LW, EPosition.RW, EPosition.CM, EPosition.ST};
+		Double value = random.nextDouble() * 1000000;
+		Double wage = random.nextDouble() * 10000;
+		
+		int id = 1;
+		int name=0;
+		for (int team = 0; team < 19; team++) { // Her takım için
+			// Önce bir kaleci oluşturuyoruz
+			String surnameGK = surnames[random.nextInt(surnames.length)];
+			Integer ageGK = ages[random.nextInt(ages.length)];
+			GKAttributes ga = new GKAttributes(random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20));
+			Player gk = new Player(names[name], surnameGK, ageGK, nationality, ga, id, value, wage);
+			
+			// Sonra 10 oyuncu rastgele pozisyonlarda
+			for (int i = 0; i < 10; i++) {
+				String surname = surnames[random.nextInt(surnames.length)];
+				Integer age = ages[random.nextInt(ages.length)];
+				TechnicalAttributes ta = new TechnicalAttributes(random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20));
+				MentalAttributes ma = new MentalAttributes(random.nextInt(20), random.nextInt(20), random.nextInt(20));
+				PhysicalAttributes pa = new PhysicalAttributes(random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20), random.nextInt(20));
+				EPosition position = positions[random.nextInt(positions.length)];
+				Player player = new Player(names[name], surname, age, nationality, ta, ma, pa, id, value, wage, position);
+			}
+			id++;
+			name++;
+		}
+	}
+	
+	
+	
 	
 	@Override
 	public void update(Observable observable) {

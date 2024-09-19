@@ -130,7 +130,8 @@ public class LogInModule {
 			DataIO.generateTeams();
 			DataIO.setTeamsToLeague();
 			DataIO.generateManagers();
-//			DataIO.generatePlayers();
+//			DataIO.playerGenerator();
+			DataIO.readPlayers();
 			DataIO.readMatchesNoSave();
 			DataIO.readTeamStatsNoSave();
 			MatchModule.unsavedDate();

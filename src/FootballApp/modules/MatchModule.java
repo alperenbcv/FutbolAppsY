@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class MatchModule {
 	static Scanner sc = new Scanner(System.in);
 	static LocalDate currentDate;
-	
+	static MatchEngine matchEngine = new MatchEngine();
 	
 	public static void saveDatesToFile() {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("date.txt",true))) {
@@ -176,7 +176,6 @@ public class MatchModule {
 			System.out.println("\nNo matches scheduled for today!");
 		}
 		else {
-			Random random = new Random();
 			
 			for(Match match:matchesOfTheDay){
 				if(match.getHomeTeamId() == DatabaseModels.teamDB.findByName("BYE").get().getId()){
@@ -190,18 +189,11 @@ public class MatchModule {
 					match.setStatus(EMatchStatus.PLAYED);
                 }
 				else {
-					MatchEngine matchEngine = new MatchEngine();
+					
 					matchEngine.simulateMatch(match);
 					match.setStatus(EMatchStatus.PLAYED);
 				}
 				
-//				else {
-//					int homeTeamScore = random.nextInt(4);
-//					int awayTeamScore = random.nextInt(4);
-//					match.setHomeTeamScore(homeTeamScore);
-//					match.setAwayTeamScore(awayTeamScore);
-//					match.setStatus(EMatchStatus.PLAYED);
-//				}
 			}
 		}
 		Optional<List<TeamStats>> all = DatabaseModels.tsDB.findAll();

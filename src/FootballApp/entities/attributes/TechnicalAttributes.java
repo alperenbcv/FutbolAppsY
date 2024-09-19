@@ -16,17 +16,17 @@ public class TechnicalAttributes extends BaseEntity implements PlayerAttributes 
 	private Integer firstTouch;
 	
 	
-	public TechnicalAttributes(Integer finishing, Integer pass, Integer dribbling, Integer tackle, Integer shotPower) {
+	public TechnicalAttributes(Integer finishing, Integer pass, Integer dribbling, Integer tackle, Integer shotPower, Integer crossing, Integer header, Integer positioning, Integer firstTouch) {
 		super(++technicalCount);
 		this.finishing = finishing;
 		this.pass = pass;
 		this.dribbling = dribbling;
 		this.tackle = tackle;
 		this.shotPower = shotPower;
-		this.crossing = 10;
-		this.header = 10;
-		this.positioning = 10;
-		this.firstTouch=10;
+		this.crossing = crossing;
+		this.header = header;
+		this.positioning = positioning;
+		this.firstTouch= firstTouch;
 	}
 	
 	public Integer getFirstTouch() {
